@@ -1724,7 +1724,8 @@ public class accs {
                     switch(dmt.toString())// 叶子结点的字符串
                     {
                         case "主页": PanelHide();index.setVisible(true);break;
-                        //NET
+                        //NET安全访问登录
+                        //用户名
                         case "Disposable Email Check":PanelHide();MailOnceCheck.setVisible(true);break;
                         //Modern
                         case "Hash": PanelHide();Hash.setVisible(true);break;//显示单个需要的panel
