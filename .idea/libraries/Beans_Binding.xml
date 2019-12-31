@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Beans Binding">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/beansbinding.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/beansbinding-doc.zip!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/beansbinding-src.zip!/" />
+    </SOURCES>
+  </library>
+</component>

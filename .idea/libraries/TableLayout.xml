@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="TableLayout">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/TableLayout.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/TableLayout-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/TableLayout-src.jar!/" />
+    </SOURCES>
+  </library>
+</component>

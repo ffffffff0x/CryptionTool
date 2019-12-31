@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="uct:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/uct_jar</output-path>
+    <root id="archive" name="uct.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="UCT-TOOLS" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-core.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jgoodies-forms.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jgoodies-common.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/beansbinding.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/TableLayout.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
