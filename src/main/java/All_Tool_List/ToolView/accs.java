@@ -417,6 +417,14 @@ public class accs {
         UnicodeDeCodeArea = new JTextArea();
         UnicodeEnCodeBT = new JButton();
         UnicodeDeCodeBT = new JButton();
+        Vigenere = new JPanel();
+        VigenereLB = new JLabel();
+        VigenereSCLP1 = new JScrollPane();
+        VigenereSorceArea = new JTextArea();
+        VigenereSCLP2 = new JScrollPane();
+        VigenereResultArea = new JTextArea();
+        VigenereEncodeBT = new JButton();
+        VigenereDecoeBT = new JButton();
         Template = new JPanel();
         TitleLBTEMP = new JLabel();
         TemplateSCLP1 = new JScrollPane();
@@ -441,6 +449,7 @@ public class accs {
             {
                 index.setBackground(new Color(228, 230, 235));
                 index.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                index.setVisible(false);
                 index.setLayout(null);
 
                 //---- IndexLB ----
@@ -1477,6 +1486,67 @@ public class accs {
             rootview.add(Unicode);
             Unicode.setBounds(265, 5, 620, 590);
 
+            //======== Vigenere ========
+            {
+                Vigenere.setBackground(new Color(228, 230, 235));
+                Vigenere.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                Vigenere.setLayout(null);
+
+                //---- VigenereLB ----
+                VigenereLB.setText("Vigenere");
+                VigenereLB.setFont(new Font("Jokerman", Font.PLAIN, 35));
+                VigenereLB.setForeground(Color.black);
+                Vigenere.add(VigenereLB);
+                VigenereLB.setBounds(230, 35, 161, 54);
+
+                //======== VigenereSCLP1 ========
+                {
+
+                    //---- VigenereSorceArea ----
+                    VigenereSorceArea.setLineWrap(true);
+                    VigenereSCLP1.setViewportView(VigenereSorceArea);
+                }
+                Vigenere.add(VigenereSCLP1);
+                VigenereSCLP1.setBounds(45, 120, 530, 151);
+
+                //======== VigenereSCLP2 ========
+                {
+
+                    //---- VigenereResultArea ----
+                    VigenereResultArea.setLineWrap(true);
+                    VigenereSCLP2.setViewportView(VigenereResultArea);
+                }
+                Vigenere.add(VigenereSCLP2);
+                VigenereSCLP2.setBounds(45, 410, 530, 151);
+
+                //---- VigenereEncodeBT ----
+                VigenereEncodeBT.setText("EnCode");
+                Vigenere.add(VigenereEncodeBT);
+                VigenereEncodeBT.setBounds(155, 318, 115, 45);
+
+                //---- VigenereDecoeBT ----
+                VigenereDecoeBT.setText("DeCode");
+                Vigenere.add(VigenereDecoeBT);
+                VigenereDecoeBT.setBounds(352, 318, 115, 45);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < Vigenere.getComponentCount(); i++) {
+                        Rectangle bounds = Vigenere.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = Vigenere.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    Vigenere.setMinimumSize(preferredSize);
+                    Vigenere.setPreferredSize(preferredSize);
+                }
+            }
+            rootview.add(Vigenere);
+            Vigenere.setBounds(265, 5, 620, 590);
+
             //======== Template ========
             {
                 Template.setBackground(new Color(228, 230, 235));
@@ -1489,7 +1559,7 @@ public class accs {
                 TitleLBTEMP.setFont(new Font("Jokerman", Font.PLAIN, 35));
                 TitleLBTEMP.setForeground(Color.black);
                 Template.add(TitleLBTEMP);
-                TitleLBTEMP.setBounds(259, 35, 103, 54);
+                TitleLBTEMP.setBounds(258, 35, 105, 54);
 
                 //======== TemplateSCLP1 ========
                 {
@@ -1696,6 +1766,14 @@ public class accs {
     private JTextArea UnicodeDeCodeArea;
     private JButton UnicodeEnCodeBT;
     private JButton UnicodeDeCodeBT;
+    private JPanel Vigenere;
+    private JLabel VigenereLB;
+    private JScrollPane VigenereSCLP1;
+    private JTextArea VigenereSorceArea;
+    private JScrollPane VigenereSCLP2;
+    private JTextArea VigenereResultArea;
+    private JButton VigenereEncodeBT;
+    private JButton VigenereDecoeBT;
     private JPanel Template;
     private JLabel TitleLBTEMP;
     private JScrollPane TemplateSCLP1;

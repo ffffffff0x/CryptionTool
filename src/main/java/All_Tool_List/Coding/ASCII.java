@@ -14,10 +14,10 @@ public class ASCII {
         for (int i = 0; i < chars.length; i++) {
             if(i != chars.length - 1)
             {
-                ASCIIL.append((int)chars[i]).append(s);
+                ASCIIL.append(Integer.valueOf(chars[i])).append(s);
             }
             else {
-                ASCIIL.append((int)chars[i]);
+                ASCIIL.append(Integer.valueOf(chars[i]));
             }
         }//ASCII转换
         return ASCIIL.toString();

@@ -15,6 +15,7 @@ new FormModel {
 				name: "index"
 				"background": &Color0 new java.awt.Color( 228, 230, 235, 255 )
 				"font": &Font0 new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				"visible": false
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "IndexLB"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/ffffffff0x_Logo.jpg" )
@@ -1165,6 +1166,69 @@ new FormModel {
 				"y": 5
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Vigenere"
+				"background": #Color0
+				"font": #Font0
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "VigenereLB"
+					"text": "Vigenere"
+					"font": #Font1
+					"foreground": #Color1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 161
+					"height": 54
+					"x": 230
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "VigenereSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "VigenereSorceArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 120
+					"width": 530
+					"height": 151
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "VigenereSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "VigenereResultArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 410
+					"width": 530
+					"height": 151
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "VigenereEncodeBT"
+					"text": "EnCode"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 155
+					"y": 318
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "VigenereDecoeBT"
+					"text": "DeCode"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 352
+					"y": 318
+					"width": 115
+					"height": 45
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 265
+				"y": 5
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "Template"
 				"background": #Color0
 				"font": #Font0
@@ -1175,9 +1239,9 @@ new FormModel {
 					"font": #Font1
 					"foreground": #Color1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"width": 103
+					"width": 105
 					"height": 54
-					"x": 259
+					"x": 258
 					"y": 35
 				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {

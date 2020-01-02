@@ -17,17 +17,7 @@ public class HEXCoder {
         //迭代
         for(String escapeStr : escapeArray)
         {
-            if (i.contains(escapeStr))
-            {
-                flag = true;
-                break;//终止循环
-            }
-        }
-        //包含转义字符
-        if(flag) try {
-            throw new Exception("BAD CHAR");
-        } catch (Exception e) {
-            e.printStackTrace();
+            i = i.replace(escapeStr,"");
         }
         //16进制字符
         char[] hexArray = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F',};
@@ -58,6 +48,10 @@ public class HEXCoder {
                 sb.append(hexArray[bit]);
                 sb.append(d);
             }
+        }
+        if(d.equals(",")||d.equals(";")||d.equals(":")||d.equals("\n")||d.equals(" "))
+        {
+            sb.deleteCharAt(sb.length() - 1);
         }
         hexString = sb.toString();
         return hexString;

@@ -26,6 +26,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode MD5 = new DefaultMutableTreeNode("Hash");
     private DefaultMutableTreeNode AES = new DefaultMutableTreeNode("AES");
 
+
     //古典下的节点
     private DefaultMutableTreeNode ROT13 = new DefaultMutableTreeNode("ROT13");
     private DefaultMutableTreeNode Rail_fence = new DefaultMutableTreeNode("Rail fence(栅栏密码)");
@@ -92,11 +93,11 @@ public class NodeAdd {
         cs1.add(Atbash);
         cs1.add(ROT13);
         cs1.add(Rail_fence);
+        cs1.add(Vigenere);
         //cs1.add(Simple_Substitution);
         //cs1.add(Hill);
         //cs1.add(Polybius_Square);
         //cs1.add(Playfair);
-        //cs1.add(Vigenère);
         //cs1.add(Autokey);
         //cs1.add(Beaufort);
         //cs1.add(Running_Key);
