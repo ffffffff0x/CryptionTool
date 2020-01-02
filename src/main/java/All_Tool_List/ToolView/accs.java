@@ -449,7 +449,6 @@ public class accs {
             {
                 index.setBackground(new Color(228, 230, 235));
                 index.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
-                index.setVisible(false);
                 index.setLayout(null);
 
                 //---- IndexLB ----
@@ -1490,6 +1489,7 @@ public class accs {
             {
                 Vigenere.setBackground(new Color(228, 230, 235));
                 Vigenere.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                Vigenere.setVisible(false);
                 Vigenere.setLayout(null);
 
                 //---- VigenereLB ----

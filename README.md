@@ -33,3 +33,6 @@ The Test Version
 ---
 
 Adding...
+---
+- Vigenere
+- SM3
