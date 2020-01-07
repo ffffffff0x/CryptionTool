@@ -20,6 +20,7 @@ The Test Version
   - SHA-256
   - SHA-384
   - SHA-512
+ - SM3
 ---
 - Atabash 
 - ROT13
@@ -37,4 +38,4 @@ The Test Version
 Adding...
 ---
 - Vigenere
-- SM3
+

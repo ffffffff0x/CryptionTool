@@ -54,7 +54,7 @@ public class AES {
     }
 
     // ECB加密:
-    public static byte[] ECBencrypt(byte[] key, byte[] input) throws GeneralSecurityException {
+    private static byte[] ECBencrypt(byte[] key, byte[] input) throws GeneralSecurityException {
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
         SecretKey keySpec = new SecretKeySpec(key, "AES");
         cipher.init(Cipher.ENCRYPT_MODE, keySpec);
@@ -62,7 +62,7 @@ public class AES {
     }
 
     // ECB解密:
-    public static byte[] ECBdecrypt(byte[] key, byte[] input) throws GeneralSecurityException {
+    private static byte[] ECBdecrypt(byte[] key, byte[] input) throws GeneralSecurityException {
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
         SecretKey keySpec = new SecretKeySpec(key, "AES");
         cipher.init(Cipher.DECRYPT_MODE, keySpec);
@@ -70,7 +70,7 @@ public class AES {
     }
 
     // CBC加密:
-    public static byte[] CBCencrypt(byte[] key, byte[] input) throws GeneralSecurityException {
+    private static byte[] CBCencrypt(byte[] key, byte[] input) throws GeneralSecurityException {
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
         SecretKeySpec keySpec = new SecretKeySpec(key, "AES");
         // CBC模式需要生成一个16 bytes的initialization vector:
@@ -84,7 +84,7 @@ public class AES {
     }
 
     // CBC解密:
-    public static byte[] CBCdecrypt(byte[] key, byte[] input) throws GeneralSecurityException {
+    private static byte[] CBCdecrypt(byte[] key, byte[] input) throws GeneralSecurityException {
         // 把input分割成IV和密文:
         byte[] iv = new byte[16];
         byte[] data = new byte[input.length - 16];
@@ -98,21 +98,20 @@ public class AES {
         return cipher.doFinal(data);
     }
 
-    public static byte[] join(byte[] bs1, byte[] bs2) {
+    private static byte[] join(byte[] bs1, byte[] bs2) {
         byte[] r = new byte[bs1.length + bs2.length];
         System.arraycopy(bs1, 0, r, 0, bs1.length);
         System.arraycopy(bs2, 0, r, bs1.length, bs2.length);
         return r;
     }
 
-    public static byte[] keyge(int KLength,String Skey) throws NoSuchAlgorithmException {
+    private static byte[] keyge(int KLength, String Skey) throws NoSuchAlgorithmException {
         KeyGenerator kgen = KeyGenerator.getInstance("AES");
         kgen.init(KLength, new SecureRandom(Skey.getBytes()));
         return  kgen.generateKey().getEncoded();
     }
 
-    public String AESEncrypt(String Source, String Skey, String Mode, String OutStyle,int KLength) throws GeneralSecurityException, UnsupportedEncodingException
-    {
+    public String AESEncrypt(String Source, String Skey, String Mode, String OutStyle,int KLength) throws GeneralSecurityException {
         if (Objects.equals(Mode, "ECB"))
         {
             byte[] key = keyge(KLength,Skey);
@@ -136,21 +135,20 @@ public class AES {
         return null;
     }
 
-    public String AESDecrypt(String Source, String Skey, String Mode, String OutStyle,int KLength) throws GeneralSecurityException, UnsupportedEncodingException
-    {
-        if(Objects.equals(Mode, "ECB"))
+    public String AESDecrypt(String Source, String Skey, String Mode, String OutStyle,int KLength) throws GeneralSecurityException {
+        if(Objects.equals(Mode,"ECB"))
         {
             byte[] key = keyge(KLength,Skey);
-            if(Objects.equals(OutStyle, "Base64")) {
-                return new String(ECBdecrypt(key, Base64.getDecoder().decode(Source)), StandardCharsets.UTF_8);
+            if(Objects.equals(OutStyle,"Base64")) {
+                return new String(ECBdecrypt(key, Base64.getDecoder().decode(Source)),StandardCharsets.UTF_8);
             }
             else {
-                return new String(ECBdecrypt(key,hexToByteArray(Source)), StandardCharsets.UTF_8);
+                return new String(ECBdecrypt(key,hexToByteArray(Source)),StandardCharsets.UTF_8);
             }
 
-        }else if (Objects.equals(Mode, "CBC")) {
+        }else if (Objects.equals(Mode,"CBC")) {
             byte[] key = keyge(KLength,Skey);
-            if(Objects.equals(OutStyle, "Base64")) {
+            if(Objects.equals(OutStyle,"Base64")) {
                 return new String(CBCdecrypt(key,Base64.getDecoder().decode(Source)), StandardCharsets.UTF_8);
             }
             else {

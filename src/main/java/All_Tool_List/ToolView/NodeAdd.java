@@ -2,9 +2,9 @@ package All_Tool_List.ToolView;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
-public class NodeAdd {
+class NodeAdd {
     //创建根节点
-    public DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
+    DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
 
     //创建二级节点
     private DefaultMutableTreeNode index = new DefaultMutableTreeNode("主页");
@@ -25,7 +25,7 @@ public class NodeAdd {
     //现代下的节点
     private DefaultMutableTreeNode MD5 = new DefaultMutableTreeNode("Hash");
     private DefaultMutableTreeNode AES = new DefaultMutableTreeNode("AES");
-
+    private DefaultMutableTreeNode SM3 = new DefaultMutableTreeNode("SM3");
 
     //古典下的节点
     private DefaultMutableTreeNode ROT13 = new DefaultMutableTreeNode("ROT13");
@@ -86,7 +86,7 @@ public class NodeAdd {
         //往现代节点下添加节点
         Modern.add(AES);
         Modern.add(MD5);
-
+        Modern.add(SM3);
         //--------
 
         //往古典节点下添加节点

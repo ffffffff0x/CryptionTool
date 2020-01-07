@@ -1,4 +1,4 @@
-package All_Tool_List.Modern.hashadd;
+package All_Tool_List.Modern.Hashadd;
 
 public class MD4 {
     private static int A, B, C, D;

@@ -7,6 +7,7 @@ import All_Tool_List.Classical.Rail_fence;
 import All_Tool_List.Coding.*;
 import All_Tool_List.Modern.AES;
 import All_Tool_List.Modern.Hash;
+import All_Tool_List.Modern.SM3;
 import All_Tool_List.Net.MailOnceCheck;
 
 import javax.swing.*;
@@ -206,8 +207,6 @@ public class accs {
                     Integer.parseInt(AESKLengthCB.getSelectedItem().toString())));
         } catch (GeneralSecurityException ex) {
             ex.printStackTrace();
-        } catch (UnsupportedEncodingException ex) {
-            ex.printStackTrace();
         }
     }//AES
 
@@ -221,11 +220,6 @@ public class accs {
                     Integer.parseInt(AESKLengthCB.getSelectedItem().toString())));
         } catch (GeneralSecurityException ex) {
             ex.printStackTrace();
-            AESResultArea.setText("Error");
-        } catch (UnsupportedEncodingException ex) {
-            ex.printStackTrace();
-            AESResultArea.setText("Error");
-        }catch (Exception a){
             AESResultArea.setText("Error");
         }
     }//AES
@@ -255,26 +249,23 @@ public class accs {
         AtbashDeCodeArea.setText(atb.AtbashEnCode(AtbashSourceArea.getText()));
     }
 
+    private void SM3encodebtnActionPerformed(ActionEvent e) {
+        SM3 SM3 = new SM3();
+        try {
+            String out = SM3.byteArrayToHexString(SM3.hash(SM3Source1.getText().getBytes()));
+            SM3encode3.setText(out);
+            SM3encode2.setText(out.toLowerCase());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
      private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         rootview = new JPanel();
         index = new JPanel();
         IndexLB = new JLabel();
         index2 = new JPanel();
-        Hash = new JPanel();
-        TitleLB = new JLabel();
-        HASHSCLP1 = new JScrollPane();
-        HashSource = new JTextArea();
-        HASHSCLP2 = new JScrollPane();
-        Hashencode1 = new JTextArea();
-        HASHSCLP3 = new JScrollPane();
-        Hashencode2 = new JTextArea();
-        MD5encodebtn = new JButton();
-        HASHLB1 = new JLabel();
-        HASHLB2 = new JLabel();
-        HASHLB3 = new JLabel();
-        HashfileBT = new JButton();
-        HashCBox = new JComboBox();
         AES = new JPanel();
         TitleLBAES = new JLabel();
         AESSCLP1 = new JScrollPane();
@@ -292,6 +283,32 @@ public class accs {
         AESLB4 = new JLabel();
         AESLB5 = new JLabel();
         AESLB6 = new JLabel();
+        Hash = new JPanel();
+        TitleLBHASH = new JLabel();
+        HASHSCLP1 = new JScrollPane();
+        HashSource = new JTextArea();
+        HASHSCLP2 = new JScrollPane();
+        Hashencode1 = new JTextArea();
+        HASHSCLP3 = new JScrollPane();
+        Hashencode2 = new JTextArea();
+        MD5encodebtn = new JButton();
+        HASHLB1 = new JLabel();
+        HASHLB2 = new JLabel();
+        HASHLB3 = new JLabel();
+        HashfileBT = new JButton();
+        HashCBox = new JComboBox();
+        SM3 = new JPanel();
+        TitleLBSM3 = new JLabel();
+        SM3SCLP1 = new JScrollPane();
+        SM3Source1 = new JTextArea();
+        SM3SCLP2 = new JScrollPane();
+        SM3encode2 = new JTextArea();
+        SM3SCLP3 = new JScrollPane();
+        SM3encode3 = new JTextArea();
+        SM3encodebtn = new JButton();
+        SM3LB4 = new JLabel();
+        SM3LB5 = new JLabel();
+        SM3LB6 = new JLabel();
         base64 = new JPanel();
         TitleLBbase64 = new JLabel();
         base64SCLP1 = new JScrollPane();
@@ -423,7 +440,6 @@ public class accs {
             {
                 index.setBackground(new Color(228, 230, 235));
                 index.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
-                index.setVisible(false);
                 index.setLayout(null);
 
                 //---- IndexLB ----
@@ -474,104 +490,6 @@ public class accs {
             }
             rootview.add(index2);
             index2.setBounds(265, 5, 620, 590);
-
-            //======== Hash ========
-            {
-                Hash.setBackground(new Color(228, 230, 235));
-                Hash.setToolTipText(" ");
-                Hash.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
-                Hash.setVisible(false);
-                Hash.setLayout(null);
-
-                //---- TitleLB ----
-                TitleLB.setText("HSAH");
-                TitleLB.setFont(new Font("Jokerman", Font.PLAIN, 35));
-                TitleLB.setForeground(Color.black);
-                Hash.add(TitleLB);
-                TitleLB.setBounds(262, 35, 97, TitleLB.getPreferredSize().height);
-
-                //======== HASHSCLP1 ========
-                {
-
-                    //---- HashSource ----
-                    HashSource.setLineWrap(true);
-                    HASHSCLP1.setViewportView(HashSource);
-                }
-                Hash.add(HASHSCLP1);
-                HASHSCLP1.setBounds(5, 129, 611, 140);
-
-                //======== HASHSCLP2 ========
-                {
-
-                    //---- Hashencode1 ----
-                    Hashencode1.setLineWrap(true);
-                    HASHSCLP2.setViewportView(Hashencode1);
-                }
-                Hash.add(HASHSCLP2);
-                HASHSCLP2.setBounds(85, 383, 403, 57);
-
-                //======== HASHSCLP3 ========
-                {
-
-                    //---- Hashencode2 ----
-                    Hashencode2.setLineWrap(true);
-                    HASHSCLP3.setViewportView(Hashencode2);
-                }
-                Hash.add(HASHSCLP3);
-                HASHSCLP3.setBounds(85, 469, 403, 57);
-
-                //---- MD5encodebtn ----
-                MD5encodebtn.setText("Encrypt");
-                MD5encodebtn.addActionListener(e -> button1ActionPerformed(e));
-                Hash.add(MD5encodebtn);
-                MD5encodebtn.setBounds(515, 447, 80, 61);
-
-                //---- HASHLB1 ----
-                HASHLB1.setText("\u2191   Source");
-                HASHLB1.setBackground(new Color(51, 51, 51));
-                HASHLB1.setForeground(Color.black);
-                HASHLB1.setFont(HASHLB1.getFont().deriveFont(HASHLB1.getFont().getSize() + 5f));
-                Hash.add(HASHLB1);
-                HASHLB1.setBounds(12, 275, 98, 22);
-
-                //---- HASHLB2 ----
-                HASHLB2.setText("Result      \u2192");
-                HASHLB2.setForeground(Color.black);
-                Hash.add(HASHLB2);
-                HASHLB2.setBounds(7, 401, 77, 21);
-
-                //---- HASHLB3 ----
-                HASHLB3.setText("UPResult  \u2192");
-                HASHLB3.setForeground(Color.black);
-                Hash.add(HASHLB3);
-                HASHLB3.setBounds(7, 487, 77, 21);
-
-                //---- HashfileBT ----
-                HashfileBT.setText("File");
-                HashfileBT.setVisible(false);
-                HashfileBT.addActionListener(e -> md5fileActionPerformed(e));
-                Hash.add(HashfileBT);
-                HashfileBT.setBounds(105, 285, 115, 66);
-                Hash.add(HashCBox);
-                HashCBox.setBounds(506, 395, 98, 36);
-
-                {
-                    // compute preferred size
-                    Dimension preferredSize = new Dimension();
-                    for(int i = 0; i < Hash.getComponentCount(); i++) {
-                        Rectangle bounds = Hash.getComponent(i).getBounds();
-                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
-                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
-                    }
-                    Insets insets = Hash.getInsets();
-                    preferredSize.width += insets.right;
-                    preferredSize.height += insets.bottom;
-                    Hash.setMinimumSize(preferredSize);
-                    Hash.setPreferredSize(preferredSize);
-                }
-            }
-            rootview.add(Hash);
-            Hash.setBounds(265, 5, 620, 590);
 
             //======== AES ========
             {
@@ -680,6 +598,193 @@ public class accs {
             }
             rootview.add(AES);
             AES.setBounds(265, 5, 620, 590);
+
+            //======== Hash ========
+            {
+                Hash.setBackground(new Color(228, 230, 235));
+                Hash.setToolTipText(" ");
+                Hash.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                Hash.setVisible(false);
+                Hash.setLayout(null);
+
+                //---- TitleLBHASH ----
+                TitleLBHASH.setText("HSAH");
+                TitleLBHASH.setFont(new Font("Jokerman", Font.PLAIN, 35));
+                TitleLBHASH.setForeground(Color.black);
+                Hash.add(TitleLBHASH);
+                TitleLBHASH.setBounds(262, 35, 97, TitleLBHASH.getPreferredSize().height);
+
+                //======== HASHSCLP1 ========
+                {
+
+                    //---- HashSource ----
+                    HashSource.setLineWrap(true);
+                    HASHSCLP1.setViewportView(HashSource);
+                }
+                Hash.add(HASHSCLP1);
+                HASHSCLP1.setBounds(5, 129, 611, 140);
+
+                //======== HASHSCLP2 ========
+                {
+
+                    //---- Hashencode1 ----
+                    Hashencode1.setLineWrap(true);
+                    HASHSCLP2.setViewportView(Hashencode1);
+                }
+                Hash.add(HASHSCLP2);
+                HASHSCLP2.setBounds(85, 383, 403, 57);
+
+                //======== HASHSCLP3 ========
+                {
+
+                    //---- Hashencode2 ----
+                    Hashencode2.setLineWrap(true);
+                    HASHSCLP3.setViewportView(Hashencode2);
+                }
+                Hash.add(HASHSCLP3);
+                HASHSCLP3.setBounds(85, 469, 403, 57);
+
+                //---- MD5encodebtn ----
+                MD5encodebtn.setText("Encrypt");
+                MD5encodebtn.addActionListener(e -> button1ActionPerformed(e));
+                Hash.add(MD5encodebtn);
+                MD5encodebtn.setBounds(515, 447, 80, 61);
+
+                //---- HASHLB1 ----
+                HASHLB1.setText("\u2191   Source");
+                HASHLB1.setBackground(new Color(51, 51, 51));
+                HASHLB1.setForeground(Color.black);
+                HASHLB1.setFont(HASHLB1.getFont().deriveFont(HASHLB1.getFont().getSize() + 5f));
+                Hash.add(HASHLB1);
+                HASHLB1.setBounds(12, 275, 98, 22);
+
+                //---- HASHLB2 ----
+                HASHLB2.setText("Result      \u2192");
+                HASHLB2.setForeground(Color.black);
+                Hash.add(HASHLB2);
+                HASHLB2.setBounds(7, 401, 77, 21);
+
+                //---- HASHLB3 ----
+                HASHLB3.setText("UPResult  \u2192");
+                HASHLB3.setForeground(Color.black);
+                Hash.add(HASHLB3);
+                HASHLB3.setBounds(7, 487, 77, 21);
+
+                //---- HashfileBT ----
+                HashfileBT.setText("File");
+                HashfileBT.setVisible(false);
+                HashfileBT.addActionListener(e -> md5fileActionPerformed(e));
+                Hash.add(HashfileBT);
+                HashfileBT.setBounds(105, 285, 115, 66);
+                Hash.add(HashCBox);
+                HashCBox.setBounds(506, 395, 98, 36);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < Hash.getComponentCount(); i++) {
+                        Rectangle bounds = Hash.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = Hash.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    Hash.setMinimumSize(preferredSize);
+                    Hash.setPreferredSize(preferredSize);
+                }
+            }
+            rootview.add(Hash);
+            Hash.setBounds(265, 5, 620, 590);
+
+            //======== SM3 ========
+            {
+                SM3.setBackground(new Color(228, 230, 235));
+                SM3.setToolTipText(" ");
+                SM3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                SM3.setVisible(false);
+                SM3.setLayout(null);
+
+                //---- TitleLBSM3 ----
+                TitleLBSM3.setText("SM3");
+                TitleLBSM3.setFont(new Font("Jokerman", Font.PLAIN, 35));
+                TitleLBSM3.setForeground(Color.black);
+                SM3.add(TitleLBSM3);
+                TitleLBSM3.setBounds(270, 35, 81, TitleLBSM3.getPreferredSize().height);
+
+                //======== SM3SCLP1 ========
+                {
+
+                    //---- SM3Source1 ----
+                    SM3Source1.setLineWrap(true);
+                    SM3SCLP1.setViewportView(SM3Source1);
+                }
+                SM3.add(SM3SCLP1);
+                SM3SCLP1.setBounds(5, 129, 611, 140);
+
+                //======== SM3SCLP2 ========
+                {
+
+                    //---- SM3encode2 ----
+                    SM3encode2.setLineWrap(true);
+                    SM3SCLP2.setViewportView(SM3encode2);
+                }
+                SM3.add(SM3SCLP2);
+                SM3SCLP2.setBounds(85, 383, 403, 57);
+
+                //======== SM3SCLP3 ========
+                {
+
+                    //---- SM3encode3 ----
+                    SM3encode3.setLineWrap(true);
+                    SM3SCLP3.setViewportView(SM3encode3);
+                }
+                SM3.add(SM3SCLP3);
+                SM3SCLP3.setBounds(85, 469, 403, 57);
+
+                //---- SM3encodebtn ----
+                SM3encodebtn.setText("Encrypt");
+                SM3encodebtn.addActionListener(e -> SM3encodebtnActionPerformed(e));
+                SM3.add(SM3encodebtn);
+                SM3encodebtn.setBounds(515, 420, 80, 61);
+
+                //---- SM3LB4 ----
+                SM3LB4.setText("\u2191   Source");
+                SM3LB4.setBackground(new Color(51, 51, 51));
+                SM3LB4.setForeground(Color.black);
+                SM3LB4.setFont(SM3LB4.getFont().deriveFont(SM3LB4.getFont().getSize() + 5f));
+                SM3.add(SM3LB4);
+                SM3LB4.setBounds(12, 275, 98, 22);
+
+                //---- SM3LB5 ----
+                SM3LB5.setText("Result      \u2192");
+                SM3LB5.setForeground(Color.black);
+                SM3.add(SM3LB5);
+                SM3LB5.setBounds(7, 401, 77, 21);
+
+                //---- SM3LB6 ----
+                SM3LB6.setText("UPResult  \u2192");
+                SM3LB6.setForeground(Color.black);
+                SM3.add(SM3LB6);
+                SM3LB6.setBounds(7, 487, 77, 21);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < SM3.getComponentCount(); i++) {
+                        Rectangle bounds = SM3.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = SM3.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    SM3.setMinimumSize(preferredSize);
+                    SM3.setPreferredSize(preferredSize);
+                }
+            }
+            rootview.add(SM3);
+            SM3.setBounds(265, 5, 620, 590);
 
             //======== base64 ========
             {
@@ -1595,20 +1700,6 @@ public class accs {
     private JPanel index;
     private JLabel IndexLB;
     private JPanel index2;
-    private JPanel Hash;
-    private JLabel TitleLB;
-    private JScrollPane HASHSCLP1;
-    private JTextArea HashSource;
-    private JScrollPane HASHSCLP2;
-    private JTextArea Hashencode1;
-    private JScrollPane HASHSCLP3;
-    private JTextArea Hashencode2;
-    private JButton MD5encodebtn;
-    private JLabel HASHLB1;
-    private JLabel HASHLB2;
-    private JLabel HASHLB3;
-    private JButton HashfileBT;
-    private JComboBox HashCBox;
     private JPanel AES;
     private JLabel TitleLBAES;
     private JScrollPane AESSCLP1;
@@ -1626,6 +1717,32 @@ public class accs {
     private JLabel AESLB4;
     private JLabel AESLB5;
     private JLabel AESLB6;
+    private JPanel Hash;
+    private JLabel TitleLBHASH;
+    private JScrollPane HASHSCLP1;
+    private JTextArea HashSource;
+    private JScrollPane HASHSCLP2;
+    private JTextArea Hashencode1;
+    private JScrollPane HASHSCLP3;
+    private JTextArea Hashencode2;
+    private JButton MD5encodebtn;
+    private JLabel HASHLB1;
+    private JLabel HASHLB2;
+    private JLabel HASHLB3;
+    private JButton HashfileBT;
+    private JComboBox HashCBox;
+    private JPanel SM3;
+    private JLabel TitleLBSM3;
+    private JScrollPane SM3SCLP1;
+    private JTextArea SM3Source1;
+    private JScrollPane SM3SCLP2;
+    private JTextArea SM3encode2;
+    private JScrollPane SM3SCLP3;
+    private JTextArea SM3encode3;
+    private JButton SM3encodebtn;
+    private JLabel SM3LB4;
+    private JLabel SM3LB5;
+    private JLabel SM3LB6;
     private JPanel base64;
     private JLabel TitleLBbase64;
     private JScrollPane base64SCLP1;
@@ -1767,6 +1884,7 @@ public class accs {
                         //Modern
                         case "Hash": PanelHide();Hash.setVisible(true);break;//显示单个需要的panel
                         case "AES":PanelHide();AES.setVisible(true);break;
+                        case "SM3":PanelHide();SM3.setVisible(true);break;
                         //Classical
                         case "ROT13": PanelHide();ROT13.setVisible(true);break;
                         case "Rail fence(栅栏密码)": PanelHide();Rail_fence.setVisible(true);break;

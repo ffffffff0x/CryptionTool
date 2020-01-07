@@ -1,6 +1,6 @@
 package All_Tool_List.Modern;
 
-import All_Tool_List.Modern.hashadd.MD4;
+import All_Tool_List.Modern.Hashadd.MD4;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
