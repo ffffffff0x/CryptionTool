@@ -12,7 +12,9 @@ The Test Version
 - AES(Test) 
 - Hash
   - MD5
+  - MD5-16
   - MD2
+  - MD4
   - SHA-1
   - SHA-224
   - SHA-256

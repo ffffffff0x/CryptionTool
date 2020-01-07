@@ -22,7 +22,6 @@ public class Rail_fence {
         StringBuilder sn = new StringBuilder();
         for (String n:srt) {
             sn.append(n);
-
         }
         return sn.toString().replace("null","");
     }

@@ -37,7 +37,6 @@ public class accs {
     }
 
     private void button1ActionPerformed(ActionEvent e) {
-    // TODO add your code here
     All_Tool_List.Modern.Hash hash = new Hash();
         Hashencode1.setText(hash.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem()).toString()));//输出值
         Hashencode2.setText(hash.HashEncode(HashSource.getText(),HashCBox.getSelectedItem().toString()).toUpperCase());//大写输出值
@@ -49,13 +48,11 @@ public class accs {
     }//MD5
 
     private void base64decodeActionPerformed(ActionEvent e){
-        // TODO add your code here
         byte[] bs64 = Base64.getDecoder().decode(base64source.getText());//获取用户输入字符通过base64加密，输出byte数组型值
         base64code.setText(new String(bs64, StandardCharsets.UTF_8));//将byte数组转换成String输出
     }//base64
 
     private void base64encodeActionPerformed(ActionEvent e){
-        // TODO add your code here
         String bs = base64source.getText();//获取用户输入字符
         byte[] bytes;//定义一个比特数组
         bytes = bs.getBytes(StandardCharsets.UTF_8);//将用户输入字符转换成byte（utf-8编码）
@@ -64,7 +61,6 @@ public class accs {
     }//base64
 
     private void ROT13CBOXItemStateChanged(ItemEvent e) {
-        // TODO add your code here
         String str = ROT13source.getText();//获取用户输入值
         StringBuilder s = new StringBuilder();//定义空String值
         //System.out.println(ROT13CBOX.getSelectedIndex());
@@ -89,7 +85,6 @@ public class accs {
     }//ROT1-25
 
     private void ROT13sourceCaretUpdate(CaretEvent e) {
-        // TODO add your code here
         String str = ROT13source.getText();//获取用户输入值
         StringBuilder s = new StringBuilder();//定义空String值
         //System.out.println(ROT13CBOX.getSelectedIndex());
@@ -114,19 +109,16 @@ public class accs {
     }//ROT1-25
 
     private void MorseEnCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         MorseCoder mcd = new MorseCoder();
         MorseDecode.setText(mcd.encode(MorseSource.getText()));
     }//Morse code
 
     private void MorseDeCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         MorseCoder mcd = new MorseCoder();
         MorseDecode.setText(mcd.decode(MorseSource.getText()));
     }//Morse code
 
     private void URLDeCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         try {
             URLDeCodeArea.setText(URLDecoder.decode(URLSourceArea.getText(),"UTF-8"));
         } catch (UnsupportedEncodingException ex) {
@@ -135,7 +127,6 @@ public class accs {
     }//URL
 
     private void URLEnCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         try {
             URLDeCodeArea.setText(URLEncoder.encode(URLSourceArea.getText(),"UTF-8"));
         } catch (UnsupportedEncodingException ex) {
@@ -144,35 +135,30 @@ public class accs {
     }//URL
 
     private void HEXEnCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         String delc = Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString();
         HEXCoder HexCoder = new HEXCoder();
         HEXDeCodeArea.setText(HexCoder.Encode(HEXSourceArea.getText(),delc));
     }//HEX
 
     private void HEXDeCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         String delc = Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString();
         HEXCoder HexCoder = new HEXCoder();
         HEXDeCodeArea.setText(HexCoder.Decode(HEXSourceArea.getText(),delc));
     }//HEX
 
     private void ASKIIEncodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         String delc = Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString();
         All_Tool_List.Coding.ASCII ASCII = new ASCII();
         ASCIIDeCode.setText(ASCII.EnCode(ASCIISource.getText(),delc));
     }//ASCII
 
     private void ASKIIDeCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         String delc = Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString();
         All_Tool_List.Coding.ASCII ASCII = new ASCII();
         ASCIIDeCode.setText(ASCII.DeCode(ASCIISource.getText(),delc));
     }//ASCII
 
     private void BinBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Coding.Conversion con = new Conversion();
         OctalArea.setText(con.BinECOtc(BinaryArea.getText()));
         DecimalArea.setText(con.BinECDec(BinaryArea.getText()));
@@ -180,7 +166,6 @@ public class accs {
     }//Conversion
 
     private void OctBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Coding.Conversion con = new Conversion();
         BinaryArea.setText(con.OctECBin(OctalArea.getText()));
         DecimalArea.setText(con.OctECDec(OctalArea.getText()));
@@ -196,7 +181,6 @@ public class accs {
     }//Conversion
 
     private void HexBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Coding.Conversion con = new Conversion();
         BinaryArea.setText(con.HEXECBin(HexadecimalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
         OctalArea.setText(con.HEXECOct(HexadecimalArea.getText(),Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
@@ -204,7 +188,6 @@ public class accs {
     }//Conversion
 
     private void MailOnceCheckBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Net.MailOnceCheck moc = new MailOnceCheck();
         try {
             MailOnceCheckResult.setText(moc.lifeCheck(MailOnceCheckField.getText()));
@@ -214,7 +197,6 @@ public class accs {
     }//MailOnceCheck
 
     private void AESEncryptBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Modern.AES AES = new AES();
         try {
             AESResultArea.setText(AES.AESEncrypt(AESSourceArea.getText(),
@@ -230,7 +212,6 @@ public class accs {
     }//AES
 
     private void AESDecryptBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Modern.AES AES = new AES();
         try {
             AESResultArea.setText(AES.AESDecrypt(AESSourceArea.getText(),
@@ -250,31 +231,26 @@ public class accs {
     }//AES
 
     private void UnicodeEnCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Coding.Unicode Unicode = new Unicode();
         UnicodeDeCodeArea.setText(Unicode.stringToUnicode(UnicodeSourceArea.getText()));
     }//Unicode
 
     private void UnicodeDeCodeBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Coding.Unicode Unicode = new Unicode();
         UnicodeDeCodeArea.setText(Unicode.unicodeToString(UnicodeSourceArea.getText()));
     }//Unicode
 
     private void Rail_fenceBT1ActionPerformed(ActionEvent e) {
-        // TODO add your code here
         All_Tool_List.Classical.Rail_fence rail = new Rail_fence();
         Rail_fenceDecode.setText(rail.Rail_fenceEnCode(Rail_fenceSource.getText(),Integer.parseInt(Rail_fenceSpinner1.getValue().toString())));
     }
 
     private void Rail_fenceBT2ActionPerformed(ActionEvent e) {
-        // TODO add your code herew
         All_Tool_List.Classical.Rail_fence rail = new Rail_fence();
         Rail_fenceDecode.setText(rail.Rail_fenceDeCode(Rail_fenceSource.getText(),Integer.parseInt(Rail_fenceSpinner1.getValue().toString())));
     }
 
     private void AtbashSourceAreaCaretUpdate(CaretEvent e) {
-        // TODO add your code here
         All_Tool_List.Classical.Atbash atb = new Atbash();
         AtbashDeCodeArea.setText(atb.AtbashEnCode(AtbashSourceArea.getText()));
     }
@@ -307,8 +283,6 @@ public class accs {
         AESResultArea = new JTextArea();
         AESEncryptBT = new JButton();
         AESDecryptBT = new JButton();
-        AESLB1 = new JLabel();
-        AESLB2 = new JLabel();
         AESLB3 = new JLabel();
         AESSCLP3 = new JScrollPane();
         AESSecretKeyArea = new JTextArea();
@@ -449,6 +423,7 @@ public class accs {
             {
                 index.setBackground(new Color(228, 230, 235));
                 index.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                index.setVisible(false);
                 index.setLayout(null);
 
                 //---- IndexLB ----
@@ -610,7 +585,7 @@ public class accs {
                 TitleLBAES.setFont(new Font("Jokerman", Font.PLAIN, 35));
                 TitleLBAES.setForeground(Color.black);
                 AES.add(TitleLBAES);
-                TitleLBAES.setBounds(273, 5, 73, 54);
+                TitleLBAES.setBounds(273, 14, 73, 54);
 
                 //======== AESSCLP1 ========
                 {
@@ -620,7 +595,7 @@ public class accs {
                     AESSCLP1.setViewportView(AESSourceArea);
                 }
                 AES.add(AESSCLP1);
-                AESSCLP1.setBounds(4, 60, 611, 139);
+                AESSCLP1.setBounds(4, 81, 611, 139);
 
                 //======== AESSCLP2 ========
                 {
@@ -636,34 +611,20 @@ public class accs {
                 AESEncryptBT.setText("Encrypt");
                 AESEncryptBT.addActionListener(e -> AESEncryptBTActionPerformed(e));
                 AES.add(AESEncryptBT);
-                AESEncryptBT.setBounds(121, 332, 115, 45);
+                AESEncryptBT.setBounds(123, 345, 115, 45);
 
                 //---- AESDecryptBT ----
                 AESDecryptBT.setText("Decrypt");
                 AESDecryptBT.addActionListener(e -> AESDecryptBTActionPerformed(e));
                 AES.add(AESDecryptBT);
-                AESDecryptBT.setBounds(396, 332, 115, 45);
-
-                //---- AESLB1 ----
-                AESLB1.setText("\u2193  Result");
-                AESLB1.setFont(AESLB1.getFont().deriveFont(AESLB1.getFont().getSize() + 5f));
-                AESLB1.setForeground(Color.black);
-                AES.add(AESLB1);
-                AESLB1.setBounds(495, 391, 90, 23);
-
-                //---- AESLB2 ----
-                AESLB2.setText("Source  \u2191");
-                AESLB2.setForeground(Color.black);
-                AESLB2.setFont(AESLB2.getFont().deriveFont(AESLB2.getFont().getSize() + 5f));
-                AES.add(AESLB2);
-                AESLB2.setBounds(22, 211, 155, 23);
+                AESDecryptBT.setBounds(398, 345, 115, 45);
 
                 //---- AESLB3 ----
-                AESLB3.setText("SecretKey  \u2192");
+                AESLB3.setText("SecretKey");
                 AESLB3.setFont(AESLB3.getFont().deriveFont(AESLB3.getFont().getSize() + 5f));
                 AESLB3.setForeground(Color.black);
                 AES.add(AESLB3);
-                AESLB3.setBounds(10, 259, 120, AESLB3.getPreferredSize().height);
+                AESLB3.setBounds(75, 244, 85, AESLB3.getPreferredSize().height);
 
                 //======== AESSCLP3 ========
                 {
@@ -673,34 +634,34 @@ public class accs {
                     AESSCLP3.setViewportView(AESSecretKeyArea);
                 }
                 AES.add(AESSCLP3);
-                AESSCLP3.setBounds(136, 230, 170, 80);
+                AESSCLP3.setBounds(32, 274, 170, 40);
                 AES.add(AESModeCB);
-                AESModeCB.setBounds(313, 246, 95, 40);
+                AESModeCB.setBounds(233, 274, 95, 40);
                 AES.add(AESOUTCB);
-                AESOUTCB.setBounds(415, 246, 95, 40);
+                AESOUTCB.setBounds(359, 274, 95, 40);
                 AES.add(AESKLengthCB);
-                AESKLengthCB.setBounds(517, 246, 95, 40);
+                AESKLengthCB.setBounds(485, 274, 95, 40);
 
                 //---- AESLB4 ----
                 AESLB4.setText("Mode");
                 AESLB4.setFont(AESLB4.getFont().deriveFont(AESLB4.getFont().getSize() + 5f));
                 AESLB4.setForeground(Color.black);
                 AES.add(AESLB4);
-                AESLB4.setBounds(334, 216, 53, 23);
+                AESLB4.setBounds(254, 244, 53, 23);
 
                 //---- AESLB5 ----
                 AESLB5.setText("AESLayout");
                 AESLB5.setFont(AESLB5.getFont().deriveFont(AESLB5.getFont().getSize() + 5f));
                 AESLB5.setForeground(Color.black);
                 AES.add(AESLB5);
-                AESLB5.setBounds(417, 216, 90, 23);
+                AESLB5.setBounds(361, 244, 90, 23);
 
                 //---- AESLB6 ----
                 AESLB6.setText(" KLength");
                 AESLB6.setFont(AESLB6.getFont().deriveFont(AESLB6.getFont().getSize() + 5f));
                 AESLB6.setForeground(Color.black);
                 AES.add(AESLB6);
-                AESLB6.setBounds(524, 216, 80, 23);
+                AESLB6.setBounds(492, 244, 80, 23);
 
                 {
                     // compute preferred size
@@ -1656,8 +1617,6 @@ public class accs {
     private JTextArea AESResultArea;
     private JButton AESEncryptBT;
     private JButton AESDecryptBT;
-    private JLabel AESLB1;
-    private JLabel AESLB2;
     private JLabel AESLB3;
     private JScrollPane AESSCLP3;
     private JTextArea AESSecretKeyArea;
@@ -1876,7 +1835,9 @@ public class accs {
         }
         //-----------
         HashCBox.addItem("MD5");
+        HashCBox.addItem("MD5-16");
         HashCBox.addItem("MD2");
+        HashCBox.addItem("MD4");
         HashCBox.addItem("SHA-1");
         HashCBox.addItem("SHA-224");
         HashCBox.addItem("SHA-256");

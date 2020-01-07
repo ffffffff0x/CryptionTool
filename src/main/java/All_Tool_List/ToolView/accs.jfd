@@ -15,6 +15,7 @@ new FormModel {
 				name: "index"
 				"background": &Color0 new java.awt.Color( 228, 230, 235, 255 )
 				"font": &Font0 new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				"visible": false
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "IndexLB"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/ffffffff0x_Logo.jpg" )
@@ -175,7 +176,7 @@ new FormModel {
 					"width": 73
 					"height": 54
 					"x": 273
-					"y": 5
+					"y": 14
 				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "AESSCLP1"
@@ -185,7 +186,7 @@ new FormModel {
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 4
-					"y": 60
+					"y": 81
 					"width": 611
 					"height": 139
 				} )
@@ -206,8 +207,8 @@ new FormModel {
 					"text": "Encrypt"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "AESEncryptBTActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 121
-					"y": 332
+					"x": 123
+					"y": 345
 					"width": 115
 					"height": 45
 				} )
@@ -216,42 +217,20 @@ new FormModel {
 					"text": "Decrypt"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "AESDecryptBTActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 396
-					"y": 332
+					"x": 398
+					"y": 345
 					"width": 115
 					"height": 45
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "AESLB1"
-					"text": "↓  Result"
+					name: "AESLB3"
+					"text": "SecretKey"
 					"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
 					"foreground": &Color2 new java.awt.Color( 0, 0, 0, 255 )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 495
-					"y": 391
-					"width": 90
-					"height": 23
-				} )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "AESLB2"
-					"text": "Source  ↑"
-					"foreground": &Color3 new java.awt.Color( 0, 0, 0, 255 )
-					"font": &SwingDerivedFont1 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 22
-					"y": 211
-					"width": 155
-					"height": 23
-				} )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "AESLB3"
-					"text": "SecretKey  →"
-					"font": &SwingDerivedFont2 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
-					"foreground": &Color4 new java.awt.Color( 0, 0, 0, 255 )
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 10
-					"y": 259
-					"width": 120
+					"x": 75
+					"y": 244
+					"width": 85
 				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "AESSCLP3"
@@ -260,16 +239,16 @@ new FormModel {
 						"lineWrap": true
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 136
-					"y": 230
+					"x": 32
+					"y": 274
 					"width": 170
-					"height": 80
+					"height": 40
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
 					name: "AESModeCB"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 313
-					"y": 246
+					"x": 233
+					"y": 274
 					"height": 40
 					"width": 95
 				} )
@@ -278,49 +257,49 @@ new FormModel {
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 95
 					"height": 40
-					"x": 415
-					"y": 246
+					"x": 359
+					"y": 274
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
 					name: "AESKLengthCB"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 95
 					"height": 40
-					"x": 517
-					"y": 246
+					"x": 485
+					"y": 274
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "AESLB4"
 					"text": "Mode"
-					"font": #SwingDerivedFont2
-					"foreground": #Color4
+					"font": #SwingDerivedFont0
+					"foreground": #Color2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 53
 					"height": 23
-					"x": 334
-					"y": 216
+					"x": 254
+					"y": 244
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "AESLB5"
 					"text": "AESLayout"
-					"font": #SwingDerivedFont2
-					"foreground": #Color4
+					"font": #SwingDerivedFont0
+					"foreground": #Color2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 90
 					"height": 23
-					"x": 417
-					"y": 216
+					"x": 361
+					"y": 244
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "AESLB6"
 					"text": " KLength"
-					"font": #SwingDerivedFont2
-					"foreground": #Color4
+					"font": #SwingDerivedFont0
+					"foreground": #Color2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 80
 					"height": 23
-					"x": 524
-					"y": 216
+					"x": 492
+					"y": 244
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620
@@ -572,8 +551,8 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "AtbashLB31"
 					"text": "↓  Atbash"
-					"font": #SwingDerivedFont0
-					"foreground": #Color2
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 465
 					"y": 350
@@ -583,8 +562,8 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "AtbashLB2"
 					"text": "Source  ↑"
-					"foreground": #Color3
-					"font": #SwingDerivedFont1
+					"foreground": &Color3 new java.awt.Color( 0, 0, 0, 255 )
+					"font": &SwingDerivedFont1 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 65
 					"y": 289
@@ -944,8 +923,8 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "ConversionLB1"
 					"text": "Oct"
-					"foreground": &Color5 new java.awt.Color( 0, 0, 0, 255 )
-					"font": &SwingDerivedFont3 new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+					"foreground": &Color4 new java.awt.Color( 0, 0, 0, 255 )
+					"font": &SwingDerivedFont2 new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 60
 					"height": 23
@@ -955,8 +934,8 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "ConversionLB2"
 					"text": "Dec"
-					"foreground": #Color5
-					"font": #SwingDerivedFont3
+					"foreground": #Color4
+					"font": #SwingDerivedFont2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 60
 					"height": 23
@@ -966,8 +945,8 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "ConversionLB3"
 					"text": "Bin"
-					"foreground": #Color5
-					"font": #SwingDerivedFont3
+					"foreground": #Color4
+					"font": #SwingDerivedFont2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 60
 					"height": 23
@@ -977,8 +956,8 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "ConversionLB4"
 					"text": "Hex/O"
-					"foreground": #Color5
-					"font": #SwingDerivedFont3
+					"foreground": #Color4
+					"font": #SwingDerivedFont2
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"width": 60
 					"height": 23

@@ -18,9 +18,9 @@ public class NodeAdd {
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
 
     //code下的三级节点
-    private DefaultMutableTreeNode cs = new DefaultMutableTreeNode("现代");
-    private DefaultMutableTreeNode cs1 = new DefaultMutableTreeNode("古典");
-    private DefaultMutableTreeNode cs2 = new DefaultMutableTreeNode("编码");
+    private DefaultMutableTreeNode Modern = new DefaultMutableTreeNode("现代");
+    private DefaultMutableTreeNode Classical = new DefaultMutableTreeNode("古典");
+    private DefaultMutableTreeNode Coding = new DefaultMutableTreeNode("编码");
 
     //现代下的节点
     private DefaultMutableTreeNode MD5 = new DefaultMutableTreeNode("Hash");
@@ -78,22 +78,22 @@ public class NodeAdd {
         //--------
 
         //往code下添加节点
-        code.add(cs);
-        code.add(cs1);
-        code.add(cs2);
+        code.add(Modern);
+        code.add(Classical);
+        code.add(Coding);
         //--------
 
         //往现代节点下添加节点
-        cs.add(AES);
-        cs.add(MD5);
+        Modern.add(AES);
+        Modern.add(MD5);
 
         //--------
 
         //往古典节点下添加节点
-        cs1.add(Atbash);
-        cs1.add(ROT13);
-        cs1.add(Rail_fence);
-        cs1.add(Vigenere);
+        Classical.add(Atbash);
+        Classical.add(ROT13);
+        Classical.add(Rail_fence);
+        Classical.add(Vigenere);
         //cs1.add(Simple_Substitution);
         //cs1.add(Hill);
         //cs1.add(Polybius_Square);
@@ -110,17 +110,16 @@ public class NodeAdd {
         //cs1.add(Four_Square);
         //cs1.add(Straddle_Checkerboard);
 
-
         //--------
 
         //往编码节点下添加节点
-        cs2.add(ASCII);
-        cs2.add(Base64);
-        cs2.add(Conversion);
-        cs2.add(HEX);
-        cs2.add(Morse_Code);
-        cs2.add(URL);
-        cs2.add(Unicode);
+        Coding.add(ASCII);
+        Coding.add(Base64);
+        Coding.add(Conversion);
+        Coding.add(HEX);
+        Coding.add(Morse_Code);
+        Coding.add(URL);
+        Coding.add(Unicode);
         //cs2.add(Tap_Code);
         //cs2.add(Shell_Code);
         //cs2.add(Uuencode);
