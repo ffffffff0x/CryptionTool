@@ -1862,10 +1862,10 @@ public class accs {
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     //Jtree
-    public NodeAdd na = new NodeAdd();
-    public JTree ta = new JTree(na.root);// 使用根节点创建树组件
+    private NodeAdd na = new NodeAdd();
+    private JTree ta = new JTree(na.root);// 使用根节点创建树组件
 
-    public void NodeSelect()
+    private void NodeSelect()
     {
         ta.addMouseListener(new MouseAdapter() {
             @Override
@@ -1905,7 +1905,7 @@ public class accs {
         });
     }
 
-    public void PanelHide()
+    private void PanelHide()
     {
         int count = rootview.getComponentCount();//获取这个panel内的所有控件
         for (int i = 0; i < count; i++) {
@@ -1916,7 +1916,7 @@ public class accs {
         }
     }
 
-    public void CBoxAddItem()
+    private void CBoxAddItem()
     {
         for(int i=13;i<=25;i++)//combobox添加node
         {
