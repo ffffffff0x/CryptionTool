@@ -188,6 +188,97 @@ new FormModel {
 				"y": 5
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "NTLM"
+				"background": #Color0
+				"font": #Font0
+				"visible": false
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TieleLBNTLM"
+					"text": "NTLM"
+					"font": #Font1
+					"foreground": #Color1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 112
+					"height": 54
+					"x": 249
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "NTLMSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "NTLMSource1"
+						"lineWrap": true
+						addEvent( new FormEvent( "javax.swing.event.CaretListener", "caretUpdate", "NTLMSource1CaretUpdate", true ) )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 611
+					"height": 140
+					"x": 5
+					"y": 129
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "NTLMSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "NTLMencode1"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 403
+					"height": 57
+					"x": 85
+					"y": 383
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "NTLMSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "NTLMencode2"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 403
+					"height": 57
+					"x": 85
+					"y": 469
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "NTLMLB1"
+					"text": "↑   Source"
+					"background": &Color3 new java.awt.Color( 51, 51, 51, 255 )
+					"foreground": &Color4 new java.awt.Color( 0, 0, 0, 255 )
+					"font": &SwingDerivedFont1 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 98
+					"height": 22
+					"x": 12
+					"y": 275
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "NTLMLB2"
+					"text": "Result      →"
+					"foreground": &Color5 new java.awt.Color( 0, 0, 0, 255 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 77
+					"height": 21
+					"x": 7
+					"y": 401
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "NTLMLB3"
+					"text": "UPResult  →"
+					"foreground": &Color6 new java.awt.Color( 0, 0, 0, 255 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 77
+					"height": 21
+					"x": 7
+					"y": 487
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 265
+				"y": 5
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "Hash"
 				"background": #Color0
 				"toolTipText": " "
@@ -252,9 +343,9 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "HASHLB1"
 					"text": "↑   Source"
-					"background": &Color3 new java.awt.Color( 51, 51, 51, 255 )
-					"foreground": &Color4 new java.awt.Color( 0, 0, 0, 255 )
-					"font": &SwingDerivedFont1 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+					"background": #Color3
+					"foreground": #Color4
+					"font": #SwingDerivedFont1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 12
 					"y": 275
@@ -264,7 +355,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "HASHLB2"
 					"text": "Result      →"
-					"foreground": &Color5 new java.awt.Color( 0, 0, 0, 255 )
+					"foreground": #Color5
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 7
 					"y": 401
@@ -274,7 +365,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "HASHLB3"
 					"text": "UPResult  →"
-					"foreground": &Color6 new java.awt.Color( 0, 0, 0, 255 )
+					"foreground": #Color6
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 7
 					"y": 487
@@ -284,13 +375,13 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "HashfileBT"
 					"text": "File"
-					"visible": false
+					"enabled": false
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "md5fileActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 105
-					"y": 285
-					"width": 115
-					"height": 66
+					"x": 120
+					"y": 300
+					"width": 96
+					"height": 53
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
 					name: "HashCBox"
@@ -512,14 +603,14 @@ new FormModel {
 					"width": 530
 					"height": 151
 					"x": 45
-					"y": 402
+					"y": 410
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
 					name: "ROT13CBOX"
 					addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "ROT13CBOXItemStateChanged", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 248
-					"y": 314
+					"y": 318
 					"width": 125
 					"height": 45
 				} )
@@ -565,7 +656,7 @@ new FormModel {
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 45
-					"y": 409
+					"y": 410
 					"width": 530
 					"height": 151
 				} )
@@ -648,7 +739,7 @@ new FormModel {
 					"height": 151
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "AtbashLB31"
+					name: "AtbashLB1"
 					"text": "↓  Atbash"
 					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
 					"foreground": new java.awt.Color( 0, 0, 0, 255 )
@@ -843,7 +934,7 @@ new FormModel {
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 45
-					"y": 409
+					"y": 410
 					"width": 530
 					"height": 151
 				} )
@@ -917,7 +1008,7 @@ new FormModel {
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 45
-					"y": 409
+					"y": 410
 					"width": 530
 					"height": 151
 				} )

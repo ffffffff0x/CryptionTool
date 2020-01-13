@@ -4,34 +4,34 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 class NodeAdd {
     //创建根节点
-    DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
+    DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 
     //创建二级节点
-    private DefaultMutableTreeNode index = new DefaultMutableTreeNode("主页");
-    private DefaultMutableTreeNode tools = new DefaultMutableTreeNode("工具");
-    private DefaultMutableTreeNode code = new DefaultMutableTreeNode("加密");
+    //private DefaultMutableTreeNode index = new DefaultMutableTreeNode("Index");
+    private DefaultMutableTreeNode tools = new DefaultMutableTreeNode("Tools");
+    private DefaultMutableTreeNode code = new DefaultMutableTreeNode("Encryption");
 
     //tools下的三级节点
-    private DefaultMutableTreeNode Mail = new DefaultMutableTreeNode("邮箱");
+    private DefaultMutableTreeNode Mail = new DefaultMutableTreeNode("Mail");
 
     //邮箱下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
 
     //code下的三级节点
-    private DefaultMutableTreeNode Modern = new DefaultMutableTreeNode("现代");
-    private DefaultMutableTreeNode Classical = new DefaultMutableTreeNode("古典");
-    private DefaultMutableTreeNode Coding = new DefaultMutableTreeNode("编码");
+    private DefaultMutableTreeNode Modern = new DefaultMutableTreeNode("Modern");
+    private DefaultMutableTreeNode Classical = new DefaultMutableTreeNode("Classical");
+    private DefaultMutableTreeNode Coding = new DefaultMutableTreeNode("Coding");
 
     //现代下的节点
-    private DefaultMutableTreeNode MD5 = new DefaultMutableTreeNode("Hash");
     private DefaultMutableTreeNode AES = new DefaultMutableTreeNode("AES");
+    private DefaultMutableTreeNode HASH = new DefaultMutableTreeNode("Hash");
     private DefaultMutableTreeNode SM3 = new DefaultMutableTreeNode("SM3");
+    private DefaultMutableTreeNode NTLM = new DefaultMutableTreeNode("NTLM");
 
     //古典下的节点
     private DefaultMutableTreeNode ROT13 = new DefaultMutableTreeNode("ROT13");
     private DefaultMutableTreeNode Rail_fence = new DefaultMutableTreeNode("Rail fence(栅栏密码)");
     private DefaultMutableTreeNode Atbash = new DefaultMutableTreeNode("Atbash(埃特巴什码)");
-    private DefaultMutableTreeNode Simple_Substitution = new DefaultMutableTreeNode("Simple Substitution(简单替换)");
     private DefaultMutableTreeNode Hill = new DefaultMutableTreeNode("Hill(希尔密码)");
     private DefaultMutableTreeNode Polybius_Square = new DefaultMutableTreeNode("Polybius Square(波利比奥斯方阵)");
     private DefaultMutableTreeNode Playfair = new DefaultMutableTreeNode("Playfair(普莱菲尔密码)");
@@ -65,7 +65,7 @@ class NodeAdd {
         //--------
 
         //往根节点添加二级节点
-        root.add(index);
+        //root.add(index);
         root.add(tools);
         root.add(code);
 
@@ -85,7 +85,8 @@ class NodeAdd {
 
         //往现代节点下添加节点
         Modern.add(AES);
-        Modern.add(MD5);
+        Modern.add(HASH);
+        Modern.add(NTLM);
         Modern.add(SM3);
         //--------
 
@@ -93,8 +94,7 @@ class NodeAdd {
         Classical.add(Atbash);
         Classical.add(ROT13);
         Classical.add(Rail_fence);
-        Classical.add(Vigenere);
-        //cs1.add(Simple_Substitution);
+        //Classical.add(Vigenere);
         //cs1.add(Hill);
         //cs1.add(Polybius_Square);
         //cs1.add(Playfair);

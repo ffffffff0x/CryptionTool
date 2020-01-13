@@ -7,6 +7,7 @@ import All_Tool_List.Classical.Rail_fence;
 import All_Tool_List.Coding.*;
 import All_Tool_List.Modern.AES;
 import All_Tool_List.Modern.Hash;
+import All_Tool_List.Modern.NTLM;
 import All_Tool_List.Modern.SM3;
 import All_Tool_List.Net.MailOnceCheck;
 
@@ -36,11 +37,23 @@ public class accs {
     public accs() {
         initComponents();
     }
+    All_Tool_List.Modern.Hash hashC = new Hash();
+    MorseCoder mcdC = new MorseCoder();
+    HEXCoder HexCoderC = new HEXCoder();
+    All_Tool_List.Coding.ASCII ASCIIC = new ASCII();
+    All_Tool_List.Coding.Conversion conC = new Conversion();
+    All_Tool_List.Net.MailOnceCheck mocC = new MailOnceCheck();
+    All_Tool_List.Modern.AES AESC = new AES();
+    All_Tool_List.Coding.Unicode UnicodeC = new Unicode();
+    All_Tool_List.Classical.Rail_fence railC = new Rail_fence();
+    All_Tool_List.Classical.Atbash atbC = new Atbash();
+    SM3 SM3C = new SM3();
+    All_Tool_List.Modern.NTLM NTLMC = new NTLM();
+
 
     private void button1ActionPerformed(ActionEvent e) {
-    All_Tool_List.Modern.Hash hash = new Hash();
-        Hashencode1.setText(hash.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem()).toString()));//输出值
-        Hashencode2.setText(hash.HashEncode(HashSource.getText(),HashCBox.getSelectedItem().toString()).toUpperCase());//大写输出值
+        Hashencode1.setText(hashC.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem()).toString()));//输出值
+        Hashencode2.setText(hashC.HashEncode(HashSource.getText(),HashCBox.getSelectedItem().toString()).toUpperCase());//大写输出值
 }//MD5
 
     private void md5fileActionPerformed(ActionEvent e) {
@@ -110,13 +123,11 @@ public class accs {
     }//ROT1-25
 
     private void MorseEnCodeBTActionPerformed(ActionEvent e) {
-        MorseCoder mcd = new MorseCoder();
-        MorseDecode.setText(mcd.encode(MorseSource.getText()));
+        MorseDecode.setText(mcdC.encode(MorseSource.getText()));
     }//Morse code
 
     private void MorseDeCodeBTActionPerformed(ActionEvent e) {
-        MorseCoder mcd = new MorseCoder();
-        MorseDecode.setText(mcd.decode(MorseSource.getText()));
+        MorseDecode.setText(mcdC.decode(MorseSource.getText()));
     }//Morse code
 
     private void URLDeCodeBTActionPerformed(ActionEvent e) {
@@ -137,70 +148,60 @@ public class accs {
 
     private void HEXEnCodeBTActionPerformed(ActionEvent e) {
         String delc = Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString();
-        HEXCoder HexCoder = new HEXCoder();
-        HEXDeCodeArea.setText(HexCoder.Encode(HEXSourceArea.getText(),delc));
+        HEXDeCodeArea.setText(HexCoderC.Encode(HEXSourceArea.getText(),delc));
     }//HEX
 
     private void HEXDeCodeBTActionPerformed(ActionEvent e) {
         String delc = Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString();
-        HEXCoder HexCoder = new HEXCoder();
-        HEXDeCodeArea.setText(HexCoder.Decode(HEXSourceArea.getText(),delc));
+        HEXDeCodeArea.setText(HexCoderC.Decode(HEXSourceArea.getText(),delc));
     }//HEX
 
     private void ASKIIEncodeBTActionPerformed(ActionEvent e) {
         String delc = Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString();
-        All_Tool_List.Coding.ASCII ASCII = new ASCII();
-        ASCIIDeCode.setText(ASCII.EnCode(ASCIISource.getText(),delc));
+        ASCIIDeCode.setText(ASCIIC.EnCode(ASCIISource.getText(),delc));
     }//ASCII
 
     private void ASKIIDeCodeBTActionPerformed(ActionEvent e) {
         String delc = Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString();
-        All_Tool_List.Coding.ASCII ASCII = new ASCII();
-        ASCIIDeCode.setText(ASCII.DeCode(ASCIISource.getText(),delc));
+        ASCIIDeCode.setText(ASCIIC.DeCode(ASCIISource.getText(),delc));
     }//ASCII
 
     private void BinBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Coding.Conversion con = new Conversion();
-        OctalArea.setText(con.BinECOtc(BinaryArea.getText()));
-        DecimalArea.setText(con.BinECDec(BinaryArea.getText()));
-        HexadecimalArea.setText(con.BinECHEX(BinaryArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
+        OctalArea.setText(conC.BinECOtc(BinaryArea.getText()));
+        DecimalArea.setText(conC.BinECDec(BinaryArea.getText()));
+        HexadecimalArea.setText(conC.BinECHEX(BinaryArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
     }//Conversion
 
     private void OctBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Coding.Conversion con = new Conversion();
-        BinaryArea.setText(con.OctECBin(OctalArea.getText()));
-        DecimalArea.setText(con.OctECDec(OctalArea.getText()));
-        HexadecimalArea.setText(con.OctECHEX(OctalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
+        BinaryArea.setText(conC.OctECBin(OctalArea.getText()));
+        DecimalArea.setText(conC.OctECDec(OctalArea.getText()));
+        HexadecimalArea.setText(conC.OctECHEX(OctalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
     }//Conversion
 
     private void DecBTActionPerformed(ActionEvent e) {
         // TODO add your code here
-        All_Tool_List.Coding.Conversion con = new Conversion();
-        BinaryArea.setText(con.DecECBin(DecimalArea.getText()));
-        OctalArea.setText(con.DecECOct(DecimalArea.getText()));
-        HexadecimalArea.setText(con.DecECHEX(DecimalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
+        BinaryArea.setText(conC.DecECBin(DecimalArea.getText()));
+        OctalArea.setText(conC.DecECOct(DecimalArea.getText()));
+        HexadecimalArea.setText(conC.DecECHEX(DecimalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
     }//Conversion
 
     private void HexBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Coding.Conversion con = new Conversion();
-        BinaryArea.setText(con.HEXECBin(HexadecimalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
-        OctalArea.setText(con.HEXECOct(HexadecimalArea.getText(),Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
-        DecimalArea.setText(con.HEXECDec(HexadecimalArea.getText(),Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
+        BinaryArea.setText(conC.HEXECBin(HexadecimalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
+        OctalArea.setText(conC.HEXECOct(HexadecimalArea.getText(),Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
+        DecimalArea.setText(conC.HEXECDec(HexadecimalArea.getText(),Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
     }//Conversion
 
     private void MailOnceCheckBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Net.MailOnceCheck moc = new MailOnceCheck();
         try {
-            MailOnceCheckResult.setText(moc.lifeCheck(MailOnceCheckField.getText()));
+            MailOnceCheckResult.setText(mocC.lifeCheck(MailOnceCheckField.getText()));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }//MailOnceCheck
 
     private void AESEncryptBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Modern.AES AES = new AES();
         try {
-            AESResultArea.setText(AES.AESEncrypt(AESSourceArea.getText(),
+            AESResultArea.setText(AESC.AESEncrypt(AESSourceArea.getText(),
                     AESSecretKeyArea.getText(),
                     AESModeCB.getSelectedItem().toString(),
                     AESOUTCB.getSelectedItem().toString(),
@@ -211,9 +212,8 @@ public class accs {
     }//AES
 
     private void AESDecryptBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Modern.AES AES = new AES();
         try {
-            AESResultArea.setText(AES.AESDecrypt(AESSourceArea.getText(),
+            AESResultArea.setText(AESC.AESDecrypt(AESSourceArea.getText(),
                     AESSecretKeyArea.getText(),
                     AESModeCB.getSelectedItem().toString(),
                     AESOUTCB.getSelectedItem().toString(),
@@ -225,39 +225,38 @@ public class accs {
     }//AES
 
     private void UnicodeEnCodeBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Coding.Unicode Unicode = new Unicode();
-        UnicodeDeCodeArea.setText(Unicode.stringToUnicode(UnicodeSourceArea.getText()));
+        UnicodeDeCodeArea.setText(UnicodeC.stringToUnicode(UnicodeSourceArea.getText()));
     }//Unicode
 
     private void UnicodeDeCodeBTActionPerformed(ActionEvent e) {
-        All_Tool_List.Coding.Unicode Unicode = new Unicode();
-        UnicodeDeCodeArea.setText(Unicode.unicodeToString(UnicodeSourceArea.getText()));
+        UnicodeDeCodeArea.setText(UnicodeC.unicodeToString(UnicodeSourceArea.getText()));
     }//Unicode
 
     private void Rail_fenceBT1ActionPerformed(ActionEvent e) {
-        All_Tool_List.Classical.Rail_fence rail = new Rail_fence();
-        Rail_fenceDecode.setText(rail.Rail_fenceEnCode(Rail_fenceSource.getText(),Integer.parseInt(Rail_fenceSpinner1.getValue().toString())));
+        Rail_fenceDecode.setText(railC.Rail_fenceEnCode(Rail_fenceSource.getText(),Integer.parseInt(Rail_fenceSpinner1.getValue().toString())));
     }
 
     private void Rail_fenceBT2ActionPerformed(ActionEvent e) {
-        All_Tool_List.Classical.Rail_fence rail = new Rail_fence();
-        Rail_fenceDecode.setText(rail.Rail_fenceDeCode(Rail_fenceSource.getText(),Integer.parseInt(Rail_fenceSpinner1.getValue().toString())));
+        Rail_fenceDecode.setText(railC.Rail_fenceDeCode(Rail_fenceSource.getText(),Integer.parseInt(Rail_fenceSpinner1.getValue().toString())));
     }
 
     private void AtbashSourceAreaCaretUpdate(CaretEvent e) {
-        All_Tool_List.Classical.Atbash atb = new Atbash();
-        AtbashDeCodeArea.setText(atb.AtbashEnCode(AtbashSourceArea.getText()));
+        AtbashDeCodeArea.setText(atbC.AtbashEnCode(AtbashSourceArea.getText()));
     }
 
     private void SM3encodebtnActionPerformed(ActionEvent e) {
-        SM3 SM3 = new SM3();
         try {
-            String out = SM3.byteArrayToHexString(SM3.hash(SM3Source1.getText().getBytes()));
+            String out = SM3C.byteArrayToHexString(SM3C.hash(SM3Source1.getText().getBytes()));
             SM3encode3.setText(out);
             SM3encode2.setText(out.toLowerCase());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    private void NTLMSource1CaretUpdate(CaretEvent e) {
+        NTLMencode1.setText(NTLMC.NTLMEncrypt(NTLMSource1.getText()));
+        NTLMencode2.setText(NTLMC.NTLMEncrypt(NTLMSource1.getText()).toUpperCase());
     }
 
      private void initComponents() {
@@ -283,6 +282,17 @@ public class accs {
         AESLB4 = new JLabel();
         AESLB5 = new JLabel();
         AESLB6 = new JLabel();
+        NTLM = new JPanel();
+        TieleLBNTLM = new JLabel();
+        NTLMSCLP1 = new JScrollPane();
+        NTLMSource1 = new JTextArea();
+        NTLMSCLP2 = new JScrollPane();
+        NTLMencode1 = new JTextArea();
+        NTLMSCLP3 = new JScrollPane();
+        NTLMencode2 = new JTextArea();
+        NTLMLB1 = new JLabel();
+        NTLMLB2 = new JLabel();
+        NTLMLB3 = new JLabel();
         Hash = new JPanel();
         TitleLBHASH = new JLabel();
         HASHSCLP1 = new JScrollPane();
@@ -339,7 +349,7 @@ public class accs {
         AtbashSourceArea = new JTextArea();
         AtbashSCLP2 = new JScrollPane();
         AtbashDeCodeArea = new JTextArea();
-        AtbashLB31 = new JLabel();
+        AtbashLB1 = new JLabel();
         AtbashLB2 = new JLabel();
         morse = new JPanel();
         TitleLBMorse = new JLabel();
@@ -599,6 +609,89 @@ public class accs {
             rootview.add(AES);
             AES.setBounds(265, 5, 620, 590);
 
+            //======== NTLM ========
+            {
+                NTLM.setBackground(new Color(228, 230, 235));
+                NTLM.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                NTLM.setVisible(false);
+                NTLM.setLayout(null);
+
+                //---- TieleLBNTLM ----
+                TieleLBNTLM.setText("NTLM");
+                TieleLBNTLM.setFont(new Font("Jokerman", Font.PLAIN, 35));
+                TieleLBNTLM.setForeground(Color.black);
+                NTLM.add(TieleLBNTLM);
+                TieleLBNTLM.setBounds(249, 35, 112, 54);
+
+                //======== NTLMSCLP1 ========
+                {
+
+                    //---- NTLMSource1 ----
+                    NTLMSource1.setLineWrap(true);
+                    NTLMSource1.addCaretListener(e -> NTLMSource1CaretUpdate(e));
+                    NTLMSCLP1.setViewportView(NTLMSource1);
+                }
+                NTLM.add(NTLMSCLP1);
+                NTLMSCLP1.setBounds(5, 129, 611, 140);
+
+                //======== NTLMSCLP2 ========
+                {
+
+                    //---- NTLMencode1 ----
+                    NTLMencode1.setLineWrap(true);
+                    NTLMSCLP2.setViewportView(NTLMencode1);
+                }
+                NTLM.add(NTLMSCLP2);
+                NTLMSCLP2.setBounds(85, 383, 403, 57);
+
+                //======== NTLMSCLP3 ========
+                {
+
+                    //---- NTLMencode2 ----
+                    NTLMencode2.setLineWrap(true);
+                    NTLMSCLP3.setViewportView(NTLMencode2);
+                }
+                NTLM.add(NTLMSCLP3);
+                NTLMSCLP3.setBounds(85, 469, 403, 57);
+
+                //---- NTLMLB1 ----
+                NTLMLB1.setText("\u2191   Source");
+                NTLMLB1.setBackground(new Color(51, 51, 51));
+                NTLMLB1.setForeground(Color.black);
+                NTLMLB1.setFont(NTLMLB1.getFont().deriveFont(NTLMLB1.getFont().getSize() + 5f));
+                NTLM.add(NTLMLB1);
+                NTLMLB1.setBounds(12, 275, 98, 22);
+
+                //---- NTLMLB2 ----
+                NTLMLB2.setText("Result      \u2192");
+                NTLMLB2.setForeground(Color.black);
+                NTLM.add(NTLMLB2);
+                NTLMLB2.setBounds(7, 401, 77, 21);
+
+                //---- NTLMLB3 ----
+                NTLMLB3.setText("UPResult  \u2192");
+                NTLMLB3.setForeground(Color.black);
+                NTLM.add(NTLMLB3);
+                NTLMLB3.setBounds(7, 487, 77, 21);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < NTLM.getComponentCount(); i++) {
+                        Rectangle bounds = NTLM.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = NTLM.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    NTLM.setMinimumSize(preferredSize);
+                    NTLM.setPreferredSize(preferredSize);
+                }
+            }
+            rootview.add(NTLM);
+            NTLM.setBounds(265, 5, 620, 590);
+
             //======== Hash ========
             {
                 Hash.setBackground(new Color(228, 230, 235));
@@ -672,10 +765,10 @@ public class accs {
 
                 //---- HashfileBT ----
                 HashfileBT.setText("File");
-                HashfileBT.setVisible(false);
+                HashfileBT.setEnabled(false);
                 HashfileBT.addActionListener(e -> md5fileActionPerformed(e));
                 Hash.add(HashfileBT);
-                HashfileBT.setBounds(105, 285, 115, 66);
+                HashfileBT.setBounds(120, 300, 96, 53);
                 Hash.add(HashCBox);
                 HashCBox.setBounds(506, 395, 98, 36);
 
@@ -884,12 +977,12 @@ public class accs {
                     ROT13SCLP2.setViewportView(ROT13edcode);
                 }
                 ROT13.add(ROT13SCLP2);
-                ROT13SCLP2.setBounds(45, 402, 530, 151);
+                ROT13SCLP2.setBounds(45, 410, 530, 151);
 
                 //---- ROT13CBOX ----
                 ROT13CBOX.addItemListener(e -> ROT13CBOXItemStateChanged(e));
                 ROT13.add(ROT13CBOX);
-                ROT13CBOX.setBounds(248, 314, 125, 45);
+                ROT13CBOX.setBounds(248, 318, 125, 45);
 
                 {
                     // compute preferred size
@@ -941,7 +1034,7 @@ public class accs {
                     Rail_fenceSCLP2.setViewportView(Rail_fenceDecode);
                 }
                 Rail_fence.add(Rail_fenceSCLP2);
-                Rail_fenceSCLP2.setBounds(45, 409, 530, 151);
+                Rail_fenceSCLP2.setBounds(45, 410, 530, 151);
 
                 //---- Rail_fenceBT1 ----
                 Rail_fenceBT1.setText("EnCode");
@@ -1013,12 +1106,12 @@ public class accs {
                 Atbash.add(AtbashSCLP2);
                 AtbashSCLP2.setBounds(45, 374, 530, 151);
 
-                //---- AtbashLB31 ----
-                AtbashLB31.setText("\u2193  Atbash");
-                AtbashLB31.setFont(AtbashLB31.getFont().deriveFont(AtbashLB31.getFont().getSize() + 5f));
-                AtbashLB31.setForeground(Color.black);
-                Atbash.add(AtbashLB31);
-                AtbashLB31.setBounds(465, 350, 155, 23);
+                //---- AtbashLB1 ----
+                AtbashLB1.setText("\u2193  Atbash");
+                AtbashLB1.setFont(AtbashLB1.getFont().deriveFont(AtbashLB1.getFont().getSize() + 5f));
+                AtbashLB1.setForeground(Color.black);
+                Atbash.add(AtbashLB1);
+                AtbashLB1.setBounds(465, 350, 155, 23);
 
                 //---- AtbashLB2 ----
                 AtbashLB2.setText("Source  \u2191");
@@ -1205,7 +1298,7 @@ public class accs {
                     HEXSCLP2.setViewportView(HEXDeCodeArea);
                 }
                 HEX.add(HEXSCLP2);
-                HEXSCLP2.setBounds(45, 409, 530, 151);
+                HEXSCLP2.setBounds(45, 410, 530, 151);
 
                 //---- HEXEnCodeBT ----
                 HEXEnCodeBT.setText("EnCode");
@@ -1271,7 +1364,7 @@ public class accs {
                     ASCIISCLP2.setViewportView(ASCIIDeCode);
                 }
                 ASCII.add(ASCIISCLP2);
-                ASCIISCLP2.setBounds(45, 409, 530, 151);
+                ASCIISCLP2.setBounds(45, 410, 530, 151);
 
                 //---- ASCIIEncodeBT ----
                 ASCIIEncodeBT.setText("EnCode");
@@ -1717,6 +1810,17 @@ public class accs {
     private JLabel AESLB4;
     private JLabel AESLB5;
     private JLabel AESLB6;
+    private JPanel NTLM;
+    private JLabel TieleLBNTLM;
+    private JScrollPane NTLMSCLP1;
+    private JTextArea NTLMSource1;
+    private JScrollPane NTLMSCLP2;
+    private JTextArea NTLMencode1;
+    private JScrollPane NTLMSCLP3;
+    private JTextArea NTLMencode2;
+    private JLabel NTLMLB1;
+    private JLabel NTLMLB2;
+    private JLabel NTLMLB3;
     private JPanel Hash;
     private JLabel TitleLBHASH;
     private JScrollPane HASHSCLP1;
@@ -1773,7 +1877,7 @@ public class accs {
     private JTextArea AtbashSourceArea;
     private JScrollPane AtbashSCLP2;
     private JTextArea AtbashDeCodeArea;
-    private JLabel AtbashLB31;
+    private JLabel AtbashLB1;
     private JLabel AtbashLB2;
     private JPanel morse;
     private JLabel TitleLBMorse;
@@ -1877,13 +1981,12 @@ public class accs {
                     // 判断
                     switch(dmt.toString())// 叶子结点的字符串
                     {
-                        case "主页": PanelHide();index.setVisible(true);break;
-                        //NET安全访问登录
-                        //用户名
+                        //case "Index": PanelHide();index.setVisible(true);break;
                         case "Disposable Email Check":PanelHide();MailOnceCheck.setVisible(true);break;
                         //Modern
-                        case "Hash": PanelHide();Hash.setVisible(true);break;//显示单个需要的panel
                         case "AES":PanelHide();AES.setVisible(true);break;
+                        case "Hash": PanelHide();Hash.setVisible(true);break;//显示单个需要的panel
+                        case "NTLM":PanelHide();NTLM.setVisible(true);break;
                         case "SM3":PanelHide();SM3.setVisible(true);break;
                         //Classical
                         case "ROT13": PanelHide();ROT13.setVisible(true);break;
@@ -1897,7 +2000,6 @@ public class accs {
                         case "ASCII": PanelHide();ASCII.setVisible(true);break;
                         case "Base Conversion": PanelHide();Conversion.setVisible(true);break;
                         case "Unicode":PanelHide();Unicode.setVisible(true);break;
-
                         default: break;
                     }
                 }//pannel切换

@@ -103,7 +103,7 @@ public class HEXCoder {
 
     private String CheckSelectItem(String i)
     {
-        String delc = "";
+        String delc;
         switch (i)
         {
             case "0x": delc = "0x";break;
@@ -114,7 +114,7 @@ public class HEXCoder {
             case "分号 ;": delc = ";";break;
             case "冒号 :": delc = ":";break;
             case "回车 \\n": delc = "\n";break;
-            default: break;
+            default: delc = i;
         }
         return delc;
     }
