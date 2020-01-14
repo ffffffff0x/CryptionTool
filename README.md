@@ -25,6 +25,7 @@
 - Atabash 
 - ROT13
 - Rail Fence
+- Vigenere
 ---
 - ASCII
 - Base64
@@ -37,5 +38,4 @@
 
 增加中...
 ---
-- Vigenere
 - DES,3DES
