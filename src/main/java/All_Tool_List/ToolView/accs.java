@@ -3,6 +3,7 @@ package All_Tool_List.ToolView;/*
  */
 
 import All_Tool_List.Classical.Atbash;
+import All_Tool_List.Classical.ROT;
 import All_Tool_List.Classical.Rail_fence;
 import All_Tool_List.Classical.Vigenere;
 import All_Tool_List.Coding.*;
@@ -11,6 +12,7 @@ import All_Tool_List.Modern.Hash;
 import All_Tool_List.Modern.NTLM;
 import All_Tool_List.Modern.SM3;
 import All_Tool_List.Net.MailOnceCheck;
+import com.sun.xml.internal.bind.v2.TODO;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -39,6 +41,8 @@ public class accs {
         initComponents();
     }
     private All_Tool_List.Modern.Hash hashC = new Hash();
+    private All_Tool_List.Coding.Base64 Base64C = new All_Tool_List.Coding.Base64();
+    private ROT ROTC = new ROT();
     private MorseCoder mcdC = new MorseCoder();
     private HEXCoder HexCoderC = new HEXCoder();
     private All_Tool_List.Coding.ASCII ASCIIC = new ASCII();
@@ -56,7 +60,7 @@ public class accs {
     private void button1ActionPerformed(ActionEvent e) {
         Hashencode1.setText(hashC.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem()).toString()));//输出值
         Hashencode2.setText(hashC.HashEncode(HashSource.getText(),HashCBox.getSelectedItem().toString()).toUpperCase());//大写输出值
-}//MD5
+    }//MD5
 
     private void md5fileActionPerformed(ActionEvent e) {
         // TODO add your code here
@@ -64,64 +68,19 @@ public class accs {
     }//MD5
 
     private void base64decodeActionPerformed(ActionEvent e){
-        byte[] bs64 = Base64.getDecoder().decode(base64source.getText());//获取用户输入字符通过base64加密，输出byte数组型值
-        base64code.setText(new String(bs64, StandardCharsets.UTF_8));//将byte数组转换成String输出
+        base64code.setText(Base64C.Base64Encode(base64source.getText()));
     }//base64
 
     private void base64encodeActionPerformed(ActionEvent e){
-        String bs = base64source.getText();//获取用户输入字符
-        byte[] bytes;//定义一个比特数组
-        bytes = bs.getBytes(StandardCharsets.UTF_8);//将用户输入字符转换成byte（utf-8编码）
-        String bss64 = Base64.getEncoder().encodeToString(bytes);//base64加密
-        base64code.setText(bss64);//输出值
+        base64code.setText(Base64C.Base64Decode(base64source.getText()));
     }//base64
 
     private void ROT13CBOXItemStateChanged(ItemEvent e) {
-        String str = ROT13source.getText();//获取用户输入值
-        StringBuilder s = new StringBuilder();//定义空String值
-        //System.out.println(ROT13CBOX.getSelectedIndex());
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);//获取String字符中某一个位置的字符并赋值给c
-            if ((c >= 'A') && (c <= 'Z')) {
-                c += ROT13CBOX.getSelectedIndex()+1;
-                if (c > 'Z')
-                    c -= 26;
-            } else if ((c >= 'a') && (c <= 'z')) {
-                c += ROT13CBOX.getSelectedIndex()+1;
-                if (c > 'z')
-                    c -= 26;
-            } else if ((c >= '0') && (c <= '9')) {
-                c += ROT13CBOX.getSelectedIndex()-8;
-                if (c > '9')
-                    c -= 10;
-            }
-            s.append(c);
-        }//ROT算法，类似凯撒加密
-        ROT13edcode.setText(s.toString());//输出值
+        ROT13edcode.setText(ROTC.ROTEncode(ROT13source.getText(), Objects.requireNonNull(ROT13CBOX.getSelectedItem()).toString()));
     }//ROT1-25
 
     private void ROT13sourceCaretUpdate(CaretEvent e) {
-        String str = ROT13source.getText();//获取用户输入值
-        StringBuilder s = new StringBuilder();//定义空String值
-        //System.out.println(ROT13CBOX.getSelectedIndex());
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);//获取String字符中某一个位置的字符并赋值给c
-            if ((c >= 'A') && (c <= 'Z')) {
-                c += ROT13CBOX.getSelectedIndex()+1;
-                if (c > 'Z')
-                    c -= 26;
-            } else if ((c >= 'a') && (c <= 'z')) {
-                c += ROT13CBOX.getSelectedIndex()+1;
-                if (c > 'z')
-                    c -= 26;
-            } else if ((c >= '0') && (c <= '9')) {
-                c += ROT13CBOX.getSelectedIndex()-8;
-                if (c > '9')
-                    c -= 10;
-            }
-            s.append(c);
-        }//ROT算法，类似凯撒加密
-        ROT13edcode.setText(s.toString());//输出值
+        ROT13edcode.setText(ROTC.ROTEncode(ROT13source.getText(), Objects.requireNonNull(ROT13CBOX.getSelectedItem()).toString()));
     }//ROT1-25
 
     private void MorseEnCodeBTActionPerformed(ActionEvent e) {
@@ -149,23 +108,19 @@ public class accs {
     }//URL
 
     private void HEXEnCodeBTActionPerformed(ActionEvent e) {
-        String delc = Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString();
-        HEXDeCodeArea.setText(HexCoderC.Encode(HEXSourceArea.getText(),delc));
+        HEXDeCodeArea.setText(HexCoderC.Encode(HEXSourceArea.getText(),Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString()));
     }//HEX
 
     private void HEXDeCodeBTActionPerformed(ActionEvent e) {
-        String delc = Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString();
-        HEXDeCodeArea.setText(HexCoderC.Decode(HEXSourceArea.getText(),delc));
+        HEXDeCodeArea.setText(HexCoderC.Decode(HEXSourceArea.getText(),Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString()));
     }//HEX
 
     private void ASKIIEncodeBTActionPerformed(ActionEvent e) {
-        String delc = Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString();
-        ASCIIDeCode.setText(ASCIIC.EnCode(ASCIISource.getText(),delc));
+        ASCIIDeCode.setText(ASCIIC.EnCode(ASCIISource.getText(),Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString()));
     }//ASCII
 
     private void ASKIIDeCodeBTActionPerformed(ActionEvent e) {
-        String delc = Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString();
-        ASCIIDeCode.setText(ASCIIC.DeCode(ASCIISource.getText(),delc));
+        ASCIIDeCode.setText(ASCIIC.DeCode(ASCIISource.getText(),Objects.requireNonNull(ASCIICBox.getSelectedItem()).toString()));
     }//ASCII
 
     private void BinBTActionPerformed(ActionEvent e) {
@@ -205,9 +160,9 @@ public class accs {
         try {
             AESResultArea.setText(AESC.AESEncrypt(AESSourceArea.getText(),
                     AESSecretKeyArea.getText(),
-                    AESModeCB.getSelectedItem().toString(),
-                    AESOUTCB.getSelectedItem().toString(),
-                    Integer.parseInt(AESKLengthCB.getSelectedItem().toString())));
+                    Objects.requireNonNull(AESModeCB.getSelectedItem()).toString(),
+                    Objects.requireNonNull(AESOUTCB.getSelectedItem()).toString(),
+                    Integer.parseInt(Objects.requireNonNull(AESKLengthCB.getSelectedItem()).toString())));
         } catch (GeneralSecurityException ex) {
             ex.printStackTrace();
         }
@@ -217,9 +172,9 @@ public class accs {
         try {
             AESResultArea.setText(AESC.AESDecrypt(AESSourceArea.getText(),
                     AESSecretKeyArea.getText(),
-                    AESModeCB.getSelectedItem().toString(),
-                    AESOUTCB.getSelectedItem().toString(),
-                    Integer.parseInt(AESKLengthCB.getSelectedItem().toString())));
+                    Objects.requireNonNull(AESModeCB.getSelectedItem()).toString(),
+                    Objects.requireNonNull(AESOUTCB.getSelectedItem()).toString(),
+                    Integer.parseInt(Objects.requireNonNull(AESKLengthCB.getSelectedItem()).toString())));
         } catch (GeneralSecurityException ex) {
             ex.printStackTrace();
             AESResultArea.setText("Error");
@@ -2108,7 +2063,7 @@ public class accs {
 
         CBoxAddItem();
 
-        JFrame frame = new JFrame("TT2");
+        JFrame frame = new JFrame("TT2 v0.1.5");
 
         frame.setContentPane(rootview);
         Image frame_icon=Toolkit.getDefaultToolkit().createImage(getClass().getResource("/img/ffffffff0x_ico.png"));
