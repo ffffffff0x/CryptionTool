@@ -5,7 +5,6 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.security.NoSuchAlgorithmException;
@@ -156,5 +155,21 @@ public class AES {
             }
         }
         return null;
+    }
+
+    private static String zeropading(String in, int i)
+    {
+        if(in.length()<i)
+        {
+            in = in + 0;// TODO: 2020/1/14  
+        }else
+        {
+            in = in.subSequence(0,i).toString();
+        }
+        return in;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(zeropading("123",6));
     }
 }

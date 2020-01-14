@@ -45,13 +45,13 @@ public class ASCII {
 
     private String CheckSelectItem(String i)
     {
-        String delc = "";
+        String delc;
         switch (i)
         {
-            case "无": delc = "";break;
-            case "空格  ": delc = " ";break;
-            case "回车 \\n": delc = "\n";break;
-            default: break;
+            case "NULL": delc = "";break;
+            case "    Space": delc = " ";break;
+            case "\\n Newline": delc = "\n";break;
+            default: delc = i;
         }
         return delc;
     }//返回分隔符

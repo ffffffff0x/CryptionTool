@@ -4,6 +4,7 @@ package All_Tool_List.ToolView;/*
 
 import All_Tool_List.Classical.Atbash;
 import All_Tool_List.Classical.Rail_fence;
+import All_Tool_List.Classical.Vigenere;
 import All_Tool_List.Coding.*;
 import All_Tool_List.Modern.AES;
 import All_Tool_List.Modern.Hash;
@@ -37,18 +38,19 @@ public class accs {
     public accs() {
         initComponents();
     }
-    All_Tool_List.Modern.Hash hashC = new Hash();
-    MorseCoder mcdC = new MorseCoder();
-    HEXCoder HexCoderC = new HEXCoder();
-    All_Tool_List.Coding.ASCII ASCIIC = new ASCII();
-    All_Tool_List.Coding.Conversion conC = new Conversion();
-    All_Tool_List.Net.MailOnceCheck mocC = new MailOnceCheck();
-    All_Tool_List.Modern.AES AESC = new AES();
-    All_Tool_List.Coding.Unicode UnicodeC = new Unicode();
-    All_Tool_List.Classical.Rail_fence railC = new Rail_fence();
-    All_Tool_List.Classical.Atbash atbC = new Atbash();
-    SM3 SM3C = new SM3();
-    All_Tool_List.Modern.NTLM NTLMC = new NTLM();
+    private All_Tool_List.Modern.Hash hashC = new Hash();
+    private MorseCoder mcdC = new MorseCoder();
+    private HEXCoder HexCoderC = new HEXCoder();
+    private All_Tool_List.Coding.ASCII ASCIIC = new ASCII();
+    private All_Tool_List.Coding.Conversion conC = new Conversion();
+    private All_Tool_List.Net.MailOnceCheck mocC = new MailOnceCheck();
+    private All_Tool_List.Modern.AES AESC = new AES();
+    private All_Tool_List.Coding.Unicode UnicodeC = new Unicode();
+    private All_Tool_List.Classical.Rail_fence railC = new Rail_fence();
+    private All_Tool_List.Classical.Atbash atbC = new Atbash();
+    private SM3 SM3C = new SM3();
+    private All_Tool_List.Modern.NTLM NTLMC = new NTLM();
+    private All_Tool_List.Classical.Vigenere VigenereC = new Vigenere();
 
 
     private void button1ActionPerformed(ActionEvent e) {
@@ -259,6 +261,14 @@ public class accs {
         NTLMencode2.setText(NTLMC.NTLMEncrypt(NTLMSource1.getText()).toUpperCase());
     }
 
+    private void VigenereEncodeBTActionPerformed(ActionEvent e) {
+        VigenereResultArea.setText(VigenereC.VigenereEncryption(VigenereSorceArea.getText(),VigenereKeyArea.getText()));
+    }
+
+    private void VigenereDecoeBTActionPerformed(ActionEvent e) {
+        VigenereResultArea.setText(VigenereC.VigenereDecryption(VigenereSorceArea.getText(),VigenereKeyArea.getText()));
+    }
+
      private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         rootview = new JPanel();
@@ -351,6 +361,16 @@ public class accs {
         AtbashDeCodeArea = new JTextArea();
         AtbashLB1 = new JLabel();
         AtbashLB2 = new JLabel();
+        Vigenere = new JPanel();
+        VigenereLB = new JLabel();
+        VigenereSCLP1 = new JScrollPane();
+        VigenereSorceArea = new JTextArea();
+        VigenereSCLP2 = new JScrollPane();
+        VigenereResultArea = new JTextArea();
+        VigenereEncodeBT = new JButton();
+        VigenereDecoeBT = new JButton();
+        VigenereSCLP3 = new JScrollPane();
+        VigenereKeyArea = new JTextArea();
         morse = new JPanel();
         TitleLBMorse = new JLabel();
         morseSCLP1 = new JScrollPane();
@@ -418,14 +438,6 @@ public class accs {
         UnicodeDeCodeArea = new JTextArea();
         UnicodeEnCodeBT = new JButton();
         UnicodeDeCodeBT = new JButton();
-        Vigenere = new JPanel();
-        VigenereLB = new JLabel();
-        VigenereSCLP1 = new JScrollPane();
-        VigenereSorceArea = new JTextArea();
-        VigenereSCLP2 = new JScrollPane();
-        VigenereResultArea = new JTextArea();
-        VigenereEncodeBT = new JButton();
-        VigenereDecoeBT = new JButton();
         Template = new JPanel();
         TitleLBTEMP = new JLabel();
         TemplateSCLP1 = new JScrollPane();
@@ -1037,13 +1049,13 @@ public class accs {
                 Rail_fenceSCLP2.setBounds(45, 410, 530, 151);
 
                 //---- Rail_fenceBT1 ----
-                Rail_fenceBT1.setText("EnCode");
+                Rail_fenceBT1.setText("Encrypt");
                 Rail_fenceBT1.addActionListener(e -> Rail_fenceBT1ActionPerformed(e));
                 Rail_fence.add(Rail_fenceBT1);
                 Rail_fenceBT1.setBounds(104, 318, 115, 45);
 
                 //---- Rail_fenceBT2 ----
-                Rail_fenceBT2.setText("DeCode");
+                Rail_fenceBT2.setText("Decrypt");
                 Rail_fenceBT2.addActionListener(e -> Rail_fenceBT2ActionPerformed(e));
                 Rail_fence.add(Rail_fenceBT2);
                 Rail_fenceBT2.setBounds(407, 318, 115, 45);
@@ -1137,6 +1149,80 @@ public class accs {
             }
             rootview.add(Atbash);
             Atbash.setBounds(265, 5, 620, 590);
+
+            //======== Vigenere ========
+            {
+                Vigenere.setBackground(new Color(228, 230, 235));
+                Vigenere.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                Vigenere.setVisible(false);
+                Vigenere.setLayout(null);
+
+                //---- VigenereLB ----
+                VigenereLB.setText("Vigenere");
+                VigenereLB.setFont(new Font("Jokerman", Font.PLAIN, 35));
+                VigenereLB.setForeground(Color.black);
+                Vigenere.add(VigenereLB);
+                VigenereLB.setBounds(230, 35, 161, 54);
+
+                //======== VigenereSCLP1 ========
+                {
+
+                    //---- VigenereSorceArea ----
+                    VigenereSorceArea.setLineWrap(true);
+                    VigenereSCLP1.setViewportView(VigenereSorceArea);
+                }
+                Vigenere.add(VigenereSCLP1);
+                VigenereSCLP1.setBounds(45, 120, 530, 151);
+
+                //======== VigenereSCLP2 ========
+                {
+
+                    //---- VigenereResultArea ----
+                    VigenereResultArea.setLineWrap(true);
+                    VigenereSCLP2.setViewportView(VigenereResultArea);
+                }
+                Vigenere.add(VigenereSCLP2);
+                VigenereSCLP2.setBounds(45, 410, 530, 151);
+
+                //---- VigenereEncodeBT ----
+                VigenereEncodeBT.setText("Encrypt");
+                VigenereEncodeBT.addActionListener(e -> VigenereEncodeBTActionPerformed(e));
+                Vigenere.add(VigenereEncodeBT);
+                VigenereEncodeBT.setBounds(76, 318, 115, 45);
+
+                //---- VigenereDecoeBT ----
+                VigenereDecoeBT.setText("Decrypt");
+                VigenereDecoeBT.addActionListener(e -> VigenereDecoeBTActionPerformed(e));
+                Vigenere.add(VigenereDecoeBT);
+                VigenereDecoeBT.setBounds(429, 318, 115, 45);
+
+                //======== VigenereSCLP3 ========
+                {
+
+                    //---- VigenereKeyArea ----
+                    VigenereKeyArea.setLineWrap(true);
+                    VigenereSCLP3.setViewportView(VigenereKeyArea);
+                }
+                Vigenere.add(VigenereSCLP3);
+                VigenereSCLP3.setBounds(230, 318, 160, 45);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < Vigenere.getComponentCount(); i++) {
+                        Rectangle bounds = Vigenere.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = Vigenere.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    Vigenere.setMinimumSize(preferredSize);
+                    Vigenere.setPreferredSize(preferredSize);
+                }
+            }
+            rootview.add(Vigenere);
+            Vigenere.setBounds(265, 5, 620, 590);
 
             //======== morse ========
             {
@@ -1312,7 +1398,7 @@ public class accs {
                 HEX.add(HEXDeCodeBT);
                 HEXDeCodeBT.setBounds(407, 318, 115, 45);
                 HEX.add(HEXDelCBox);
-                HEXDelCBox.setBounds(263, 321, 100, 38);
+                HEXDelCBox.setBounds(249, 321, 128, 38);
 
                 {
                     // compute preferred size
@@ -1378,7 +1464,7 @@ public class accs {
                 ASCII.add(ASCIIDeCodeBT);
                 ASCIIDeCodeBT.setBounds(407, 318, 115, 45);
                 ASCII.add(ASCIICBox);
-                ASCIICBox.setBounds(263, 321, 100, 38);
+                ASCIICBox.setBounds(249, 321, 128, 38);
 
                 {
                     // compute preferred size
@@ -1644,68 +1730,6 @@ public class accs {
             rootview.add(Unicode);
             Unicode.setBounds(265, 5, 620, 590);
 
-            //======== Vigenere ========
-            {
-                Vigenere.setBackground(new Color(228, 230, 235));
-                Vigenere.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
-                Vigenere.setVisible(false);
-                Vigenere.setLayout(null);
-
-                //---- VigenereLB ----
-                VigenereLB.setText("Vigenere");
-                VigenereLB.setFont(new Font("Jokerman", Font.PLAIN, 35));
-                VigenereLB.setForeground(Color.black);
-                Vigenere.add(VigenereLB);
-                VigenereLB.setBounds(230, 35, 161, 54);
-
-                //======== VigenereSCLP1 ========
-                {
-
-                    //---- VigenereSorceArea ----
-                    VigenereSorceArea.setLineWrap(true);
-                    VigenereSCLP1.setViewportView(VigenereSorceArea);
-                }
-                Vigenere.add(VigenereSCLP1);
-                VigenereSCLP1.setBounds(45, 120, 530, 151);
-
-                //======== VigenereSCLP2 ========
-                {
-
-                    //---- VigenereResultArea ----
-                    VigenereResultArea.setLineWrap(true);
-                    VigenereSCLP2.setViewportView(VigenereResultArea);
-                }
-                Vigenere.add(VigenereSCLP2);
-                VigenereSCLP2.setBounds(45, 410, 530, 151);
-
-                //---- VigenereEncodeBT ----
-                VigenereEncodeBT.setText("EnCode");
-                Vigenere.add(VigenereEncodeBT);
-                VigenereEncodeBT.setBounds(155, 318, 115, 45);
-
-                //---- VigenereDecoeBT ----
-                VigenereDecoeBT.setText("DeCode");
-                Vigenere.add(VigenereDecoeBT);
-                VigenereDecoeBT.setBounds(352, 318, 115, 45);
-
-                {
-                    // compute preferred size
-                    Dimension preferredSize = new Dimension();
-                    for(int i = 0; i < Vigenere.getComponentCount(); i++) {
-                        Rectangle bounds = Vigenere.getComponent(i).getBounds();
-                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
-                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
-                    }
-                    Insets insets = Vigenere.getInsets();
-                    preferredSize.width += insets.right;
-                    preferredSize.height += insets.bottom;
-                    Vigenere.setMinimumSize(preferredSize);
-                    Vigenere.setPreferredSize(preferredSize);
-                }
-            }
-            rootview.add(Vigenere);
-            Vigenere.setBounds(265, 5, 620, 590);
-
             //======== Template ========
             {
                 Template.setBackground(new Color(228, 230, 235));
@@ -1879,6 +1903,16 @@ public class accs {
     private JTextArea AtbashDeCodeArea;
     private JLabel AtbashLB1;
     private JLabel AtbashLB2;
+    private JPanel Vigenere;
+    private JLabel VigenereLB;
+    private JScrollPane VigenereSCLP1;
+    private JTextArea VigenereSorceArea;
+    private JScrollPane VigenereSCLP2;
+    private JTextArea VigenereResultArea;
+    private JButton VigenereEncodeBT;
+    private JButton VigenereDecoeBT;
+    private JScrollPane VigenereSCLP3;
+    private JTextArea VigenereKeyArea;
     private JPanel morse;
     private JLabel TitleLBMorse;
     private JScrollPane morseSCLP1;
@@ -1946,14 +1980,6 @@ public class accs {
     private JTextArea UnicodeDeCodeArea;
     private JButton UnicodeEnCodeBT;
     private JButton UnicodeDeCodeBT;
-    private JPanel Vigenere;
-    private JLabel VigenereLB;
-    private JScrollPane VigenereSCLP1;
-    private JTextArea VigenereSorceArea;
-    private JScrollPane VigenereSCLP2;
-    private JTextArea VigenereResultArea;
-    private JButton VigenereEncodeBT;
-    private JButton VigenereDecoeBT;
     private JPanel Template;
     private JLabel TitleLBTEMP;
     private JScrollPane TemplateSCLP1;
@@ -1992,6 +2018,7 @@ public class accs {
                         case "ROT13": PanelHide();ROT13.setVisible(true);break;
                         case "Rail fence(栅栏密码)": PanelHide();Rail_fence.setVisible(true);break;
                         case "Atbash(埃特巴什码)":PanelHide();Atbash.setVisible(true);break;
+                        case "Vigenere(维吉尼亚密码)":PanelHide();Vigenere.setVisible(true);break;
                         //Coding
                         case "Base64": PanelHide();base64.setVisible(true);break;
                         case "Morse Code": PanelHide();morse.setVisible(true);break;
@@ -2030,29 +2057,23 @@ public class accs {
             ROT13CBOX.addItem("ROT"+ii);
         }
         //-----------
-        HEXDelCBox.addItem("无");
+        HEXDelCBox.addItem("NULL");
         HEXDelCBox.addItem("0x");
         HEXDelCBox.addItem("\\x");
-        HEXDelCBox.addItem("空格  ");
-        HEXDelCBox.addItem("逗号 ,");
-        HEXDelCBox.addItem("分号 ;");
-        HEXDelCBox.addItem("冒号 :");
-        HEXDelCBox.addItem("回车 \\n");
+        HEXDelCBox.addItem("    Space");
+        HEXDelCBox.addItem(",   Comma");
+        HEXDelCBox.addItem(";   Semicolon");
+        HEXDelCBox.addItem(":   Colon");
+        HEXDelCBox.addItem("\\n Newline");
         //-----------
-        ASCIICBox.addItem("无");
-        ASCIICBox.addItem("空格  ");
-        ASCIICBox.addItem("回车 \\n");
+        ASCIICBox.addItem("    Space");
+        ASCIICBox.addItem("NULL");
+        ASCIICBox.addItem("\\n Newline");
         //-----------
         ConversionCBox.addItem("HEX");
-        for (int i = 3; i < 8; i++) {
-            ConversionCBox.addItem(String.valueOf(i));
-        }
-        for (int i = 9; i < 16; i++) {
-            ConversionCBox.addItem(String.valueOf(i));
-        }
-        for (int i = 17; i <= 30; i++) {
-            ConversionCBox.addItem(String.valueOf(i));
-        }
+        for (int i = 3; i < 8; i++) ConversionCBox.addItem(String.valueOf(i));
+        for (int i = 9; i < 16; i++) ConversionCBox.addItem(String.valueOf(i));
+        for (int i = 17; i <= 30; i++) ConversionCBox.addItem(String.valueOf(i));
         //-----------
         HashCBox.addItem("MD5");
         HashCBox.addItem("MD5-16");

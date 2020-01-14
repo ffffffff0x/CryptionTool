@@ -94,7 +94,7 @@ class NodeAdd {
         Classical.add(Atbash);
         Classical.add(ROT13);
         Classical.add(Rail_fence);
-        //Classical.add(Vigenere);
+        Classical.add(Vigenere);
         //cs1.add(Hill);
         //cs1.add(Polybius_Square);
         //cs1.add(Playfair);

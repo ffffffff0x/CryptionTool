@@ -108,12 +108,12 @@ public class HEXCoder {
         {
             case "0x": delc = "0x";break;
             case "\\x": delc = "\\x";break;
-            case "无": delc = "";break;
-            case "空格  ": delc = " ";break;
-            case "逗号 ,": delc = ",";break;
-            case "分号 ;": delc = ";";break;
-            case "冒号 :": delc = ":";break;
-            case "回车 \\n": delc = "\n";break;
+            case "NULL": delc = "";break;
+            case "    Space": delc = " ";break;
+            case ",   Comma": delc = ",";break;
+            case ";   Semicolon": delc = ";";break;
+            case ":   Colon": delc = ":";break;
+            case "\\n Newline": delc = "\n";break;
             default: delc = i;
         }
         return delc;

@@ -662,7 +662,7 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "Rail_fenceBT1"
-					"text": "EnCode"
+					"text": "Encrypt"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Rail_fenceBT1ActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 104
@@ -672,7 +672,7 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "Rail_fenceBT2"
-					"text": "DeCode"
+					"text": "Decrypt"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Rail_fenceBT2ActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 407
@@ -759,6 +759,84 @@ new FormModel {
 					"y": 289
 					"width": 155
 					"height": 23
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 265
+				"y": 5
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Vigenere"
+				"background": #Color0
+				"font": #Font0
+				"visible": false
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "VigenereLB"
+					"text": "Vigenere"
+					"font": #Font1
+					"foreground": #Color1
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 161
+					"height": 54
+					"x": 230
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "VigenereSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "VigenereSorceArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 120
+					"width": 530
+					"height": 151
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "VigenereSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "VigenereResultArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 410
+					"width": 530
+					"height": 151
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "VigenereEncodeBT"
+					"text": "Encrypt"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "VigenereEncodeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 76
+					"y": 318
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "VigenereDecoeBT"
+					"text": "Decrypt"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "VigenereDecoeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 429
+					"y": 318
+					"width": 115
+					"height": 45
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "VigenereSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "VigenereKeyArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 230
+					"y": 318
+					"width": 160
+					"height": 45
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620
@@ -961,10 +1039,10 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JComboBox" ) {
 					name: "HEXDelCBox"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 263
+					"x": 249
 					"y": 321
 					"height": 38
-					"width": 100
+					"width": 128
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620
@@ -1035,9 +1113,9 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JComboBox" ) {
 					name: "ASCIICBox"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 263
+					"x": 249
 					"y": 321
-					"width": 100
+					"width": 128
 					"height": 38
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -1334,70 +1412,6 @@ new FormModel {
 				"y": 5
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
-				name: "Vigenere"
-				"background": #Color0
-				"font": #Font0
-				"visible": false
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "VigenereLB"
-					"text": "Vigenere"
-					"font": #Font1
-					"foreground": #Color1
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"width": 161
-					"height": 54
-					"x": 230
-					"y": 35
-				} )
-				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "VigenereSCLP1"
-					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "VigenereSorceArea"
-						"lineWrap": true
-					} )
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 45
-					"y": 120
-					"width": 530
-					"height": 151
-				} )
-				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "VigenereSCLP2"
-					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "VigenereResultArea"
-						"lineWrap": true
-					} )
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 45
-					"y": 410
-					"width": 530
-					"height": 151
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "VigenereEncodeBT"
-					"text": "EnCode"
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 155
-					"y": 318
-					"width": 115
-					"height": 45
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "VigenereDecoeBT"
-					"text": "DeCode"
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 352
-					"y": 318
-					"width": 115
-					"height": 45
-				} )
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"width": 620
-				"height": 590
-				"x": 265
-				"y": 5
-			} )
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "Template"
 				"background": #Color0
 				"font": #Font0
@@ -1475,3 +1489,4 @@ new FormModel {
 		} )
 	}
 }
+
