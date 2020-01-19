@@ -24,6 +24,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -58,8 +59,9 @@ public class accs {
 
 
     private void button1ActionPerformed(ActionEvent e) {
-        Hashencode1.setText(hashC.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem()).toString()));//输出值
-        Hashencode2.setText(hashC.HashEncode(HashSource.getText(),HashCBox.getSelectedItem().toString()).toUpperCase());//大写输出值
+        HashencodeHEX.setText(new BigInteger(1, java.util.Base64.getDecoder().decode(hashC.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())))).toString(16));
+        HashencodeHEXUP.setText(new BigInteger(1, java.util.Base64.getDecoder().decode(hashC.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())))).toString(16).toUpperCase());
+        HashencodeBase64.setText(hashC.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())));
     }//MD5
 
     private void md5fileActionPerformed(ActionEvent e) {
@@ -68,11 +70,11 @@ public class accs {
     }//MD5
 
     private void base64decodeActionPerformed(ActionEvent e){
-        base64code.setText(Base64C.Base64Encode(base64source.getText()));
+        base64code.setText(Base64C.Base64Decode(base64source.getText()));
     }//base64
 
     private void base64encodeActionPerformed(ActionEvent e){
-        base64code.setText(Base64C.Base64Decode(base64source.getText()));
+        base64code.setText(Base64C.Base64Encode(base64source.getText()));
     }//base64
 
     private void ROT13CBOXItemStateChanged(ItemEvent e) {
@@ -262,14 +264,17 @@ public class accs {
         TitleLBHASH = new JLabel();
         HASHSCLP1 = new JScrollPane();
         HashSource = new JTextArea();
-        HASHSCLP2 = new JScrollPane();
-        Hashencode1 = new JTextArea();
         HASHSCLP3 = new JScrollPane();
-        Hashencode2 = new JTextArea();
+        HashencodeHEX = new JTextArea();
+        HASHSCLP4 = new JScrollPane();
+        HashencodeHEXUP = new JTextArea();
+        HASHSCLP5 = new JScrollPane();
+        HashencodeBase64 = new JTextArea();
         MD5encodebtn = new JButton();
         HASHLB1 = new JLabel();
         HASHLB2 = new JLabel();
         HASHLB3 = new JLabel();
+        HASHLB4 = new JLabel();
         HashfileBT = new JButton();
         HashCBox = new JComboBox();
         SM3 = new JPanel();
@@ -682,33 +687,43 @@ public class accs {
                     HASHSCLP1.setViewportView(HashSource);
                 }
                 Hash.add(HASHSCLP1);
-                HASHSCLP1.setBounds(5, 129, 611, 140);
-
-                //======== HASHSCLP2 ========
-                {
-
-                    //---- Hashencode1 ----
-                    Hashencode1.setLineWrap(true);
-                    HASHSCLP2.setViewportView(Hashencode1);
-                }
-                Hash.add(HASHSCLP2);
-                HASHSCLP2.setBounds(85, 383, 403, 57);
+                HASHSCLP1.setBounds(5, 129, 611, 120);
 
                 //======== HASHSCLP3 ========
                 {
 
-                    //---- Hashencode2 ----
-                    Hashencode2.setLineWrap(true);
-                    HASHSCLP3.setViewportView(Hashencode2);
+                    //---- HashencodeHEX ----
+                    HashencodeHEX.setLineWrap(true);
+                    HASHSCLP3.setViewportView(HashencodeHEX);
                 }
                 Hash.add(HASHSCLP3);
-                HASHSCLP3.setBounds(85, 469, 403, 57);
+                HASHSCLP3.setBounds(85, 392, 403, 40);
+
+                //======== HASHSCLP4 ========
+                {
+
+                    //---- HashencodeHEXUP ----
+                    HashencodeHEXUP.setLineWrap(true);
+                    HASHSCLP4.setViewportView(HashencodeHEXUP);
+                }
+                Hash.add(HASHSCLP4);
+                HASHSCLP4.setBounds(85, 449, 403, 40);
+
+                //======== HASHSCLP5 ========
+                {
+
+                    //---- HashencodeBase64 ----
+                    HashencodeBase64.setLineWrap(true);
+                    HASHSCLP5.setViewportView(HashencodeBase64);
+                }
+                Hash.add(HASHSCLP5);
+                HASHSCLP5.setBounds(85, 506, 403, 40);
 
                 //---- MD5encodebtn ----
                 MD5encodebtn.setText("Encrypt");
                 MD5encodebtn.addActionListener(e -> button1ActionPerformed(e));
                 Hash.add(MD5encodebtn);
-                MD5encodebtn.setBounds(515, 447, 80, 61);
+                MD5encodebtn.setBounds(515, 464, 80, 61);
 
                 //---- HASHLB1 ----
                 HASHLB1.setText("\u2191   Source");
@@ -716,28 +731,34 @@ public class accs {
                 HASHLB1.setForeground(Color.black);
                 HASHLB1.setFont(HASHLB1.getFont().deriveFont(HASHLB1.getFont().getSize() + 5f));
                 Hash.add(HASHLB1);
-                HASHLB1.setBounds(12, 275, 98, 22);
+                HASHLB1.setBounds(12, 258, 98, 22);
 
                 //---- HASHLB2 ----
-                HASHLB2.setText("Result      \u2192");
+                HASHLB2.setText("R/HEX");
                 HASHLB2.setForeground(Color.black);
                 Hash.add(HASHLB2);
-                HASHLB2.setBounds(7, 401, 77, 21);
+                HASHLB2.setBounds(30, 402, 41, 21);
 
                 //---- HASHLB3 ----
-                HASHLB3.setText("UPResult  \u2192");
+                HASHLB3.setText("UPResult");
                 HASHLB3.setForeground(Color.black);
                 Hash.add(HASHLB3);
-                HASHLB3.setBounds(7, 487, 77, 21);
+                HASHLB3.setBounds(20, 459, 51, 21);
+
+                //---- HASHLB4 ----
+                HASHLB4.setText("R/Base64");
+                HASHLB4.setForeground(Color.black);
+                Hash.add(HASHLB4);
+                HASHLB4.setBounds(16, 516, 55, 21);
 
                 //---- HashfileBT ----
                 HashfileBT.setText("File");
                 HashfileBT.setEnabled(false);
                 HashfileBT.addActionListener(e -> md5fileActionPerformed(e));
                 Hash.add(HashfileBT);
-                HashfileBT.setBounds(120, 300, 96, 53);
+                HashfileBT.setBounds(122, 295, 96, 53);
                 Hash.add(HashCBox);
-                HashCBox.setBounds(506, 395, 98, 36);
+                HashCBox.setBounds(506, 401, 98, 36);
 
                 {
                     // compute preferred size
@@ -1804,14 +1825,17 @@ public class accs {
     private JLabel TitleLBHASH;
     private JScrollPane HASHSCLP1;
     private JTextArea HashSource;
-    private JScrollPane HASHSCLP2;
-    private JTextArea Hashencode1;
     private JScrollPane HASHSCLP3;
-    private JTextArea Hashencode2;
+    private JTextArea HashencodeHEX;
+    private JScrollPane HASHSCLP4;
+    private JTextArea HashencodeHEXUP;
+    private JScrollPane HASHSCLP5;
+    private JTextArea HashencodeBase64;
     private JButton MD5encodebtn;
     private JLabel HASHLB1;
     private JLabel HASHLB2;
     private JLabel HASHLB3;
+    private JLabel HASHLB4;
     private JButton HashfileBT;
     private JComboBox HashCBox;
     private JPanel SM3;

@@ -36,7 +36,18 @@ public class Hash {
             }
             assert mc != null;
             mc.update(message.getBytes());//hash摘要
-            return new BigInteger(1, mc.digest()).toString(16);
+            byte[] out = mc.digest();
+            //System.out.println(out);
+            //System.out.println(java.util.Base64.getEncoder().encodeToString((out)));
+            //System.out.println(java.util.Base64.getDecoder().decode("GVE/3J2k+3KkoF62aRdUjTyQ/5TVQZ4fI2PuqJ3+4d0="));
+            //System.out.println(new BigInteger(1, out).toString(16));
+            //return new BigInteger(1, out).toString(16);
+            return java.util.Base64.getEncoder().encodeToString(out);
         }
+    }
+
+    public static void main(String[] args) {
+        Hash hash = new Hash();
+        hash.HashEncode("Password1","SHA-256");
     }
 }

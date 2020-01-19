@@ -304,31 +304,43 @@ new FormModel {
 					"x": 5
 					"y": 129
 					"width": 611
-					"height": 140
-				} )
-				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "HASHSCLP2"
-					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "Hashencode1"
-						"lineWrap": true
-					} )
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 85
-					"y": 383
-					"width": 403
-					"height": 57
+					"height": 120
 				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "HASHSCLP3"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "Hashencode2"
+						name: "HashencodeHEX"
 						"lineWrap": true
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 85
-					"y": 469
+					"y": 392
 					"width": 403
-					"height": 57
+					"height": 40
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "HASHSCLP4"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "HashencodeHEXUP"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 403
+					"height": 40
+					"x": 85
+					"y": 449
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "HASHSCLP5"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "HashencodeBase64"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 403
+					"height": 40
+					"x": 85
+					"y": 506
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "MD5encodebtn"
@@ -336,7 +348,7 @@ new FormModel {
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 515
-					"y": 447
+					"y": 464
 					"height": 61
 					"width": 80
 				} )
@@ -348,29 +360,39 @@ new FormModel {
 					"font": #SwingDerivedFont1
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 12
-					"y": 275
+					"y": 258
 					"width": 98
 					"height": 22
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "HASHLB2"
-					"text": "Result      →"
+					"text": "R/HEX"
 					"foreground": #Color5
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 7
-					"y": 401
+					"x": 30
+					"y": 402
 					"height": 21
-					"width": 77
+					"width": 41
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "HASHLB3"
-					"text": "UPResult  →"
+					"text": "UPResult"
 					"foreground": #Color6
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 7
-					"y": 487
-					"width": 77
+					"x": 20
+					"y": 459
+					"width": 51
 					"height": 21
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "HASHLB4"
+					"text": "R/Base64"
+					"foreground": #Color6
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 55
+					"height": 21
+					"x": 16
+					"y": 516
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "HashfileBT"
@@ -378,8 +400,8 @@ new FormModel {
 					"enabled": false
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "md5fileActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 120
-					"y": 300
+					"x": 122
+					"y": 295
 					"width": 96
 					"height": 53
 				} )
@@ -387,7 +409,7 @@ new FormModel {
 					name: "HashCBox"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 506
-					"y": 395
+					"y": 401
 					"width": 98
 					"height": 36
 				} )
@@ -1489,4 +1511,3 @@ new FormModel {
 		} )
 	}
 }
-

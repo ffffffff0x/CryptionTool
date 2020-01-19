@@ -1,25 +1,23 @@
 package All_Tool_List.Modern;
 
-import sun.security.krb5.internal.crypto.Des;
-
 import javax.crypto.Cipher;
 
 
 public class DES {
-    private static String strDefaultKey = "jIAn";    //預設的金鑰
+    private static String strDefaultKey = "jIAn";    //预设秘钥
     private StringBuffer objSb          = null;
     private Cipher objCipher;
     private java.security.Key objKey    = null;
     private int intStringLength         = 0;
     private int intTemp                 = 0;
 
-    //預設建構子
+    //构造函数
     public DES() throws Exception
     {
         this(strDefaultKey);
     }
 
-    //自訂密鑰
+    //秘钥
     public DES(String arg_strKey) throws Exception
     {
         setKey(arg_strKey.getBytes());
