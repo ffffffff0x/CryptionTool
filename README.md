@@ -1,12 +1,13 @@
 # Java Tools For CTF
 
-目前为测试中版本，使用中任何问题都可以在github上联系我。
+目前为测试中版本，使用中任何问题都可以在github上提出。
 
 ## 界面视图
 ![1](./image/Introduction.png)
 
 ## 工具清单
  
+- JWT
 - Disposable Email Check(Test)
 ---
 - AES(Test)

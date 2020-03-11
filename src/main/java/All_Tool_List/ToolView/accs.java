@@ -2,6 +2,7 @@ package All_Tool_List.ToolView;/*
  * Created by JFormDesigner on Mon Sep 09 14:12:51 CST 2019
  */
 
+import All_Tool_List.Authentication.JWT;
 import All_Tool_List.Classical.Atbash;
 import All_Tool_List.Classical.ROT;
 import All_Tool_List.Classical.Rail_fence;
@@ -12,7 +13,6 @@ import All_Tool_List.Modern.Hash;
 import All_Tool_List.Modern.NTLM;
 import All_Tool_List.Modern.SM3;
 import All_Tool_List.Net.MailOnceCheck;
-import com.sun.xml.internal.bind.v2.TODO;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -27,9 +27,9 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
-import java.util.Base64;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 /**
@@ -56,7 +56,7 @@ public class accs {
     private SM3 SM3C = new SM3();
     private All_Tool_List.Modern.NTLM NTLMC = new NTLM();
     private All_Tool_List.Classical.Vigenere VigenereC = new Vigenere();
-
+    private All_Tool_List.Authentication.JWT JWTC = new JWT();
 
     private void button1ActionPerformed(ActionEvent e) {
         HashencodeHEX.setText(new BigInteger(1, java.util.Base64.getDecoder().decode(hashC.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())))).toString(16));
@@ -138,7 +138,6 @@ public class accs {
     }//Conversion
 
     private void DecBTActionPerformed(ActionEvent e) {
-        // TODO add your code here
         BinaryArea.setText(conC.DecECBin(DecimalArea.getText()));
         OctalArea.setText(conC.DecECOct(DecimalArea.getText()));
         HexadecimalArea.setText(conC.DecECHEX(DecimalArea.getText(), Objects.requireNonNull(ConversionCBox.getSelectedItem()).toString()));
@@ -226,12 +225,53 @@ public class accs {
         VigenereResultArea.setText(VigenereC.VigenereDecryption(VigenereSorceArea.getText(),VigenereKeyArea.getText()));
     }
 
+    private void JWTEncodeBTActionPerformed(ActionEvent e) {
+        try {
+            JWTTokenArea.setText(JWTC.JWTencode(JWTHeaderArea.getText(),JWTPayloadArea.getText(),JWTSignatureArea.getText()));
+        } catch (NoSuchAlgorithmException ex) {
+            ex.printStackTrace();
+        } catch (InvalidKeyException ex) {
+            ex.printStackTrace();
+        } catch (UnsupportedEncodingException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void JWTDecodeBTActionPerformed(ActionEvent e) {
+        String[] out = JWTC.JWTdecode(JWTTokenArea.getText());
+        JWTHeaderArea.setText(out[0]);
+        JWTPayloadArea.setText(out[1]);
+        JWTSignatureArea.setText(out[2]);
+    }
+
      private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         rootview = new JPanel();
         index = new JPanel();
         IndexLB = new JLabel();
         index2 = new JPanel();
+        JWT = new JPanel();
+        TitleLBJWT = new JLabel();
+        JWTSCLP1 = new JScrollPane();
+        JWTHeaderArea = new JTextArea();
+        JWTSCLP2 = new JScrollPane();
+        JWTPayloadArea = new JTextArea();
+        JWTSCLP3 = new JScrollPane();
+        JWTSignatureArea = new JTextArea();
+        JWTSCLP4 = new JScrollPane();
+        JWTTokenArea = new JTextArea();
+        JWTLB1 = new JLabel();
+        JWTLB2 = new JLabel();
+        JWTLB3 = new JLabel();
+        JWTLB4 = new JLabel();
+        JWTEncodeBT = new JButton();
+        JWTDecodeBT = new JButton();
+        MailOnceCheck = new JPanel();
+        MailOnceCheckBT = new JButton();
+        MailOnceCheckLB1 = new JLabel();
+        MailOnceCheckAffirming = new JLabel();
+        MailOnceCheckField = new JFormattedTextField();
+        MailOnceCheckResult = new JLabel();
         AES = new JPanel();
         TitleLBAES = new JLabel();
         AESSCLP1 = new JScrollPane();
@@ -384,12 +424,6 @@ public class accs {
         DecBT = new JButton();
         HexBT = new JButton();
         ConversionCBox = new JComboBox();
-        MailOnceCheck = new JPanel();
-        MailOnceCheckBT = new JButton();
-        MailOnceCheckLB1 = new JLabel();
-        MailOnceCheckAffirming = new JLabel();
-        MailOnceCheckField = new JFormattedTextField();
-        MailOnceCheckResult = new JLabel();
         Unicode = new JPanel();
         TitleLBUnicode = new JLabel();
         UnicodeSCLP1 = new JScrollPane();
@@ -472,6 +506,173 @@ public class accs {
             }
             rootview.add(index2);
             index2.setBounds(265, 5, 620, 590);
+
+            //======== JWT ========
+            {
+                JWT.setBackground(new Color(228, 230, 235));
+                JWT.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                JWT.setVisible(false);
+                JWT.setLayout(null);
+
+                //---- TitleLBJWT ----
+                TitleLBJWT.setText("JWT");
+                TitleLBJWT.setFont(new Font("Jokerman", Font.PLAIN, 35));
+                TitleLBJWT.setForeground(Color.black);
+                JWT.add(TitleLBJWT);
+                TitleLBJWT.setBounds(264, 28, 92, 54);
+
+                //======== JWTSCLP1 ========
+                {
+
+                    //---- JWTHeaderArea ----
+                    JWTHeaderArea.setLineWrap(true);
+                    JWTSCLP1.setViewportView(JWTHeaderArea);
+                }
+                JWT.add(JWTSCLP1);
+                JWTSCLP1.setBounds(16, 135, 180, 170);
+
+                //======== JWTSCLP2 ========
+                {
+
+                    //---- JWTPayloadArea ----
+                    JWTPayloadArea.setLineWrap(true);
+                    JWTSCLP2.setViewportView(JWTPayloadArea);
+                }
+                JWT.add(JWTSCLP2);
+                JWTSCLP2.setBounds(221, 135, 180, 170);
+
+                //======== JWTSCLP3 ========
+                {
+
+                    //---- JWTSignatureArea ----
+                    JWTSignatureArea.setLineWrap(true);
+                    JWTSCLP3.setViewportView(JWTSignatureArea);
+                }
+                JWT.add(JWTSCLP3);
+                JWTSCLP3.setBounds(426, 135, 180, 170);
+
+                //======== JWTSCLP4 ========
+                {
+
+                    //---- JWTTokenArea ----
+                    JWTTokenArea.setLineWrap(true);
+                    JWTSCLP4.setViewportView(JWTTokenArea);
+                }
+                JWT.add(JWTSCLP4);
+                JWTSCLP4.setBounds(15, 415, 593, 140);
+
+                //---- JWTLB1 ----
+                JWTLB1.setText("TOKEN :");
+                JWTLB1.setFont(JWTLB1.getFont().deriveFont(JWTLB1.getFont().getSize() + 5f));
+                JWTLB1.setForeground(Color.black);
+                JWT.add(JWTLB1);
+                JWTLB1.setBounds(19, 384, 70, 32);
+
+                //---- JWTLB2 ----
+                JWTLB2.setText("Header :");
+                JWTLB2.setFont(JWTLB2.getFont().deriveFont(JWTLB2.getFont().getSize() + 5f));
+                JWTLB2.setForeground(Color.black);
+                JWT.add(JWTLB2);
+                JWTLB2.setBounds(19, 104, 75, 32);
+
+                //---- JWTLB3 ----
+                JWTLB3.setText("Payload :");
+                JWTLB3.setFont(JWTLB3.getFont().deriveFont(JWTLB3.getFont().getSize() + 5f));
+                JWTLB3.setForeground(Color.black);
+                JWT.add(JWTLB3);
+                JWTLB3.setBounds(224, 104, 75, 32);
+
+                //---- JWTLB4 ----
+                JWTLB4.setText("Verify Signature :");
+                JWTLB4.setFont(JWTLB4.getFont().deriveFont(JWTLB4.getFont().getSize() + 5f));
+                JWTLB4.setForeground(Color.black);
+                JWT.add(JWTLB4);
+                JWTLB4.setBounds(429, 104, 165, 32);
+
+                //---- JWTEncodeBT ----
+                JWTEncodeBT.setFont(JWTEncodeBT.getFont().deriveFont(Font.BOLD));
+                JWTEncodeBT.setText("\u2193");
+                JWTEncodeBT.addActionListener(e -> JWTEncodeBTActionPerformed(e));
+                JWT.add(JWTEncodeBT);
+                JWTEncodeBT.setBounds(139, 339, 130, 40);
+
+                //---- JWTDecodeBT ----
+                JWTDecodeBT.setText("\u2191");
+                JWTDecodeBT.setFont(JWTDecodeBT.getFont().deriveFont(JWTDecodeBT.getFont().getStyle() | Font.BOLD));
+                JWTDecodeBT.addActionListener(e -> JWTDecodeBTActionPerformed(e));
+                JWT.add(JWTDecodeBT);
+                JWTDecodeBT.setBounds(339, 339, 130, 40);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < JWT.getComponentCount(); i++) {
+                        Rectangle bounds = JWT.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = JWT.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    JWT.setMinimumSize(preferredSize);
+                    JWT.setPreferredSize(preferredSize);
+                }
+            }
+            rootview.add(JWT);
+            JWT.setBounds(265, 5, 620, 590);
+
+            //======== MailOnceCheck ========
+            {
+                MailOnceCheck.setBackground(new Color(228, 230, 235));
+                MailOnceCheck.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                MailOnceCheck.setVisible(false);
+                MailOnceCheck.setLayout(null);
+
+                //---- MailOnceCheckBT ----
+                MailOnceCheckBT.setText("Check");
+                MailOnceCheckBT.addActionListener(e -> MailOnceCheckBTActionPerformed(e));
+                MailOnceCheck.add(MailOnceCheckBT);
+                MailOnceCheckBT.setBounds(426, 180, 115, 45);
+
+                //---- MailOnceCheckLB1 ----
+                MailOnceCheckLB1.setText("\u2190  MailAddress");
+                MailOnceCheckLB1.setForeground(Color.black);
+                MailOnceCheckLB1.setFont(MailOnceCheckLB1.getFont().deriveFont(MailOnceCheckLB1.getFont().getSize() + 5f));
+                MailOnceCheck.add(MailOnceCheckLB1);
+                MailOnceCheckLB1.setBounds(406, 114, 155, 23);
+
+                //---- MailOnceCheckAffirming ----
+                MailOnceCheckAffirming.setText("\u6570\u636e\u7531Antbot.pw\u63d0\u4f9b");
+                MailOnceCheckAffirming.setForeground(Color.black);
+                MailOnceCheck.add(MailOnceCheckAffirming);
+                MailOnceCheckAffirming.setBounds(247, 560, 127, MailOnceCheckAffirming.getPreferredSize().height);
+                MailOnceCheck.add(MailOnceCheckField);
+                MailOnceCheckField.setBounds(61, 110, 310, MailOnceCheckField.getPreferredSize().height);
+
+                //---- MailOnceCheckResult ----
+                MailOnceCheckResult.setText("Result");
+                MailOnceCheckResult.setForeground(Color.black);
+                MailOnceCheckResult.setFont(MailOnceCheckResult.getFont().deriveFont(MailOnceCheckResult.getFont().getSize() + 5f));
+                MailOnceCheck.add(MailOnceCheckResult);
+                MailOnceCheckResult.setBounds(130, 185, 173, 35);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < MailOnceCheck.getComponentCount(); i++) {
+                        Rectangle bounds = MailOnceCheck.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = MailOnceCheck.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    MailOnceCheck.setMinimumSize(preferredSize);
+                    MailOnceCheck.setPreferredSize(preferredSize);
+                }
+            }
+            rootview.add(MailOnceCheck);
+            MailOnceCheck.setBounds(265, 5, 620, 590);
 
             //======== AES ========
             {
@@ -1589,59 +1790,6 @@ public class accs {
             rootview.add(Conversion);
             Conversion.setBounds(265, 5, 620, 590);
 
-            //======== MailOnceCheck ========
-            {
-                MailOnceCheck.setBackground(new Color(228, 230, 235));
-                MailOnceCheck.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
-                MailOnceCheck.setVisible(false);
-                MailOnceCheck.setLayout(null);
-
-                //---- MailOnceCheckBT ----
-                MailOnceCheckBT.setText("Check");
-                MailOnceCheckBT.addActionListener(e -> MailOnceCheckBTActionPerformed(e));
-                MailOnceCheck.add(MailOnceCheckBT);
-                MailOnceCheckBT.setBounds(426, 180, 115, 45);
-
-                //---- MailOnceCheckLB1 ----
-                MailOnceCheckLB1.setText("\u2190  MailAddress");
-                MailOnceCheckLB1.setForeground(Color.black);
-                MailOnceCheckLB1.setFont(MailOnceCheckLB1.getFont().deriveFont(MailOnceCheckLB1.getFont().getSize() + 5f));
-                MailOnceCheck.add(MailOnceCheckLB1);
-                MailOnceCheckLB1.setBounds(406, 114, 155, 23);
-
-                //---- MailOnceCheckAffirming ----
-                MailOnceCheckAffirming.setText("\u6570\u636e\u7531Antbot.pw\u63d0\u4f9b");
-                MailOnceCheckAffirming.setForeground(Color.black);
-                MailOnceCheck.add(MailOnceCheckAffirming);
-                MailOnceCheckAffirming.setBounds(247, 560, 127, MailOnceCheckAffirming.getPreferredSize().height);
-                MailOnceCheck.add(MailOnceCheckField);
-                MailOnceCheckField.setBounds(61, 110, 310, MailOnceCheckField.getPreferredSize().height);
-
-                //---- MailOnceCheckResult ----
-                MailOnceCheckResult.setText("Result");
-                MailOnceCheckResult.setForeground(Color.black);
-                MailOnceCheckResult.setFont(MailOnceCheckResult.getFont().deriveFont(MailOnceCheckResult.getFont().getSize() + 5f));
-                MailOnceCheck.add(MailOnceCheckResult);
-                MailOnceCheckResult.setBounds(130, 185, 173, 35);
-
-                {
-                    // compute preferred size
-                    Dimension preferredSize = new Dimension();
-                    for(int i = 0; i < MailOnceCheck.getComponentCount(); i++) {
-                        Rectangle bounds = MailOnceCheck.getComponent(i).getBounds();
-                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
-                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
-                    }
-                    Insets insets = MailOnceCheck.getInsets();
-                    preferredSize.width += insets.right;
-                    preferredSize.height += insets.bottom;
-                    MailOnceCheck.setMinimumSize(preferredSize);
-                    MailOnceCheck.setPreferredSize(preferredSize);
-                }
-            }
-            rootview.add(MailOnceCheck);
-            MailOnceCheck.setBounds(265, 5, 620, 590);
-
             //======== Unicode ========
             {
                 Unicode.setBackground(new Color(228, 230, 235));
@@ -1793,6 +1941,28 @@ public class accs {
     private JPanel index;
     private JLabel IndexLB;
     private JPanel index2;
+    private JPanel JWT;
+    private JLabel TitleLBJWT;
+    private JScrollPane JWTSCLP1;
+    private JTextArea JWTHeaderArea;
+    private JScrollPane JWTSCLP2;
+    private JTextArea JWTPayloadArea;
+    private JScrollPane JWTSCLP3;
+    private JTextArea JWTSignatureArea;
+    private JScrollPane JWTSCLP4;
+    private JTextArea JWTTokenArea;
+    private JLabel JWTLB1;
+    private JLabel JWTLB2;
+    private JLabel JWTLB3;
+    private JLabel JWTLB4;
+    private JButton JWTEncodeBT;
+    private JButton JWTDecodeBT;
+    private JPanel MailOnceCheck;
+    private JButton MailOnceCheckBT;
+    private JLabel MailOnceCheckLB1;
+    private JLabel MailOnceCheckAffirming;
+    private JFormattedTextField MailOnceCheckField;
+    private JLabel MailOnceCheckResult;
     private JPanel AES;
     private JLabel TitleLBAES;
     private JScrollPane AESSCLP1;
@@ -1945,12 +2115,6 @@ public class accs {
     private JButton DecBT;
     private JButton HexBT;
     private JComboBox ConversionCBox;
-    private JPanel MailOnceCheck;
-    private JButton MailOnceCheckBT;
-    private JLabel MailOnceCheckLB1;
-    private JLabel MailOnceCheckAffirming;
-    private JFormattedTextField MailOnceCheckField;
-    private JLabel MailOnceCheckResult;
     private JPanel Unicode;
     private JLabel TitleLBUnicode;
     private JScrollPane UnicodeSCLP1;
@@ -1988,6 +2152,7 @@ public class accs {
                     {
                         //case "Index": PanelHide();index.setVisible(true);break;
                         case "Disposable Email Check":PanelHide();MailOnceCheck.setVisible(true);break;
+                        case "JWT":PanelHide();JWT.setVisible(true);break;
                         //Modern
                         case "AES":PanelHide();AES.setVisible(true);break;
                         case "Hash": PanelHide();Hash.setVisible(true);break;//显示单个需要的panel
@@ -2087,7 +2252,7 @@ public class accs {
 
         CBoxAddItem();
 
-        JFrame frame = new JFrame("TT2 v0.1.5");
+        JFrame frame = new JFrame("TT2 v0.1.7");
 
         frame.setContentPane(rootview);
         Image frame_icon=Toolkit.getDefaultToolkit().createImage(getClass().getResource("/img/ffffffff0x_ico.png"));

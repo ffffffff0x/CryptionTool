@@ -101,7 +101,7 @@ public class DES {
         try
         {
             String test = "jIAn";
-            DES des = new DES("jIAn");//自定義密鑰
+            DES des = new DES("KGS!@#$%");//自定義密鑰
             System.out.println("加密前的字符："+test);
             System.out.println("加密後的字符："+des.encrypt(test));
             System.out.println("解密後的字符："+des.decrypt(des.encrypt(test)));

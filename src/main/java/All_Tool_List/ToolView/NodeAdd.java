@@ -16,6 +16,7 @@ class NodeAdd {
 
     //邮箱下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
+    private DefaultMutableTreeNode JWT = new DefaultMutableTreeNode("JWT");
 
     //code下的三级节点
     private DefaultMutableTreeNode Modern = new DefaultMutableTreeNode("Modern");
@@ -24,6 +25,7 @@ class NodeAdd {
 
     //现代下的节点
     private DefaultMutableTreeNode AES = new DefaultMutableTreeNode("AES");
+    private DefaultMutableTreeNode DES = new DefaultMutableTreeNode("DES");
     private DefaultMutableTreeNode HASH = new DefaultMutableTreeNode("Hash");
     private DefaultMutableTreeNode SM3 = new DefaultMutableTreeNode("SM3");
     private DefaultMutableTreeNode NTLM = new DefaultMutableTreeNode("NTLM");
@@ -71,6 +73,7 @@ class NodeAdd {
 
         //--------
         tools.add(Mail);
+        tools.add(JWT);
 
         ///-------
         Mail.add(MailOnceCheck);
@@ -85,6 +88,7 @@ class NodeAdd {
 
         //往现代节点下添加节点
         Modern.add(AES);
+        Modern.add(DES);
         Modern.add(HASH);
         Modern.add(NTLM);
         Modern.add(SM3);
