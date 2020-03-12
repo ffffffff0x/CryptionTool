@@ -32,7 +32,8 @@ public class JWT {
             String Hmac256 = HmacSHA256(sb.toString(),Signature);
             sb.append(".");
             sb.append(Hmac256);
-            return sb.toString();
+            Hmac256 = sb.toString();
+            return Hmac256.replace("=","").replace("+","-").replace("/","_");
         }
     }
 

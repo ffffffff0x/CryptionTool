@@ -24,6 +24,7 @@ class NodeAdd {
     private DefaultMutableTreeNode Coding = new DefaultMutableTreeNode("Coding");
 
     //现代下的节点
+    private DefaultMutableTreeNode Authentication = new DefaultMutableTreeNode("Authentication");
     private DefaultMutableTreeNode AES = new DefaultMutableTreeNode("AES");
     private DefaultMutableTreeNode DES = new DefaultMutableTreeNode("DES");
     private DefaultMutableTreeNode HASH = new DefaultMutableTreeNode("Hash");
@@ -73,7 +74,6 @@ class NodeAdd {
 
         //--------
         tools.add(Mail);
-        tools.add(JWT);
 
         ///-------
         Mail.add(MailOnceCheck);
@@ -87,12 +87,17 @@ class NodeAdd {
         //--------
 
         //往现代节点下添加节点
+        Modern.add(Authentication);
         Modern.add(AES);
         Modern.add(DES);
         Modern.add(HASH);
         Modern.add(NTLM);
         Modern.add(SM3);
         //--------
+
+        //往认证节点下添加检点
+        Authentication.add(NTLM);
+        Authentication.add(JWT);
 
         //往古典节点下添加节点
         Classical.add(Atbash);
