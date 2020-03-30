@@ -6,59 +6,50 @@ import java.math.BigInteger;
 import java.util.Arrays;
 
 public class SM3 {
-    private static char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
-            '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-    private static final String ivHexStr = "7380166f 4914b2b9 172442d7 da8a0600 a96f30bc 163138aa e38dee4d b0fb0e4e";
-    private static final BigInteger IV = new BigInteger(ivHexStr.replaceAll(" ",
-            ""), 16);
-    private static final Integer Tj15 = Integer.valueOf("79cc4519", 16);
-    private static final Integer Tj63 = Integer.valueOf("7a879d8a", 16);
+    private static char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final String ivHex = "7380166f 4914b2b9 172442d7 da8a0600 a96f30bc 163138aa e38dee4d b0fb0e4e";
+    private static final BigInteger IV = new BigInteger(ivHex.replaceAll(" ",""), 16);
+    private static final Integer Tj11 = Integer.valueOf("79cc4519", 16);
+    private static final Integer Tj61 = Integer.valueOf("7a879d8a", 16);
     private static final byte[] FirstPadding = {(byte) 0x80};
     private static final byte[] ZeroPadding = {(byte) 0x00};
 
-    private static int T(int j) {
+    private static int TJT(int j) {
         if (j >= 0 && j <= 15) {
-            return Tj15;
+            return Tj11;
         } else if (j >= 16 && j <= 63) {
-            return Tj63;
+            return Tj61;
         } else {
-            throw new RuntimeException("data invalid");
+            throw new RuntimeException("DI");
         }
     }
 
-    private static Integer FF(Integer x, Integer y, Integer z, int j) {
+    private static Integer FJF(Integer x, Integer y, Integer z, int j) {
         if (j >= 0 && j <= 15) {
             return x ^ y ^ z;
         } else if (j >= 16 && j <= 63) {
-            return (x & y)
-                    | (x & z)
-                    | (y & z);
+            return (x & y)|(x & z)|(y & z);
         } else {
-            throw new RuntimeException("data invalid");
+            throw new RuntimeException("DI");
         }
     }
 
-    private static Integer GG(Integer x, Integer y, Integer z, int j) {
+    private static Integer GJG(Integer x, Integer y, Integer z, int j) {
         if (j >= 0 && j <= 15) {
             return x ^ y ^ z;
         } else if (j >= 16 && j <= 63) {
-            return (x & y)
-                    | (~x & z);
+            return (x & y)|(~x & z);
         } else {
-            throw new RuntimeException("data invalid");
+            throw new RuntimeException("DI");
         }
     }
 
     private static Integer P0(Integer x) {
-        return x
-                ^ Integer.rotateLeft(x, 9)
-                ^ Integer.rotateLeft(x, 17);
+        return x ^ Integer.rotateLeft(x, 9) ^ Integer.rotateLeft(x, 17);
     }
 
     private static Integer P1(Integer x) {
-        return x
-                ^ Integer.rotateLeft(x, 15)
-                ^ Integer.rotateLeft(x, 23);
+        return x ^ Integer.rotateLeft(x, 15) ^ Integer.rotateLeft(x, 23);
     }
 
     private static byte[] padding(byte[] source) throws IOException {
@@ -126,13 +117,10 @@ public class SM3 {
         }
         int ss1, ss2, tt1, tt2;
         for (int j = 0; j < 64; j++) {
-            ss1 = Integer
-                    .rotateLeft(
-                            Integer.rotateLeft(a, 12) + e
-                                    + Integer.rotateLeft(T(j), j), 7);
+            ss1 = Integer.rotateLeft(Integer.rotateLeft(a, 12) + e + Integer.rotateLeft(TJT(j), j), 7);
             ss2 = ss1 ^ Integer.rotateLeft(a, 12);
-            tt1 = FF(a, b, c, j) + d + ss2 + w1[j];
-            tt2 = GG(e, f, g, j) + h + ss1 + w[j];
+            tt1 = FJF(a, b, c, j) + d + ss2 + w1[j];
+            tt2 = GJG(e, f, g, j) + h + ss1 + w[j];
             d = c;
             c = Integer.rotateLeft(b, 9);
             b = a;
@@ -159,8 +147,7 @@ public class SM3 {
 
     }
 
-    private static byte[] toByteArray(int a, int b, int c, int d, int e, int f,
-                                      int g, int h) throws IOException {
+    private static byte[] toByteArray(int a, int b, int c, int d, int e, int f, int g, int h) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream(32);
         baos.write(toByteArray(a));
         baos.write(toByteArray(b));

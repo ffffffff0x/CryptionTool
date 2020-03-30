@@ -3,8 +3,6 @@ package All_Tool_List.Modern;
 import All_Tool_List.Coding.Conversion;
 import All_Tool_List.Coding.HEXCoder;
 
-import java.sql.SQLOutput;
-
 public class LM {
     public static HEXCoder hex = new HEXCoder();
     public static Conversion con = new Conversion();

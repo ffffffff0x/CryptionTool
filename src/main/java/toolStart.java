@@ -6,8 +6,7 @@ public class toolStart {
     public static void main(String[] args){
         FlatLightLaf.install();
         IntelliJTheme.install(toolStart.class.getResourceAsStream("theme.json"));
-        accs accs;
-        accs = new accs();
+        accs accs = new accs();
         accs.init();
     }
 }
