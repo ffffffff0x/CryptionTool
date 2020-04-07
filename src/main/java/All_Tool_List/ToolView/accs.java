@@ -456,6 +456,7 @@ public class accs {
             {
                 index.setBackground(new Color(228, 230, 235));
                 index.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+                index.setVisible(false);
                 index.setLayout(null);
 
                 //---- IndexLB ----
@@ -678,7 +679,6 @@ public class accs {
             {
                 AES.setBackground(new Color(228, 230, 235));
                 AES.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
-                AES.setVisible(false);
                 AES.setLayout(null);
 
                 //---- TitleLBAES ----
@@ -2240,8 +2240,7 @@ public class accs {
         AESKLengthCB.addItem("256");
     }
 
-    public void init()
-    {
+    public void init() throws UnsupportedLookAndFeelException {
         na.setnode();
         NodeSelect();
         ta.setShowsRootHandles(true);// 设置树显示根节点句柄

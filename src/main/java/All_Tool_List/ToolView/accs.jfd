@@ -15,6 +15,7 @@ new FormModel {
 				name: "index"
 				"background": &Color0 new java.awt.Color( 228, 230, 235, 255 )
 				"font": &Font0 new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				"visible": false
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "IndexLB"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/ffffffff0x_Logo.jpg" )
@@ -241,7 +242,6 @@ new FormModel {
 				name: "AES"
 				"background": #Color0
 				"font": #Font0
-				"visible": false
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "TitleLBAES"
 					"text": "AES"
