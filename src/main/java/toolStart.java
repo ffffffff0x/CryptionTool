@@ -1,14 +1,13 @@
-import All_Tool_List.ToolView.accs;
-import com.formdev.flatlaf.IntelliJTheme;
+import All_Tool_List.ToolView.RootView.RootView;
+import com.formdev.flatlaf.*;
 
-import javax.swing.*;
-
-public class toolStart {
-    public static void main(String[] args) throws UnsupportedLookAndFeelException {
-        IntelliJTheme.install(toolStart.class.getResourceAsStream("Theme/Cyan_lighttheme.json"));
+public class ToolStart {
+    public static void main(String[] args) {
+        IntelliJTheme.install(ToolStart.class.getResourceAsStream("Theme/Hiberbee.json"));
+        //IntelliJTheme.install(ToolStart.class.getResourceAsStream("Theme/Cyan_lighttheme.json"));
+        //IntelliJTheme.install(ToolStart.class.getResourceAsStream("Theme/DarkFlatTheme.json"));
         //FlatLightLaf.install();
         //FlatDarculaLaf.install();
-        accs accs = new accs();
-        accs.init();
+        new RootView().run();
     }
 }
