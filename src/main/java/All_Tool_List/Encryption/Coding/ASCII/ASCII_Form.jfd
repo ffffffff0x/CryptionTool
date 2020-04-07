@@ -1,0 +1,107 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "ASCII"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBASCII"
+					"text": "ASCII"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 103
+					"height": 54
+					"x": 259
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "ASCIISCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "ASCIISource"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 120
+					"width": 530
+					"height": 100
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "ASCIISCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "ASCIIDeCode"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 349
+					"width": 530
+					"height": 81
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "ASCIIEncodeBT"
+					"text": "EnCode"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ASKIIEncodeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 54
+					"y": 262
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "ASCIIDeCodeBT"
+					"text": "DeCode"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ASKIIDeCodeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 448
+					"y": 262
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "ASCIICBox"
+					"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 186
+					"y": 265
+					"width": 128
+					"height": 38
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "ASCIISpinner"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 331
+					"y": 269
+					"height": 30
+					"width": 100
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "ASCIISCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "ASCIIDeCode2"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 530
+					"height": 81
+					"x": 45
+					"y": 475
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 785, 645 )
+		} )
+	}
+}

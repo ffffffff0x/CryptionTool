@@ -1,0 +1,81 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Atbash"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBAtbash"
+					"text": "Atabash"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 148
+					"height": 54
+					"x": 236
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "AtbashSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "AtbashSourceArea"
+						"lineWrap": true
+						addEvent( new FormEvent( "javax.swing.event.CaretListener", "caretUpdate", "AtbashSourceAreaCaretUpdate", true ) )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 136
+					"width": 530
+					"height": 151
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "AtbashSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "AtbashDeCodeArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 374
+					"width": 530
+					"height": 151
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "AtbashLB1"
+					"text": "↓  Atbash"
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 465
+					"y": 350
+					"width": 155
+					"height": 23
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "AtbashLB2"
+					"text": "Source  ↑"
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 65
+					"y": 289
+					"width": 155
+					"height": 23
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 785, 645 )
+		} )
+	}
+}

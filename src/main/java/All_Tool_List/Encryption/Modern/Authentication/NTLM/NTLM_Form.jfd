@@ -1,0 +1,103 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "NTLM"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TieleLBNTLM"
+					"text": "NTLM"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 112
+					"height": 54
+					"x": 249
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "NTLMSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "NTLMSource1"
+						"lineWrap": true
+						addEvent( new FormEvent( "javax.swing.event.CaretListener", "caretUpdate", "NTLMSource1CaretUpdate", true ) )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 611
+					"height": 140
+					"x": 5
+					"y": 129
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "NTLMSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "NTLMencode1"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 403
+					"height": 57
+					"x": 85
+					"y": 383
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "NTLMSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "NTLMencode2"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 403
+					"height": 57
+					"x": 85
+					"y": 469
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "NTLMLB1"
+					"text": "↑   Source"
+					"background": new java.awt.Color( 51, 51, 51, 255 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 98
+					"height": 22
+					"x": 12
+					"y": 275
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "NTLMLB2"
+					"text": "Result      →"
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 77
+					"height": 21
+					"x": 7
+					"y": 401
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "NTLMLB3"
+					"text": "UPResult  →"
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 77
+					"height": 21
+					"x": 7
+					"y": 487
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 785, 645 )
+		} )
+	}
+}

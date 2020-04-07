@@ -1,0 +1,148 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "JWT"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBJWT"
+					"text": "JWT"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 92
+					"height": 54
+					"x": 264
+					"y": 28
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "JWTSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "JWTHeaderArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 16
+					"y": 135
+					"width": 180
+					"height": 170
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "JWTSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "JWTPayloadArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 180
+					"height": 170
+					"x": 221
+					"y": 135
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "JWTSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "JWTSignatureArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 180
+					"height": 170
+					"x": 426
+					"y": 135
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "JWTSCLP4"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "JWTTokenArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 593
+					"height": 140
+					"x": 15
+					"y": 415
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "JWTLB1"
+					"text": "TOKEN :"
+					"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 19
+					"y": 384
+					"width": 70
+					"height": 32
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "JWTLB2"
+					"text": "Header :"
+					"font": #SwingDerivedFont0
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 75
+					"height": 32
+					"x": 19
+					"y": 104
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "JWTLB3"
+					"text": "Payload :"
+					"font": #SwingDerivedFont0
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 75
+					"height": 32
+					"x": 224
+					"y": 104
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "JWTLB4"
+					"text": "Verify Signature :"
+					"font": #SwingDerivedFont0
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 165
+					"height": 32
+					"x": 429
+					"y": 104
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "JWTEncodeBT"
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 131073, 0, false )
+					"text": "↓"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "JWTEncodeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 139
+					"y": 339
+					"width": 130
+					"height": 40
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "JWTDecodeBT"
+					"text": "↑"
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "JWTDecodeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 130
+					"height": 40
+					"x": 339
+					"y": 339
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 785, 645 )
+		} )
+	}
+}

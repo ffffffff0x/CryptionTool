@@ -1,0 +1,174 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Conversion"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBConversion"
+					"text": "Conversion"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 203
+					"height": 54
+					"x": 208
+					"y": 10
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "ConversionSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "BinaryArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 18
+					"y": 97
+					"width": 485
+					"height": 80
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "ConversionSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "OctalArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 18
+					"y": 219
+					"width": 485
+					"height": 80
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "ConversionSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "DecimalArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 485
+					"height": 80
+					"x": 18
+					"y": 341
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "ConversionSCLP4"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "HexadecimalArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 485
+					"height": 80
+					"x": 18
+					"y": 463
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "ConversionLB1"
+					"text": "Oct"
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 60
+					"height": 23
+					"x": 20
+					"y": 193
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "ConversionLB2"
+					"text": "Dec"
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 60
+					"height": 23
+					"x": 20
+					"y": 316
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "ConversionLB3"
+					"text": "Bin"
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 60
+					"height": 23
+					"x": 20
+					"y": 72
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "ConversionLB4"
+					"text": "Hex/O"
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 60
+					"height": 23
+					"x": 20
+					"y": 439
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "BinBT"
+					"text": "BIN"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "BinBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 523
+					"y": 118
+					"height": 38
+					"width": 78
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "OctBT"
+					"text": "OCT"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "OctBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 78
+					"height": 38
+					"x": 523
+					"y": 240
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "DecBT"
+					"text": "DEC"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "DecBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 78
+					"height": 38
+					"x": 523
+					"y": 362
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "HexBT"
+					"text": "HEX/O"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "HexBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 78
+					"height": 38
+					"x": 523
+					"y": 501
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "ConversionCBox"
+					"maximumRowCount": 4
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 523
+					"y": 464
+					"width": 78
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 785, 645 )
+		} )
+	}
+}
