@@ -27,7 +27,6 @@ public class Template extends JPanel {
         Tempbutton3 = new JButton();
 
         //======== this ========
-        setBackground(null);
         setLayout(null);
 
         //======== Template ========

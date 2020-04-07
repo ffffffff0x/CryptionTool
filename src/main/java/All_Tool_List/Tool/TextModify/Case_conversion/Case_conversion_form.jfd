@@ -6,24 +6,14 @@ new FormModel {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
-				name: "Template"
-				"background": sfield java.awt.Color gray
+				name: "Case_Conversion"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "TitleLBTEMP"
-					"text": "TEMP"
-					"font": new java.awt.Font( "Jokerman", 0, 35 )
-					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"width": 105
-					"height": 54
-					"x": 258
-					"y": 35
-				} )
+				"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "TemplateSCLP1"
+					name: "Case_ConversionSCLP1"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "TempArea1"
+						name: "Case_ConversionSourceArea"
 						"lineWrap": true
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -33,9 +23,9 @@ new FormModel {
 					"height": 151
 				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "TemplateSCLP2"
+					name: "Case_ConversionSCLP2"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "TempArea2"
+						name: "Case_ConversionRArea"
 						"lineWrap": true
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -45,8 +35,9 @@ new FormModel {
 					"height": 151
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Tempbutton2"
-					"text": "EnCode"
+					name: "Case_ConversionUPBT"
+					"text": "UpperCase"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Case_ConversionUPBTActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 155
 					"y": 318
@@ -54,13 +45,26 @@ new FormModel {
 					"height": 45
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Tempbutton3"
-					"text": "DeCode"
+					name: "Case_ConversionLOBT"
+					"text": "LowerCase"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Case_ConversionLOBTActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 352
 					"y": 318
 					"width": 115
 					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBbase64"
+					"text": "Case Conversion"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 290
+					"height": 54
+					"x": 165
+					"y": 35
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620

@@ -20,6 +20,7 @@ import All_Tool_List.Encryption.Modern.Authentication.JWT.JWT_Form;
 import All_Tool_List.Encryption.Modern.Authentication.NTLM.NTLM_Form;
 import All_Tool_List.Encryption.Modern.Hash.Hash_Form;
 import All_Tool_List.Encryption.Modern.SM3.SM3_Form;
+import All_Tool_List.Tool.TextModify.Case_conversion.Case_conversion_form;
 import All_Tool_List.ToolView.Index.Index_Form;
 import All_Tool_List.ToolView.NodeAdd.NodeAdd;
 
@@ -61,6 +62,10 @@ public class RootView extends JFrame {
     private Hash_Form Hash_Form = new Hash_Form();
     private SM3_Form SM3_Form = new SM3_Form();
 
+    //Tools
+    //TextModify
+    private Case_conversion_form Case_conversion_form = new Case_conversion_form();
+
 
     public RootView() {
         initComponents();
@@ -86,7 +91,7 @@ public class RootView extends JFrame {
         //======== RP ========
         {
             RP.setForeground(new Color(60, 63, 65));
-            RP.setBackground(new Color(204, 204, 204));
+            RP.setBackground(Color.gray);
             RP.setLayout(null);
 
             {
@@ -127,7 +132,7 @@ public class RootView extends JFrame {
         this.setVisible(true);
     }
 
-    public void SetJtree(){
+    private void SetJtree(){
         na.setnode();
         //NodeSelect();
         JTREE.add(ta);
@@ -136,7 +141,7 @@ public class RootView extends JFrame {
         JTREE.setViewportView(ta);//创建一个视口并设置其视图
     }
 
-    public void SetPanel(){
+    private void SetPanel(){
         RP.add(Index_Form);
         Index_Form.setBounds(0, 0, 620, 590);
 
@@ -160,9 +165,11 @@ public class RootView extends JFrame {
         this.SetPanelSetting(NTLM_Form);
         this.SetPanelSetting(Hash_Form);
         this.SetPanelSetting(SM3_Form);
+        //tools
+        this.SetPanelSetting(Case_conversion_form);
     }
 
-    public void SetPanelSetting(JPanel set){
+    private void SetPanelSetting(JPanel set){
         RP.add(set);
         set.setBounds(0, 0, 620, 590);
         set.setVisible(false);
@@ -200,6 +207,8 @@ public class RootView extends JFrame {
                         case "ASCII": PanelHide();ASCII_Form.setVisible(true);break;
                         case "Base Conversion": PanelHide();Conversion_Form.setVisible(true);break;
                         case "Unicode":PanelHide();Unicode_Form.setVisible(true);break;
+                        ////Tools
+                        case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);
                         default: break;
                     }
                 }//pannel切换

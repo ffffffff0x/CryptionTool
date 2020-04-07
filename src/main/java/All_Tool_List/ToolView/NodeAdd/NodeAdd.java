@@ -13,10 +13,7 @@ public class NodeAdd {
 
     //tools下的三级节点
     private DefaultMutableTreeNode Mail = new DefaultMutableTreeNode("Mail");
-
-    //邮箱下的节点
-    private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
-    private DefaultMutableTreeNode JWT = new DefaultMutableTreeNode("JWT");
+    private DefaultMutableTreeNode TextModify = new DefaultMutableTreeNode("TextModify");
 
     //code下的三级节点
     private DefaultMutableTreeNode Modern = new DefaultMutableTreeNode("Modern");
@@ -24,6 +21,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode Coding = new DefaultMutableTreeNode("Coding");
 
     //现代下的节点
+    private DefaultMutableTreeNode JWT = new DefaultMutableTreeNode("JWT");
     private DefaultMutableTreeNode Authentication = new DefaultMutableTreeNode("Authentication");
     private DefaultMutableTreeNode AES = new DefaultMutableTreeNode("AES");
     private DefaultMutableTreeNode DES = new DefaultMutableTreeNode("DES");
@@ -64,21 +62,28 @@ public class NodeAdd {
     private DefaultMutableTreeNode Xxencode = new DefaultMutableTreeNode("Xxencode");
     private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion");
 
+    //邮箱下的节点
+    private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
+
+    private DefaultMutableTreeNode case_Conversion = new DefaultMutableTreeNode("Case Conversion");
+
     public void setnode(){
         //--------
 
         //往根节点添加二级节点
         //root.add(Setting);
-        //root.add(tools);
+        root.add(tools);
         root.add(code);
 
         //--------
         //tools.add(Mail);
+        tools.add(TextModify);
 
         ///-------
         //Mail.add(MailOnceCheck);
 
-        //--------2
+        //--------
+        TextModify.add(case_Conversion);
 
         //往code下添加节点
         code.add(Modern);

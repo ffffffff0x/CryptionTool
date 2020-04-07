@@ -16,7 +16,7 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "RP"
 				"foreground": new java.awt.Color( 60, 63, 65, 255 )
-				"background": new java.awt.Color( 204, 204, 204, 255 )
+				"background": sfield java.awt.Color gray
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 276
 				"y": 5
