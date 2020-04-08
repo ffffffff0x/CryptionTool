@@ -65,7 +65,8 @@ public class NodeAdd {
     //邮箱下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
 
-    private DefaultMutableTreeNode case_Conversion = new DefaultMutableTreeNode("Case Conversion");
+    private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Conversion");
+    private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Substitution");
 
     public void setnode(){
         //--------
@@ -83,7 +84,8 @@ public class NodeAdd {
         //Mail.add(MailOnceCheck);
 
         //--------
-        TextModify.add(case_Conversion);
+        TextModify.add(Case_Conversion);
+        TextModify.add(Text_Substitution);
 
         //往code下添加节点
         code.add(Modern);

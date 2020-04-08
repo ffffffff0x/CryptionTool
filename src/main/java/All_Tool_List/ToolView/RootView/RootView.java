@@ -21,6 +21,8 @@ import All_Tool_List.Encryption.Modern.Authentication.NTLM.NTLM_Form;
 import All_Tool_List.Encryption.Modern.Hash.Hash_Form;
 import All_Tool_List.Encryption.Modern.SM3.SM3_Form;
 import All_Tool_List.Tool.TextModify.Case_conversion.Case_conversion_form;
+import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_form;
+import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_impl;
 import All_Tool_List.ToolView.Index.Index_Form;
 import All_Tool_List.ToolView.NodeAdd.NodeAdd;
 
@@ -65,7 +67,7 @@ public class RootView extends JFrame {
     //Tools
     //TextModify
     private Case_conversion_form Case_conversion_form = new Case_conversion_form();
-
+    private Text_substitution_form Text_substitution_form = new Text_substitution_form();
 
     public RootView() {
         initComponents();
@@ -167,6 +169,7 @@ public class RootView extends JFrame {
         this.SetPanelSetting(SM3_Form);
         //tools
         this.SetPanelSetting(Case_conversion_form);
+        this.SetPanelSetting(Text_substitution_form);
     }
 
     private void SetPanelSetting(JPanel set){
@@ -208,7 +211,8 @@ public class RootView extends JFrame {
                         case "Base Conversion": PanelHide();Conversion_Form.setVisible(true);break;
                         case "Unicode":PanelHide();Unicode_Form.setVisible(true);break;
                         ////Tools
-                        case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);
+                        case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);break;
+                        case "Text Substitution":PanelHide();Text_substitution_form.setVisible(true);break;
                         default: break;
                     }
                 }//pannel切换

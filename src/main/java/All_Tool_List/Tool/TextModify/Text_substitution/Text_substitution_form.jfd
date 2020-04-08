@@ -1,0 +1,100 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Text_Substitution"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBText_Substitution"
+					"text": "Text Substitution"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 307
+					"height": 54
+					"x": 156
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "Text_SubstitutionSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "Text_SubstitutionArea1"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 120
+					"width": 530
+					"height": 151
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "Text_SubstitutionSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "Text_SubstitutionArea2"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 410
+					"width": 530
+					"height": 151
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "Text_SubstitutionBT"
+					"text": "Transformation"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Text_SubstitutionBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 430
+					"y": 315
+					"width": 125
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "Text_SubstitutionLB2"
+					"text": "---------->"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 200
+					"y": 329
+					"width": 65
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "Text_SubstitutionSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "Text_SubstitutionCHARAREA"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 65
+					"y": 310
+					"width": 120
+					"height": 55
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "Text_SubstitutionSCPL4"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "Text_SubstitutionTARGERAREA"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 120
+					"height": 55
+					"x": 280
+					"y": 310
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 870, 670 )
+		} )
+	}
+}
