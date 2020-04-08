@@ -8,9 +8,11 @@
 
 ## 工具清单
  
-- JWT
-- Disposable Email Check(Test)
+- Case conversion
+- Text substitution
 ---
+- JWT
+- NTLM-HASH
 - AES(Test)
 - Hash
   - MD5
@@ -41,3 +43,6 @@
 增加中...
 ---
 - DES,3DES
+- SM2,SM4
+- LM
+- 更多的文本处理
