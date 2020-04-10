@@ -20,11 +20,9 @@ import All_Tool_List.Encryption.Modern.Authentication.JWT.JWT_Form;
 import All_Tool_List.Encryption.Modern.Authentication.NTLM.NTLM_Form;
 import All_Tool_List.Encryption.Modern.Hash.Hash_Form;
 import All_Tool_List.Encryption.Modern.SM3.SM3_Form;
-import All_Tool_List.Tool.NetTool.PortScan.PortScan_impl;
 import All_Tool_List.Tool.NetTool.PortScan.ProtScan_form;
 import All_Tool_List.Tool.TextModify.Case_conversion.Case_conversion_form;
 import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_form;
-import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_impl;
 import All_Tool_List.ToolView.Index.Index_Form;
 import All_Tool_List.ToolView.NodeAdd.NodeAdd;
 

@@ -34,10 +34,19 @@ public class ProtScan_form extends JPanel {
             PortArea.setText("");
             STBT.setEnabled(false);
             STATE2.setText("Running");
+            PortScanRunPB.setVisible(true);
             new Progress().execute();
         }else {
             PortArea.setText("NONE Target");
         }
+    }
+
+    private void PortSortBTActionPerformed(ActionEvent e) {
+        PortArea.setText(PortSort(PortArea.getText()));
+    }
+
+    private void PortFastBTActionPerformed(ActionEvent e) {
+        new PortFast_form().setSize(550,645);
     }
 
     private void initComponents() {
@@ -59,6 +68,10 @@ public class ProtScan_form extends JPanel {
         ip = new JLabel();
         STATE = new JLabel();
         STATE2 = new JTextField();
+        PortSortBT = new JButton();
+        PortFastBT = new JButton();
+        label1 = new JLabel();
+        PortScanRunPB = new JProgressBar();
 
         //======== this ========
         setLayout(null);
@@ -142,10 +155,10 @@ public class ProtScan_form extends JPanel {
             IPTF.setBounds(160, 112, 160, IPTF.getPreferredSize().height);
 
             //---- ip ----
-            ip.setText("IP");
+            ip.setText("Target");
             ip.setFont(ip.getFont().deriveFont(ip.getFont().getSize() + 3f));
             ProtScan.add(ip);
-            ip.setBounds(100, 116, 30, 20);
+            ip.setBounds(85, 116, 60, 20);
 
             //---- STATE ----
             STATE.setText("State");
@@ -159,7 +172,33 @@ public class ProtScan_form extends JPanel {
             STATE2.setHorizontalAlignment(SwingConstants.CENTER);
             STATE2.setBackground(null);
             ProtScan.add(STATE2);
-            STATE2.setBounds(220, 406, 95, STATE2.getPreferredSize().height);
+            STATE2.setBounds(223, 406, 95, STATE2.getPreferredSize().height);
+
+            //---- PortSortBT ----
+            PortSortBT.setText("S");
+            PortSortBT.setHorizontalAlignment(SwingConstants.LEFT);
+            PortSortBT.addActionListener(e -> PortSortBTActionPerformed(e));
+            ProtScan.add(PortSortBT);
+            PortSortBT.setBounds(375, 96, 34, 59);
+
+            //---- PortFastBT ----
+            PortFastBT.setText("H");
+            PortFastBT.setHorizontalAlignment(SwingConstants.LEFT);
+            PortFastBT.addActionListener(e -> PortFastBTActionPerformed(e));
+            ProtScan.add(PortFastBT);
+            PortFastBT.setBounds(375, 156, 34, 59);
+
+            //---- label1 ----
+            label1.setText("S:\u6392\u5e8f  H:\u7aef\u53e3\u5e2e\u52a9\u4fe1\u606f");
+            ProtScan.add(label1);
+            label1.setBounds(5, 570, 610, label1.getPreferredSize().height);
+
+            //---- PortScanRunPB ----
+            PortScanRunPB.setIndeterminate(true);
+            PortScanRunPB.setBackground(new Color(102, 102, 102));
+            PortScanRunPB.setVisible(false);
+            ProtScan.add(PortScanRunPB);
+            PortScanRunPB.setBounds(223, 440, 95, 20);
 
             {
                 // compute preferred size
@@ -214,6 +253,10 @@ public class ProtScan_form extends JPanel {
     private JLabel ip;
     private JLabel STATE;
     private JTextField STATE2;
+    private JButton PortSortBT;
+    private JButton PortFastBT;
+    private JLabel label1;
+    private JProgressBar PortScanRunPB;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public void init(String ip,int sp,int ep,int tc,int de){
@@ -233,6 +276,29 @@ public class ProtScan_form extends JPanel {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public static String PortSort(String source){
+        String[] Sort = source.split("\n");
+        StringBuilder sb = new StringBuilder();
+        int i,j;
+        for(i=0;i<Sort.length-1;i++)
+        {
+            for(j=0;j<Sort.length-1-i;j++)
+            {
+                if(Integer.parseInt(Sort[j])>Integer.parseInt(Sort[j+1]))
+                {
+                    String temp = Sort[j];
+                    Sort[j] = Sort[j+1];
+                    Sort[j+1] = temp;
+                }
+            }
+        }
+        for (String a:Sort
+             ) {
+            sb.append(a+"\n");
+        }
+        return sb.toString();
     }
 
     class PortScan implements Runnable {
@@ -301,6 +367,7 @@ public class ProtScan_form extends JPanel {
         //每次更新的信息
         protected void process(List<Integer> chunks) {
             STATE2.setText("Complete");
+            PortScanRunPB.setVisible(false);
             STBT.setEnabled(true);
         }
 

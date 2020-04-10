@@ -136,12 +136,12 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "ip"
-					"text": "IP"
+					"text": "Target"
 					"font": #SwingDerivedFont0
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"width": 30
+					"width": 60
 					"height": 20
-					"x": 100
+					"x": 85
 					"y": 116
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -161,8 +161,49 @@ new FormModel {
 					"horizontalAlignment": 0
 					"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 220
+					"x": 223
 					"y": 406
+					"width": 95
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "PortSortBT"
+					"text": "S"
+					"horizontalAlignment": 2
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "PortSortBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 375
+					"y": 96
+					"height": 59
+					"width": 34
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "PortFastBT"
+					"text": "H"
+					"horizontalAlignment": 2
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "PortFastBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 34
+					"height": 59
+					"x": 375
+					"y": 156
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "S:排序  H:端口帮助信息"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 5
+					"y": 570
+					"width": 610
+				} )
+				add( new FormComponent( "javax.swing.JProgressBar" ) {
+					name: "PortScanRunPB"
+					"indeterminate": true
+					"background": new java.awt.Color( 102, 102, 102, 255 )
+					"visible": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 223
+					"y": 440
+					"height": 20
 					"width": 95
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
