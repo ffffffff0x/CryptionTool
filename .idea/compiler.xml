@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UCT-TOOLS" />
+        <module name="CryptionTool" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="UCT-TOOLS" target="1.8" />
+      <module name="CryptionTool" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -12,7 +12,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode code = new DefaultMutableTreeNode("Encryption");
 
     //tools下的三级节点
-    private DefaultMutableTreeNode Mail = new DefaultMutableTreeNode("Mail");
+    private DefaultMutableTreeNode NetTool = new DefaultMutableTreeNode("NetTool");
     private DefaultMutableTreeNode TextModify = new DefaultMutableTreeNode("TextModify");
 
     //code下的三级节点
@@ -62,8 +62,9 @@ public class NodeAdd {
     private DefaultMutableTreeNode Xxencode = new DefaultMutableTreeNode("Xxencode");
     private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion");
 
-    //邮箱下的节点
+    //nettool下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
+    private DefaultMutableTreeNode Port_Scan = new DefaultMutableTreeNode("Port Scan");
 
     private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Conversion");
     private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Substitution");
@@ -77,11 +78,11 @@ public class NodeAdd {
         root.add(code);
 
         //--------
-        //tools.add(Mail);
+        tools.add(NetTool);
         tools.add(TextModify);
 
         ///-------
-        //Mail.add(MailOnceCheck);
+        NetTool.add(Port_Scan);
 
         //--------
         TextModify.add(Case_Conversion);

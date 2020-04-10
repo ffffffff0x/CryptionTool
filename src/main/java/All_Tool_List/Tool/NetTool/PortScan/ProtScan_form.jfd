@@ -1,0 +1,179 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "ProtScan"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLB"
+					"text": "Port Scan"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 177
+					"height": 54
+					"x": 221
+					"y": 15
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "PortScanSCLP"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "PortArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 395
+					"y": 90
+					"width": 185
+					"height": 475
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "STBT"
+					"text": "Start"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "STBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 145
+					"y": 475
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "SPortSP"
+					"model": new javax.swing.SpinnerNumberModel {
+						value: 1
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 182
+					"width": 100
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "EPortSP"
+					"model": new javax.swing.SpinnerNumberModel {
+						value: 65535
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 238
+					"width": 100
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "TCSP"
+					"model": new javax.swing.SpinnerNumberModel {
+						value: 2000
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 294
+					"width": 100
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "DelaySP"
+					"model": new javax.swing.SpinnerNumberModel {
+						value: 2000
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 350
+					"width": 100
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "SPort"
+					"text": "Start Port"
+					"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 75
+					"y": 185
+					"width": 110
+					"height": 25
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "EPort"
+					"text": "End Port"
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 110
+					"height": 25
+					"x": 75
+					"y": 241
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TC"
+					"text": "Thread count"
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 110
+					"height": 25
+					"x": 75
+					"y": 297
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "DE"
+					"text": "Delay"
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 110
+					"height": 25
+					"x": 75
+					"y": 353
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "IPTF"
+					"horizontalAlignment": 2
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 160
+					"y": 112
+					"width": 160
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "ip"
+					"text": "IP"
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 30
+					"height": 20
+					"x": 100
+					"y": 116
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "STATE"
+					"text": "State"
+					"font": #SwingDerivedFont0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 110
+					"height": 25
+					"x": 75
+					"y": 409
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "STATE2"
+					"editable": false
+					"text": "Wait"
+					"horizontalAlignment": 0
+					"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 406
+					"width": 95
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 870, 670 )
+		} )
+	}
+}
