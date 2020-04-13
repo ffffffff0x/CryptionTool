@@ -14,16 +14,17 @@ import javax.swing.*;
 public class MorseCoder_Form extends JPanel {
     public MorseCoder_Form() {
         initComponents();
+        CBOXItemADD();
     }
 
-    private static MorseCoder_impl MorseCoder_impl = new MorseCoder_impl();
+    private static MorseCoder_impl MorseCoder_impl = new MorseCoder_impl('.','-');
 
     private void MorseEnCodeBTActionPerformed(ActionEvent e) {
-        MorseDecode.setText(MorseCoder_impl.encode(MorseSource.getText()));
+        MorseDecode.setText(MorseCoder_impl.encode(MorseSource.getText(),MorseCBox.getSelectedItem().toString()));
     }//Morse code
 
     private void MorseDeCodeBTActionPerformed(ActionEvent e) {
-        MorseDecode.setText(MorseCoder_impl.decode(MorseSource.getText()));
+        MorseDecode.setText(MorseCoder_impl.decode(MorseSource.getText(),MorseCBox.getSelectedItem().toString()));
     }//Morse code
 
     private void initComponents() {
@@ -36,6 +37,7 @@ public class MorseCoder_Form extends JPanel {
         MorseDecode = new JTextArea();
         MorseEnCodeBT = new JButton();
         MorseDeCodeBT = new JButton();
+        MorseCBox = new JComboBox();
 
         //======== this ========
         setLayout(null);
@@ -76,13 +78,15 @@ public class MorseCoder_Form extends JPanel {
             MorseEnCodeBT.setText("EnCode");
             MorseEnCodeBT.addActionListener(e -> MorseEnCodeBTActionPerformed(e));
             morse.add(MorseEnCodeBT);
-            MorseEnCodeBT.setBounds(155, 318, 115, 45);
+            MorseEnCodeBT.setBounds(104, 318, 115, 45);
 
             //---- MorseDeCodeBT ----
             MorseDeCodeBT.setText("DeCode");
             MorseDeCodeBT.addActionListener(e -> MorseDeCodeBTActionPerformed(e));
             morse.add(MorseDeCodeBT);
-            MorseDeCodeBT.setBounds(352, 318, 115, 45);
+            MorseDeCodeBT.setBounds(407, 318, 115, 45);
+            morse.add(MorseCBox);
+            MorseCBox.setBounds(249, 321, 128, 38);
 
             {
                 // compute preferred size
@@ -128,5 +132,11 @@ public class MorseCoder_Form extends JPanel {
     private JTextArea MorseDecode;
     private JButton MorseEnCodeBT;
     private JButton MorseDeCodeBT;
+    private JComboBox MorseCBox;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+
+    private void CBOXItemADD(){
+        MorseCBox.addItem("  Space");
+        MorseCBox.addItem("/ ");
+    }
 }

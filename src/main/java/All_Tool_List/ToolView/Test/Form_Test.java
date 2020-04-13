@@ -1,13 +1,13 @@
-package All_Tool_List.Tool.NetTool.PortScan;
+package All_Tool_List.ToolView.Test;
+
+import All_Tool_List.Encryption.Coding.MorseCoder.MorseCoder_Form;
 
 import javax.swing.*;
 
-public class PortScan_test {
+public class Form_Test {
     public static void main(String[] args) {
-        ProtScan_form PF = new ProtScan_form();
-
         JFrame f = new JFrame();
-        f.add(PF);
+        f.add(new MorseCoder_Form());
 
         f.pack();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

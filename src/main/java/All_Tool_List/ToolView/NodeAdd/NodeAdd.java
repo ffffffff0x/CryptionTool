@@ -97,7 +97,7 @@ public class NodeAdd {
         //往现代节点下添加节点
         Modern.add(Authentication);
         Modern.add(AES);
-        Modern.add(DES);
+        //Modern.add(DES);
         Modern.add(HASH);
         Modern.add(NTLM);
         Modern.add(SM3);

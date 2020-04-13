@@ -36,41 +36,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
  * @author 1
  */
 public class RootView extends JFrame {
-    private static NodeAdd na = new NodeAdd();
-    private static JTree ta = new JTree(na.root);// 使用根节点创建树组件
-
-    private Index_Form Index_Form = new Index_Form();
-    //private Setting_From Setting_From = new Setting_From();
-
-    //Coding
-    private All_Tool_List.Encryption.Coding.ASCII.ASCII_Form ASCII_Form = new ASCII_Form();
-    private Base64_Form Base64_Form = new Base64_Form();
-    private All_Tool_List.Encryption.Coding.Conversion.Conversion_Form Conversion_Form = new Conversion_Form();
-    private HEXCoder_Form HEXCoder_Form = new HEXCoder_Form();
-    private MorseCoder_Form MorseCoder_Form = new MorseCoder_Form();
-    private Unicode_Form Unicode_Form = new Unicode_Form();
-    private URL_Form URL_Form = new URL_Form();
-
-    //Classical
-    private Atbash_Form Atbash_Form = new Atbash_Form();
-    private Rail_fence_Form Rail_fence_Form = new Rail_fence_Form();
-    private ROT_Form ROT_Form = new ROT_Form();
-    private Vigenere_Form Vigenere_Form = new Vigenere_Form();
-
-    //Modern
-    private AES_Form AES_Form = new AES_Form();
-    private JWT_Form JWT_Form = new JWT_Form();
-    private NTLM_Form NTLM_Form = new NTLM_Form();
-    private Hash_Form Hash_Form = new Hash_Form();
-    private SM3_Form SM3_Form = new SM3_Form();
-
-    //Tools
-    //NetTool
-    private ProtScan_form ProtScan_form = new ProtScan_form();
-    //TextModify
-    private Case_conversion_form Case_conversion_form = new Case_conversion_form();
-    private Text_substitution_form Text_substitution_form = new Text_substitution_form();
-
     public RootView() {
         initComponents();
         SetJtree();
@@ -145,6 +110,41 @@ public class RootView extends JFrame {
         JTREE.setViewportView(ta);//创建一个视口并设置其视图
     }
 
+    private static NodeAdd na = new NodeAdd();
+    private static JTree ta = new JTree(na.root);// 使用根节点创建树组件
+
+    private Index_Form Index_Form = new Index_Form();
+    //private Setting_From Setting_From = new Setting_From();
+
+    //Coding
+    private All_Tool_List.Encryption.Coding.ASCII.ASCII_Form ASCII_Form = new ASCII_Form();
+    private Base64_Form Base64_Form = new Base64_Form();
+    private All_Tool_List.Encryption.Coding.Conversion.Conversion_Form Conversion_Form = new Conversion_Form();
+    private HEXCoder_Form HEXCoder_Form = new HEXCoder_Form();
+    private MorseCoder_Form MorseCoder_Form = new MorseCoder_Form();
+    private Unicode_Form Unicode_Form = new Unicode_Form();
+    private URL_Form URL_Form = new URL_Form();
+
+    //Classical
+    private Atbash_Form Atbash_Form = new Atbash_Form();
+    private Rail_fence_Form Rail_fence_Form = new Rail_fence_Form();
+    private ROT_Form ROT_Form = new ROT_Form();
+    private Vigenere_Form Vigenere_Form = new Vigenere_Form();
+
+    //Modern
+    private AES_Form AES_Form = new AES_Form();
+    private JWT_Form JWT_Form = new JWT_Form();
+    private NTLM_Form NTLM_Form = new NTLM_Form();
+    private Hash_Form Hash_Form = new Hash_Form();
+    private SM3_Form SM3_Form = new SM3_Form();
+
+    //Tools
+    //NetTool
+    private ProtScan_form ProtScan_form = new ProtScan_form();
+    //TextModify
+    private Case_conversion_form Case_conversion_form = new Case_conversion_form();
+    private Text_substitution_form Text_substitution_form = new Text_substitution_form();
+
     private void SetPanel(){
         RP.add(Index_Form);
         Index_Form.setBounds(0, 0, 620, 590);
@@ -184,8 +184,8 @@ public class RootView extends JFrame {
 
     private void NodeSelect() {
         ta.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
+                @Override
+                public void mouseClicked(MouseEvent e) {
                 //super.mouseClicked(e);
                 DefaultMutableTreeNode dmt = (DefaultMutableTreeNode) ta.getLastSelectedPathComponent();
                 // 如果是叶子结点

@@ -75,19 +75,18 @@ public class MorseCoder_impl {
 
     private final char dit; // short mark or dot
     private final char dah; // longer mark or dash
-    private final char split;
 
-    public MorseCoder_impl() {
-        this('.', '-', '/');
-    }
+    //public MorseCoder_impl() {
+    //    this('.', '-', '/');
+    //}
 
-    private MorseCoder_impl(char dit, char dah, char split) {
+    public MorseCoder_impl(char dit, char dah) {
         this.dit = dit;
         this.dah = dah;
-        this.split = split;
     }
 
-    public String encode(String text) {
+    public String encode(String text,String split) {
+        split = CheckSelectItem(split);
         if (text == null) {
             throw new IllegalArgumentException("Text should not be null.");
         }
@@ -104,7 +103,8 @@ public class MorseCoder_impl {
         return morseBuilder.toString();
     }
 
-    public String decode(String morse) {
+    public String decode(String morse,String split) {
+        split = CheckSelectItem(split);
         if (morse == null) {
             throw new IllegalArgumentException("Morse should not be null.");
         }
@@ -119,5 +119,17 @@ public class MorseCoder_impl {
             textBuilder.appendCodePoint(codePoint);
         }
         return textBuilder.toString();
+    }
+
+    private String CheckSelectItem(String i)
+    {
+        String delc;
+        switch (i)
+        {
+            case "  Space": delc = " ";break;
+            case "/ ": delc = "/";break;
+            default: delc = i;
+        }
+        return delc;
     }
 }
