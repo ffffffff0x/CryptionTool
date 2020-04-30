@@ -5,6 +5,7 @@
 package All_Tool_List.ToolView.Template;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 /**
@@ -31,7 +32,7 @@ public class Template extends JPanel {
 
         //======== Template ========
         {
-            Template.setBackground(Color.gray);
+            Template.setBackground(null);
             Template.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
             Template.setLayout(null);
 

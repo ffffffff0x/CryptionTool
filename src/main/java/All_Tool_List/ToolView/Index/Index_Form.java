@@ -26,13 +26,15 @@ public class Index_Form extends JPanel {
 
         //======== index ========
         {
-            index.setBackground(new Color(228, 230, 235));
+            index.setBackground(null);
             index.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
             index.setLayout(null);
 
             //---- IndexLB ----
-            IndexLB.setIcon(new ImageIcon(getClass().getResource("/img/ffffffff0x_Logo.jpg")));
+            IndexLB.setIcon(new ImageIcon(getClass().getResource("/img/ffffffff0x_Logo.png")));
             IndexLB.setHorizontalAlignment(SwingConstants.CENTER);
+            IndexLB.setBackground(null);
+            IndexLB.setForeground(null);
             index.add(IndexLB);
             IndexLB.setBounds(0, 0, 620, 590);
 

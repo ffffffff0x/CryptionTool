@@ -94,6 +94,8 @@ public class ProtScan_form extends JPanel {
 
                 //---- PortArea ----
                 PortArea.setLineWrap(true);
+                PortArea.setBackground(null);
+                PortArea.setEditable(false);
                 PortScanSCLP.setViewportView(PortArea);
             }
             ProtScan.add(PortScanSCLP);
@@ -191,7 +193,7 @@ public class ProtScan_form extends JPanel {
             //---- label1 ----
             label1.setText("S:\u6392\u5e8f  H:\u7aef\u53e3\u5e2e\u52a9\u4fe1\u606f");
             ProtScan.add(label1);
-            label1.setBounds(5, 570, 610, label1.getPreferredSize().height);
+            label1.setBounds(5, 573, 610, label1.getPreferredSize().height);
 
             //---- PortScanRunPB ----
             PortScanRunPB.setIndeterminate(true);

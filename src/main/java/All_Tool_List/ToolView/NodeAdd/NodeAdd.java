@@ -7,9 +7,11 @@ public class NodeAdd {
     public DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 
     //创建二级节点
-    //private DefaultMutableTreeNode Setting = new DefaultMutableTreeNode("Setting");
+    private DefaultMutableTreeNode Setting = new DefaultMutableTreeNode("Setting");
     private DefaultMutableTreeNode tools = new DefaultMutableTreeNode("Tools");
     private DefaultMutableTreeNode code = new DefaultMutableTreeNode("Encryption");
+
+    private DefaultMutableTreeNode Theme = new DefaultMutableTreeNode("Theme");
 
     //tools下的三级节点
     private DefaultMutableTreeNode NetTool = new DefaultMutableTreeNode("NetTool");
@@ -30,7 +32,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode NTLM = new DefaultMutableTreeNode("NTLM");
 
     //古典下的节点
-    private DefaultMutableTreeNode ROT13 = new DefaultMutableTreeNode("ROT13");
+    private DefaultMutableTreeNode ROT13 = new DefaultMutableTreeNode("ROT");
     private DefaultMutableTreeNode Rail_fence = new DefaultMutableTreeNode("Rail fence(栅栏密码)");
     private DefaultMutableTreeNode Atbash = new DefaultMutableTreeNode("Atbash(埃特巴什码)");
     private DefaultMutableTreeNode Hill = new DefaultMutableTreeNode("Hill(希尔密码)");
@@ -76,6 +78,9 @@ public class NodeAdd {
         //root.add(Setting);
         root.add(tools);
         root.add(code);
+
+        //--------
+        //Setting.add(Theme);
 
         //--------
         tools.add(NetTool);

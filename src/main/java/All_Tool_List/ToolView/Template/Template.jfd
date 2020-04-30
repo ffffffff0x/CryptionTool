@@ -7,7 +7,7 @@ new FormModel {
 			name: "this"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "Template"
-				"background": sfield java.awt.Color gray
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "TitleLBTEMP"

@@ -25,6 +25,8 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JTextArea" ) {
 						name: "PortArea"
 						"lineWrap": true
+						"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"editable": false
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 395
@@ -192,7 +194,7 @@ new FormModel {
 					"text": "S:排序  H:端口帮助信息"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 5
-					"y": 570
+					"y": 573
 					"width": 610
 				} )
 				add( new FormComponent( "javax.swing.JProgressBar" ) {

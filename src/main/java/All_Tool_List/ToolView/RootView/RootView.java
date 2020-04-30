@@ -27,9 +27,9 @@ import All_Tool_List.ToolView.Index.Index_Form;
 import All_Tool_List.ToolView.NodeAdd.NodeAdd;
 
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
@@ -50,7 +50,7 @@ public class RootView extends JFrame {
 
         //======== this ========
         setBackground(Color.pink);
-        setTitle(" CryptiontTool-Ver D\u2642A\u2642R\u2642K");
+        setTitle(" CryptionTool-Ver D\u2642A\u2642R\u2642K");
         setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("/img/ffffffff0x_ico.png")).getImage());
@@ -60,7 +60,7 @@ public class RootView extends JFrame {
         //======== RP ========
         {
             RP.setForeground(new Color(60, 63, 65));
-            RP.setBackground(Color.gray);
+            RP.setBackground(null);
             RP.setLayout(null);
 
             {
@@ -79,12 +79,12 @@ public class RootView extends JFrame {
             }
         }
         contentPane.add(RP);
-        RP.setBounds(276, 5, 620, 590);
+        RP.setBounds(270, 5, 625, 590);
         contentPane.add(JTREE);
-        JTREE.setBounds(4, 5, 265, 595);
+        JTREE.setBounds(4, 5, 260, 595);
 
-        contentPane.setPreferredSize(new Dimension(905, 635));
-        setSize(905, 635);
+        contentPane.setPreferredSize(new Dimension(905, 640));
+        setSize(905, 640);
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
@@ -96,6 +96,7 @@ public class RootView extends JFrame {
 
 
     public void run(){
+        //this.pack();
         this.setSize(905,630);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -114,6 +115,7 @@ public class RootView extends JFrame {
     private static JTree ta = new JTree(na.root);// 使用根节点创建树组件
 
     private Index_Form Index_Form = new Index_Form();
+    //private ThemeSelect_form ThemeSelect_form = new ThemeSelect_form();
     //private Setting_From Setting_From = new Setting_From();
 
     //Coding
@@ -147,9 +149,10 @@ public class RootView extends JFrame {
 
     private void SetPanel(){
         RP.add(Index_Form);
-        Index_Form.setBounds(0, 0, 620, 590);
+        Index_Form.setBounds(0, 0, 630, 590);
 
-        //this.SetPanelSetting(Setting_From);
+        //this.SetPanelSetting(ThemeSelect_form);
+
         //Coding
         this.SetPanelSetting(ASCII_Form);
         this.SetPanelSetting(Base64_Form);
@@ -183,17 +186,16 @@ public class RootView extends JFrame {
     }
 
     private void NodeSelect() {
-        ta.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                //super.mouseClicked(e);
+        ta.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
                 DefaultMutableTreeNode dmt = (DefaultMutableTreeNode) ta.getLastSelectedPathComponent();
                 // 如果是叶子结点
                 if (dmt.isLeaf()) {
                     // 判断
                     switch(dmt.toString())// 叶子结点的字符串
                     {
-                        //case "Setting": PanelHide();Setting_From.setVisible(true);break;
+                        //case "Theme": PanelHide();ThemeSelect_form.setVisible(true);break;
                         //case "Disposable Email Check":PanelHide();MailOnceCheck.setVisible(true);break;
                         ////Modern
                         case "JWT":PanelHide();JWT_Form.setVisible(true);break;
@@ -202,7 +204,7 @@ public class RootView extends JFrame {
                         case "NTLM":PanelHide();NTLM_Form.setVisible(true);break;
                         case "SM3":PanelHide();SM3_Form.setVisible(true);break;
                         ////Classical
-                        case "ROT13": PanelHide();ROT_Form.setVisible(true);break;
+                        case "ROT": PanelHide();ROT_Form.setVisible(true);break;
                         case "Rail fence(栅栏密码)": PanelHide();Rail_fence_Form.setVisible(true);break;
                         case "Atbash(埃特巴什码)":PanelHide();Atbash_Form.setVisible(true);break;
                         case "Vigenere(维吉尼亚密码)":PanelHide();Vigenere_Form.setVisible(true);break;
