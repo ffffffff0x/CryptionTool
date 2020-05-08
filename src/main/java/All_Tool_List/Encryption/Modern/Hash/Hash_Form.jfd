@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.3" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.1.0.272" Java: "11.0.6" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -12,7 +12,7 @@ new FormModel {
 				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "TitleLBHASH"
-					"text": "HSAH"
+					"text": "HASH"
 					"font": new java.awt.Font( "Jokerman", 0, 35 )
 					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {

@@ -63,7 +63,7 @@ public class Hash_Form extends JPanel {
             Hash.setLayout(null);
 
             //---- TitleLBHASH ----
-            TitleLBHASH.setText("HSAH");
+            TitleLBHASH.setText("HASH");
             TitleLBHASH.setFont(new Font("Jokerman", Font.PLAIN, 35));
             TitleLBHASH.setForeground(null);
             Hash.add(TitleLBHASH);

@@ -96,8 +96,7 @@ public class RootView extends JFrame {
 
 
     public void run(){
-        //this.pack();
-        this.setSize(905,630);
+        this.setSize(905,633);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
@@ -111,45 +110,45 @@ public class RootView extends JFrame {
         JTREE.setViewportView(ta);//创建一个视口并设置其视图
     }
 
-    private static NodeAdd na = new NodeAdd();
-    private static JTree ta = new JTree(na.root);// 使用根节点创建树组件
+    private final static NodeAdd na = new NodeAdd();
+    private final static JTree ta = new JTree(na.root);// 使用根节点创建树组件
 
-    private Index_Form Index_Form = new Index_Form();
+    private final Index_Form Index_Form = new Index_Form();
     //private ThemeSelect_form ThemeSelect_form = new ThemeSelect_form();
     //private Setting_From Setting_From = new Setting_From();
 
     //Coding
-    private All_Tool_List.Encryption.Coding.ASCII.ASCII_Form ASCII_Form = new ASCII_Form();
-    private Base64_Form Base64_Form = new Base64_Form();
-    private All_Tool_List.Encryption.Coding.Conversion.Conversion_Form Conversion_Form = new Conversion_Form();
-    private HEXCoder_Form HEXCoder_Form = new HEXCoder_Form();
-    private MorseCoder_Form MorseCoder_Form = new MorseCoder_Form();
-    private Unicode_Form Unicode_Form = new Unicode_Form();
-    private URL_Form URL_Form = new URL_Form();
+    private final All_Tool_List.Encryption.Coding.ASCII.ASCII_Form ASCII_Form = new ASCII_Form();
+    private final Base64_Form Base64_Form = new Base64_Form();
+    private final All_Tool_List.Encryption.Coding.Conversion.Conversion_Form Conversion_Form = new Conversion_Form();
+    private final HEXCoder_Form HEXCoder_Form = new HEXCoder_Form();
+    private final MorseCoder_Form MorseCoder_Form = new MorseCoder_Form();
+    private final Unicode_Form Unicode_Form = new Unicode_Form();
+    private final URL_Form URL_Form = new URL_Form();
 
     //Classical
-    private Atbash_Form Atbash_Form = new Atbash_Form();
-    private Rail_fence_Form Rail_fence_Form = new Rail_fence_Form();
-    private ROT_Form ROT_Form = new ROT_Form();
-    private Vigenere_Form Vigenere_Form = new Vigenere_Form();
+    private final Atbash_Form Atbash_Form = new Atbash_Form();
+    private final Rail_fence_Form Rail_fence_Form = new Rail_fence_Form();
+    private final ROT_Form ROT_Form = new ROT_Form();
+    private final Vigenere_Form Vigenere_Form = new Vigenere_Form();
 
     //Modern
-    private AES_Form AES_Form = new AES_Form();
-    private JWT_Form JWT_Form = new JWT_Form();
-    private NTLM_Form NTLM_Form = new NTLM_Form();
-    private Hash_Form Hash_Form = new Hash_Form();
-    private SM3_Form SM3_Form = new SM3_Form();
+    private final AES_Form AES_Form = new AES_Form();
+    private final JWT_Form JWT_Form = new JWT_Form();
+    private final NTLM_Form NTLM_Form = new NTLM_Form();
+    private final Hash_Form Hash_Form = new Hash_Form();
+    private final SM3_Form SM3_Form = new SM3_Form();
 
     //Tools
     //NetTool
-    private ProtScan_form ProtScan_form = new ProtScan_form();
+    private final ProtScan_form ProtScan_form = new ProtScan_form();
     //TextModify
-    private Case_conversion_form Case_conversion_form = new Case_conversion_form();
-    private Text_substitution_form Text_substitution_form = new Text_substitution_form();
+    private final Case_conversion_form Case_conversion_form = new Case_conversion_form();
+    private final Text_substitution_form Text_substitution_form = new Text_substitution_form();
 
     private void SetPanel(){
         RP.add(Index_Form);
-        Index_Form.setBounds(0, 0, 630, 590);
+        Index_Form.setBounds(0, 0, 620, 590);
 
         //this.SetPanelSetting(ThemeSelect_form);
 
@@ -186,44 +185,41 @@ public class RootView extends JFrame {
     }
 
     private void NodeSelect() {
-        ta.addTreeSelectionListener(new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                DefaultMutableTreeNode dmt = (DefaultMutableTreeNode) ta.getLastSelectedPathComponent();
-                // 如果是叶子结点
-                if (dmt.isLeaf()) {
-                    // 判断
-                    switch(dmt.toString())// 叶子结点的字符串
-                    {
-                        //case "Theme": PanelHide();ThemeSelect_form.setVisible(true);break;
-                        //case "Disposable Email Check":PanelHide();MailOnceCheck.setVisible(true);break;
-                        ////Modern
-                        case "JWT":PanelHide();JWT_Form.setVisible(true);break;
-                        case "AES":PanelHide();AES_Form.setVisible(true);break;
-                        case "Hash": PanelHide();Hash_Form.setVisible(true);break;//显示单个需要的panel
-                        case "NTLM":PanelHide();NTLM_Form.setVisible(true);break;
-                        case "SM3":PanelHide();SM3_Form.setVisible(true);break;
-                        ////Classical
-                        case "ROT": PanelHide();ROT_Form.setVisible(true);break;
-                        case "Rail fence(栅栏密码)": PanelHide();Rail_fence_Form.setVisible(true);break;
-                        case "Atbash(埃特巴什码)":PanelHide();Atbash_Form.setVisible(true);break;
-                        case "Vigenere(维吉尼亚密码)":PanelHide();Vigenere_Form.setVisible(true);break;
-                        ////Coding
-                        case "Base64": PanelHide();Base64_Form.setVisible(true);break;
-                        case "Morse Code": PanelHide();MorseCoder_Form.setVisible(true);break;
-                        case "URL": PanelHide();URL_Form.setVisible(true);break;
-                        case "HEX": PanelHide();HEXCoder_Form.setVisible(true);break;
-                        case "ASCII": PanelHide();ASCII_Form.setVisible(true);break;
-                        case "Base Conversion": PanelHide();Conversion_Form.setVisible(true);break;
-                        case "Unicode":PanelHide();Unicode_Form.setVisible(true);break;
-                        ////Tools
-                        case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);break;
-                        case "Text Substitution":PanelHide();Text_substitution_form.setVisible(true);break;
-                        case "Port Scan":PanelHide();ProtScan_form.setVisible(true);break;
-                        default: break;
-                    }
-                }//pannel切换
-            }
+        ta.addTreeSelectionListener(e -> {
+            DefaultMutableTreeNode dmt = (DefaultMutableTreeNode) ta.getLastSelectedPathComponent();
+            // 如果是叶子结点
+            if (dmt.isLeaf()) {
+                // 判断
+                switch(dmt.toString())// 叶子结点的字符串
+                {
+                    //case "Theme": PanelHide();ThemeSelect_form.setVisible(true);break;
+                    //case "Disposable Email Check":PanelHide();MailOnceCheck.setVisible(true);break;
+                    ////Modern
+                    case "JWT":PanelHide();JWT_Form.setVisible(true);break;
+                    case "AES":PanelHide();AES_Form.setVisible(true);break;
+                    case "Hash": PanelHide();Hash_Form.setVisible(true);break;//显示单个需要的panel
+                    case "NTLM":PanelHide();NTLM_Form.setVisible(true);break;
+                    case "SM3":PanelHide();SM3_Form.setVisible(true);break;
+                    ////Classical
+                    case "ROT": PanelHide();ROT_Form.setVisible(true);break;
+                    case "Rail fence(栅栏密码)": PanelHide();Rail_fence_Form.setVisible(true);break;
+                    case "Atbash(埃特巴什码)":PanelHide();Atbash_Form.setVisible(true);break;
+                    case "Vigenere(维吉尼亚密码)":PanelHide();Vigenere_Form.setVisible(true);break;
+                    ////Coding
+                    case "Base64": PanelHide();Base64_Form.setVisible(true);break;
+                    case "Morse Code": PanelHide();MorseCoder_Form.setVisible(true);break;
+                    case "URL": PanelHide();URL_Form.setVisible(true);break;
+                    case "HEX": PanelHide();HEXCoder_Form.setVisible(true);break;
+                    case "ASCII": PanelHide();ASCII_Form.setVisible(true);break;
+                    case "Base Conversion": PanelHide();Conversion_Form.setVisible(true);break;
+                    case "Unicode":PanelHide();Unicode_Form.setVisible(true);break;
+                    ////Tools
+                    case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);break;
+                    case "Text Substitution":PanelHide();Text_substitution_form.setVisible(true);break;
+                    case "Port Scan":PanelHide();ProtScan_form.setVisible(true);break;
+                    default: break;
+                }
+            }//pannel切换
         });
     }
 
