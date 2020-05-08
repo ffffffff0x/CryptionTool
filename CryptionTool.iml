@@ -18,6 +18,6 @@
     <orderEntry type="library" name="TableLayout" level="project" />
     <orderEntry type="library" name="Beans Binding" level="project" />
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="Maven: com.formdev:flatlaf:0.22" level="project" />
+    <orderEntry type="library" name="Maven: com.formdev:flatlaf:0.33" level="project" />
   </component>
 </module>

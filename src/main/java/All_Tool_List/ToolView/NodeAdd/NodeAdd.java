@@ -29,6 +29,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode DES = new DefaultMutableTreeNode("DES");
     private DefaultMutableTreeNode HASH = new DefaultMutableTreeNode("Hash");
     private DefaultMutableTreeNode SM3 = new DefaultMutableTreeNode("SM3");
+    private DefaultMutableTreeNode SM4 = new DefaultMutableTreeNode("SM4");
     private DefaultMutableTreeNode NTLM = new DefaultMutableTreeNode("NTLM");
 
     //古典下的节点
@@ -106,6 +107,7 @@ public class NodeAdd {
         Modern.add(HASH);
         Modern.add(NTLM);
         Modern.add(SM3);
+        Modern.add(SM4);
         //--------
 
         //往认证节点下添加检点

@@ -20,6 +20,7 @@ import All_Tool_List.Encryption.Modern.Authentication.JWT.JWT_Form;
 import All_Tool_List.Encryption.Modern.Authentication.NTLM.NTLM_Form;
 import All_Tool_List.Encryption.Modern.Hash.Hash_Form;
 import All_Tool_List.Encryption.Modern.SM3.SM3_Form;
+import All_Tool_List.Encryption.Modern.SM4.SM4_Form;
 import All_Tool_List.Tool.NetTool.PortScan.ProtScan_form;
 import All_Tool_List.Tool.TextModify.Case_conversion.Case_conversion_form;
 import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_form;
@@ -138,6 +139,7 @@ public class RootView extends JFrame {
     private final NTLM_Form NTLM_Form = new NTLM_Form();
     private final Hash_Form Hash_Form = new Hash_Form();
     private final SM3_Form SM3_Form = new SM3_Form();
+    private final SM4_Form SM4_Form = new SM4_Form();
 
     //Tools
     //NetTool
@@ -171,6 +173,7 @@ public class RootView extends JFrame {
         this.SetPanelSetting(NTLM_Form);
         this.SetPanelSetting(Hash_Form);
         this.SetPanelSetting(SM3_Form);
+        this.SetPanelSetting(SM4_Form);
         //tools
         this.SetPanelSetting(ProtScan_form);
         this.SetPanelSetting(Case_conversion_form);
@@ -200,6 +203,7 @@ public class RootView extends JFrame {
                     case "Hash": PanelHide();Hash_Form.setVisible(true);break;//显示单个需要的panel
                     case "NTLM":PanelHide();NTLM_Form.setVisible(true);break;
                     case "SM3":PanelHide();SM3_Form.setVisible(true);break;
+                    case "SM4":PanelHide();SM4_Form.setVisible(true);break;
                     ////Classical
                     case "ROT": PanelHide();ROT_Form.setVisible(true);break;
                     case "Rail fence(栅栏密码)": PanelHide();Rail_fence_Form.setVisible(true);break;

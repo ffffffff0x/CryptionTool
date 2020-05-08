@@ -1,0 +1,108 @@
+JFDML JFormDesigner: "7.0.1.0.272" Java: "11.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Template"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "SM4LB"
+					"text": "SM4"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 85
+					"height": 54
+					"x": 267
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "SM4SCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "SM4Area1"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 120
+					"width": 530
+					"height": 151
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "SM4SCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "SM4Area2"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 410
+					"width": 530
+					"height": 151
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "SM4DecodeBT"
+					"text": "Decrypt"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SM4DecodeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 437
+					"y": 345
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "SM4EncodeBT"
+					"text": "Encrypt"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SM4EncodeBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 115
+					"height": 45
+					"x": 437
+					"y": 290
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "KEYField"
+					"text": "请输入16字符密钥"
+					"foreground": sfield java.awt.Color gray
+					addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "KEYFieldFocusGained", true ) )
+					addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "KEYFieldFocusLost", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 225
+					"y": 303
+					"width": 170
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "SM4CBox1"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 89
+					"y": 326
+					"width": 98
+					"height": 25
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "IVField"
+					"text": "CBC模式IV值(16字符)"
+					"foreground": sfield java.awt.Color gray
+					addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "IVFieldFocusGained", true ) )
+					addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "IVFieldFocusLost", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 225
+					"y": 346
+					"width": 170
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 870, 670 )
+		} )
+	}
+}
