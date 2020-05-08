@@ -6,7 +6,7 @@
 
     <groupId>CryptionTool</groupId>
     <artifactId>CryptionTool</artifactId>
-    <version>0.2.5</version>
+    <version>0.2.6</version>
     <build>
         <plugins>
             <plugin>
