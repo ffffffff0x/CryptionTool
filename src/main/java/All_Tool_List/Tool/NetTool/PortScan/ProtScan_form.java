@@ -261,7 +261,7 @@ public class ProtScan_form extends JPanel {
     private JProgressBar PortScanRunPB;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
-    public void init(String ip,int sp,int ep,int tc,int de){
+    public void init(String ip,int sp,int ep,int tc,int de) {
         this.IP = ip;
         this.SPortN = sp;
         this.EPortN = ep;
@@ -280,7 +280,7 @@ public class ProtScan_form extends JPanel {
         return false;
     }
 
-    public static String PortSort(String source){
+    public static String PortSort(String source) {
         String[] Sort = source.split("\n");
         StringBuilder sb = new StringBuilder();
         int i,j;

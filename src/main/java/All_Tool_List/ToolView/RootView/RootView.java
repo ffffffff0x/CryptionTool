@@ -32,6 +32,7 @@ import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeSelectionModel;
 
 /**
  * @author 1
@@ -108,6 +109,7 @@ public class RootView extends JFrame {
         JTREE.add(ta);
         ta.setShowsRootHandles(true);// 设置树显示根节点句柄
         ta.expandRow(0);//展开根节点
+        ta.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);//一次只能选择一个节点，多节点为 TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION
         JTREE.setViewportView(ta);//创建一个视口并设置其视图
     }
 
