@@ -29,6 +29,7 @@ import All_Tool_List.ToolView.Index.Index_Form;
 import All_Tool_List.ToolView.NodeAdd.NodeAdd;
 
 import java.awt.*;
+import java.util.HashMap;
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
@@ -43,6 +44,7 @@ public class RootView extends JFrame {
         initComponents();
         SetJtree();
         SetPanel();
+        NodeMap();
         NodeSelect();
     }
 
@@ -192,43 +194,72 @@ public class RootView extends JFrame {
         set.setVisible(false);
     }
 
+    public static HashMap<String,JPanel> Nodemap = new HashMap<>();
+    private void NodeMap(){
+        Nodemap.put("JWT",JWT_Form);
+        Nodemap.put("AES",AES_Form);
+        Nodemap.put("Hash",Hash_Form);
+        Nodemap.put("NTLM",NTLM_Form);
+        Nodemap.put("SM3",SM3_Form);
+        Nodemap.put("SM4",SM4_Form);
+        Nodemap.put("ROT",ROT_Form);
+        Nodemap.put("Rail fence(栅栏密码)",Rail_fence_Form);
+        Nodemap.put("Atbash(埃特巴什码)",Atbash_Form);
+        Nodemap.put("Vigenere(维吉尼亚密码)",Vigenere_Form);
+        Nodemap.put("Base64",Base64_Form);
+        Nodemap.put("Morse Code",MorseCoder_Form);
+        Nodemap.put("URL",URL_Form);
+        Nodemap.put("HEX",HEXCoder_Form);
+        Nodemap.put("ASCII",ASCII_Form);
+        Nodemap.put("Base Conversion",Conversion_Form);
+        Nodemap.put("Unicode",Unicode_Form);
+        Nodemap.put("Case Conversion",Case_conversion_form);
+        Nodemap.put("Text Substitution",Text_substitution_form);
+        Nodemap.put("Text Segmentation",Text_segmentation_form);
+        Nodemap.put("Port Scan",ProtScan_form);
+    }
+
     private void NodeSelect() {
         ta.addTreeSelectionListener(e -> {
             DefaultMutableTreeNode dmt = (DefaultMutableTreeNode) ta.getLastSelectedPathComponent();
             // 如果是叶子结点
             if (dmt.isLeaf()) {
                 // 判断
-                switch(dmt.toString())// 叶子结点的字符串
-                {
-                    //case "Theme": PanelHide();ThemeSelect_form.setVisible(true);break;
-                    //case "Disposable Email Check":PanelHide();MailOnceCheck.setVisible(true);break;
-                    ////Modern
-                    case "JWT":PanelHide();JWT_Form.setVisible(true);break;
-                    case "AES":PanelHide();AES_Form.setVisible(true);break;
-                    case "Hash": PanelHide();Hash_Form.setVisible(true);break;//显示单个需要的panel
-                    case "NTLM":PanelHide();NTLM_Form.setVisible(true);break;
-                    case "SM3":PanelHide();SM3_Form.setVisible(true);break;
-                    case "SM4":PanelHide();SM4_Form.setVisible(true);break;
-                    ////Classical
-                    case "ROT": PanelHide();ROT_Form.setVisible(true);break;
-                    case "Rail fence(栅栏密码)": PanelHide();Rail_fence_Form.setVisible(true);break;
-                    case "Atbash(埃特巴什码)":PanelHide();Atbash_Form.setVisible(true);break;
-                    case "Vigenere(维吉尼亚密码)":PanelHide();Vigenere_Form.setVisible(true);break;
-                    ////Coding
-                    case "Base64": PanelHide();Base64_Form.setVisible(true);break;
-                    case "Morse Code": PanelHide();MorseCoder_Form.setVisible(true);break;
-                    case "URL": PanelHide();URL_Form.setVisible(true);break;
-                    case "HEX": PanelHide();HEXCoder_Form.setVisible(true);break;
-                    case "ASCII": PanelHide();ASCII_Form.setVisible(true);break;
-                    case "Base Conversion": PanelHide();Conversion_Form.setVisible(true);break;
-                    case "Unicode":PanelHide();Unicode_Form.setVisible(true);break;
-                    ////Tools
-                    case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);break;
-                    case "Text Substitution":PanelHide();Text_substitution_form.setVisible(true);break;
-                    case "Text Segmentation":PanelHide();Text_segmentation_form.setVisible(true);break;
-                    case "Port Scan":PanelHide();ProtScan_form.setVisible(true);break;
-                    default: break;
+                if (Nodemap.get(dmt.toString())!= null){
+                    PanelHide();
+                    Nodemap.get(dmt.toString()).setVisible(true);
                 }
+
+                //switch(dmt.toString())// 叶子结点的字符串
+                //{
+                //    //case "Theme": PanelHide();ThemeSelect_form.setVisible(true);break;
+                //    ////Modern
+                //    case "JWT":PanelHide();JWT_Form.setVisible(true);break;
+                //    case "AES":PanelHide();AES_Form.setVisible(true);break;
+                //    case "Hash": PanelHide();Hash_Form.setVisible(true);break;//显示单个需要的panel
+                //    case "NTLM":PanelHide();NTLM_Form.setVisible(true);break;
+                //    case "SM3":PanelHide();SM3_Form.setVisible(true);break;
+                //    case "SM4":PanelHide();SM4_Form.setVisible(true);break;
+                //    ////Classical
+                //    case "ROT": PanelHide();ROT_Form.setVisible(true);break;
+                //    case "Rail fence(栅栏密码)": PanelHide();Rail_fence_Form.setVisible(true);break;
+                //    case "Atbash(埃特巴什码)":PanelHide();Atbash_Form.setVisible(true);break;
+                //    case "Vigenere(维吉尼亚密码)":PanelHide();Vigenere_Form.setVisible(true);break;
+                //    ////Coding
+                //    case "Base64": PanelHide();Base64_Form.setVisible(true);break;
+                //    case "Morse Code": PanelHide();MorseCoder_Form.setVisible(true);break;
+                //    case "URL": PanelHide();URL_Form.setVisible(true);break;
+                //    case "HEX": PanelHide();HEXCoder_Form.setVisible(true);break;
+                //    case "ASCII": PanelHide();ASCII_Form.setVisible(true);break;
+                //    case "Base Conversion": PanelHide();Conversion_Form.setVisible(true);break;
+                //    case "Unicode":PanelHide();Unicode_Form.setVisible(true);break;
+                //    ////Tools
+                //    case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);break;
+                //    case "Text Substitution":PanelHide();Text_substitution_form.setVisible(true);break;
+                //    case "Text Segmentation":PanelHide();Text_segmentation_form.setVisible(true);break;
+                //    case "Port Scan":PanelHide();ProtScan_form.setVisible(true);break;
+                //    default: break;
+                //}
             }//pannel切换
         });
     }
