@@ -23,6 +23,7 @@ import All_Tool_List.Encryption.Modern.SM3.SM3_Form;
 import All_Tool_List.Encryption.Modern.SM4.SM4_Form;
 import All_Tool_List.Tool.NetTool.PortScan.ProtScan_form;
 import All_Tool_List.Tool.TextModify.Case_conversion.Case_conversion_form;
+import All_Tool_List.Tool.TextModify.Text_segmentation.Text_segmentation_form;
 import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_form;
 import All_Tool_List.ToolView.Index.Index_Form;
 import All_Tool_List.ToolView.NodeAdd.NodeAdd;
@@ -149,6 +150,7 @@ public class RootView extends JFrame {
     //TextModify
     private final Case_conversion_form Case_conversion_form = new Case_conversion_form();
     private final Text_substitution_form Text_substitution_form = new Text_substitution_form();
+    private final Text_segmentation_form Text_segmentation_form = new Text_segmentation_form();
 
     private void SetPanel(){
         RP.add(Index_Form);
@@ -180,6 +182,7 @@ public class RootView extends JFrame {
         this.SetPanelSetting(ProtScan_form);
         this.SetPanelSetting(Case_conversion_form);
         this.SetPanelSetting(Text_substitution_form);
+        this.SetPanelSetting(Text_segmentation_form);
 
     }
 
@@ -222,6 +225,7 @@ public class RootView extends JFrame {
                     ////Tools
                     case "Case Conversion":PanelHide();Case_conversion_form.setVisible(true);break;
                     case "Text Substitution":PanelHide();Text_substitution_form.setVisible(true);break;
+                    case "Text Segmentation":PanelHide();Text_segmentation_form.setVisible(true);break;
                     case "Port Scan":PanelHide();ProtScan_form.setVisible(true);break;
                     default: break;
                 }

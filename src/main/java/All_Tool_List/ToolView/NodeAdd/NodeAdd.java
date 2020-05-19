@@ -71,6 +71,7 @@ public class NodeAdd {
 
     private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Conversion");
     private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Substitution");
+    private DefaultMutableTreeNode Text_Segmentation = new DefaultMutableTreeNode("Text Segmentation");
 
     public void setnode(){
         //--------
@@ -93,6 +94,7 @@ public class NodeAdd {
         //--------
         TextModify.add(Case_Conversion);
         TextModify.add(Text_Substitution);
+        TextModify.add(Text_Segmentation);
 
         //往code下添加节点
         code.add(Modern);

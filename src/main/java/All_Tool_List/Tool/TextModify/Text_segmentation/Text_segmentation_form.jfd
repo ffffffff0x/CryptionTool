@@ -1,0 +1,87 @@
+JFDML JFormDesigner: "7.0.1.0.272" Java: "11.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Text_segmentation"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBText_segmentation"
+					"text": "Text segmentation"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 324
+					"height": 54
+					"x": 148
+					"y": 35
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "Text_segmentationSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "Text_segmentationSoiurceArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 120
+					"width": 530
+					"height": 151
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "Text_segmentationSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "Text_segmentationDESArea"
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 45
+					"y": 410
+					"width": 530
+					"height": 151
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "Text_segmentationBT"
+					"text": "segmentation"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Text_segmentationBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 427
+					"y": 315
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "Text_segmentationSP"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 97
+					"y": 317
+					"width": 95
+					"height": 40
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "Text_segmentationSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "Text_segmentationSEG"
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 262
+					"y": 317
+					"width": 95
+					"height": 40
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 870, 670 )
+		} )
+	}
+}
