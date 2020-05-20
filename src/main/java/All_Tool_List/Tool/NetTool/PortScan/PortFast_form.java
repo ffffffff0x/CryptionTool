@@ -28,6 +28,7 @@ public class PortFast_form extends JFrame {
 
         //======== this ========
         setTitle("PortFast");
+        setResizable(false);
         setLayout(null);
 
         //======== scrollPane1 ========

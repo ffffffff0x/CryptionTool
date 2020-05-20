@@ -7,6 +7,11 @@ public class Text_segmentation_impl {
         int i = sourcestr.length() / segmnumber;
         int j = sourcestr.length() % segmnumber;
 
+        if (segmchar.length()<=0)
+        {
+            segmchar = " ";
+        }
+
         for (int x = (j == 0 ? i - 1 : i); x > 0; x--) {
             sb = sb.insert(x * segmnumber,segmchar);
         }

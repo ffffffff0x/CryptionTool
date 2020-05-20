@@ -64,6 +64,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode Uuencode = new DefaultMutableTreeNode("Uuencode");
     private DefaultMutableTreeNode Xxencode = new DefaultMutableTreeNode("Xxencode");
     private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion");
+    private DefaultMutableTreeNode Conversion_2 = new DefaultMutableTreeNode("Base Conversion 2");
 
     //nettool下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
@@ -142,6 +143,7 @@ public class NodeAdd {
         Coding.add(ASCII);
         Coding.add(Base64);
         Coding.add(Conversion);
+        Coding.add(Conversion_2);
         Coding.add(HEX);
         Coding.add(Morse_Code);
         Coding.add(URL);

@@ -6,24 +6,40 @@ new FormModel {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
-				name: "Text_segmentation"
+				name: "Conversion_2"
 				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
 				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "TitleLBText_segmentation"
-					"text": "Text Segmentation"
+					name: "TitleLBConversion_2"
+					"text": "Conversion"
 					"font": new java.awt.Font( "Jokerman", 0, 35 )
 					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"width": 324
+					"width": 202
 					"height": 54
-					"x": 148
+					"x": 209
 					"y": 35
 				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "Conversion_2SourceCB"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 50
+					"y": 96
+					"width": 80
+					"height": 24
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "Conversion_2DesCB"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 80
+					"height": 24
+					"x": 50
+					"y": 386
+				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "Text_segmentationSCLP1"
+					name: "Conversion_2SCLP1"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "Text_segmentationSoiurceArea"
+						name: "Conversion_2SourceArea"
 						"lineWrap": true
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -33,9 +49,9 @@ new FormModel {
 					"height": 151
 				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "Text_segmentationSCLP2"
+					name: "Conversion_2SCLP2"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "Text_segmentationDESArea"
+						name: "Conversion_2DesArea"
 						"lineWrap": true
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -44,34 +60,26 @@ new FormModel {
 					"width": 530
 					"height": 151
 				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "Text_segmentationBT"
-					"text": "segmentation"
-					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Text_segmentationBTActionPerformed", true ) )
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 427
-					"y": 315
-					"width": 115
-					"height": 45
-				} )
-				add( new FormComponent( "javax.swing.JSpinner" ) {
-					name: "Text_segmentationSP"
-				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 97
-					"y": 317
-					"width": 95
-					"height": 40
-				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "Text_segmentationSCLP3"
+					name: "Conversion_2SCLP3"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
-						name: "Text_segmentationSEG"
+						name: "Conversion_2SplitArea"
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 262
-					"y": 317
-					"width": 95
-					"height": 40
+					"x": 238
+					"y": 315
+					"width": 145
+					"height": 50
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "Conversion_2BT"
+					"text": "Conversion"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Conversion_2BTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 420
+					"y": 318
+					"width": 115
+					"height": 45
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620

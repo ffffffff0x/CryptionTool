@@ -303,7 +303,7 @@ public class ProtScan_form extends JPanel {
         return sb.toString();
     }
 
-    class PortScan implements Runnable {
+class PortScan implements Runnable {
         private String address;
         private int Port;
         private int delay;
@@ -339,7 +339,7 @@ public class ProtScan_form extends JPanel {
         }
     }
 
-    class Progress extends SwingWorker<Void, Integer> {
+class Progress extends SwingWorker<Void, Integer> {
 
         @Override
         //后台任务在此方法中实现

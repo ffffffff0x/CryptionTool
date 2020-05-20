@@ -21,7 +21,7 @@ public class Text_segmentation_form extends JPanel {
     private Text_segmentation_impl Text_segmentation_impl = new Text_segmentation_impl();
 
     private void Text_segmentationBTActionPerformed(ActionEvent e) {
-        Text_segmentationDESArea.setText(Text_segmentation_impl.Text_segmentation(Text_segmentationSoiurceArea.getText(),(Text_segmentationSEG.getText().length()== 0 ? " " : Text_segmentationSEG.getText()),(int)Text_segmentationSP.getValue()));
+        Text_segmentationDESArea.setText(Text_segmentation_impl.Text_segmentation(Text_segmentationSoiurceArea.getText(),Text_segmentationSEG.getText(),(int)Text_segmentationSP.getValue()));
     }
 
     private void initComponents() {
@@ -47,7 +47,7 @@ public class Text_segmentation_form extends JPanel {
             Text_segmentation.setLayout(null);
 
             //---- TitleLBText_segmentation ----
-            TitleLBText_segmentation.setText("Text segmentation");
+            TitleLBText_segmentation.setText("Text Segmentation");
             TitleLBText_segmentation.setFont(new Font("Jokerman", Font.PLAIN, 35));
             TitleLBText_segmentation.setForeground(null);
             Text_segmentation.add(TitleLBText_segmentation);

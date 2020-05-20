@@ -1,0 +1,34 @@
+JFDML JFormDesigner: "7.0.1.0.272" Java: "11.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "Template"
+				"background": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "TitleLBWebDirectoryScan"
+					"text": "WebDirectoryScan"
+					"font": new java.awt.Font( "Jokerman", 0, 35 )
+					"foreground": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 335
+					"height": 54
+					"x": 142
+					"y": 35
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 620
+				"height": 590
+				"x": 0
+				"y": 0
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 870, 670 )
+		} )
+	}
+}

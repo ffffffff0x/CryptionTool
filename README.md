@@ -2,7 +2,7 @@
 
 **简介:** 一个CTF+渗透测试工具框架，主要实现功能在加解密和编码这块，在软件使用过程中发现问题或建议欢迎提交 issue.
 
-**简介:** 不定期
+**简介:** 不定期更新
 
 ---
 
@@ -14,6 +14,7 @@
 - 文字处理
   - Case conversion(大小写转换)
   - Text substitution(文字替换)
+  - Text segmentation(文本分割)
 
 **加解密/编解码**
 - 现代
@@ -32,7 +33,8 @@
     - SHA-384
     - SHA-512
   - SM3
-- 传统
+  - SM4
+- 古典
   - Atabash(埃特巴什码)
   - ROT13
   - Rail Fence(栅栏密码)
@@ -41,6 +43,7 @@
   - ASCII
   - Base64
   - Base Conversion
+  - Base Conversion 2(以分割符为界一次转换多个)
   - HEX
   - Morse Code
   - URL
@@ -48,7 +51,7 @@
 
 **待实现...**
 - DES,3DES
-- SM2,SM4
+- SM2
 - LM
 - 更多的文本处理
 

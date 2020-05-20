@@ -7,6 +7,7 @@ import All_Tool_List.Encryption.Classical.Vigenere.Vigenere_Form;
 import All_Tool_List.Encryption.Coding.ASCII.ASCII_Form;
 import All_Tool_List.Encryption.Coding.Base64.Base64_Form;
 import All_Tool_List.Encryption.Coding.Conversion.Conversion_Form;
+import All_Tool_List.Encryption.Coding.Conversion_2.Conversion_2_form;
 import All_Tool_List.Encryption.Coding.HEXCoder.HEXCoder_Form;
 import All_Tool_List.Encryption.Coding.MorseCoder.MorseCoder_Form;
 import All_Tool_List.Encryption.Coding.URL.URL_Form;
@@ -31,6 +32,7 @@ public class NodeMap {
     private final All_Tool_List.Encryption.Coding.ASCII.ASCII_Form ASCII_Form = new ASCII_Form();
     private final All_Tool_List.Encryption.Coding.Base64.Base64_Form Base64_Form = new Base64_Form();
     private final All_Tool_List.Encryption.Coding.Conversion.Conversion_Form Conversion_Form = new Conversion_Form();
+    private final All_Tool_List.Encryption.Coding.Conversion_2.Conversion_2_form Conversion_2_form = new Conversion_2_form();
     private final All_Tool_List.Encryption.Coding.HEXCoder.HEXCoder_Form HEXCoder_Form = new HEXCoder_Form();
     private final All_Tool_List.Encryption.Coding.MorseCoder.MorseCoder_Form MorseCoder_Form = new MorseCoder_Form();
     private final All_Tool_List.Encryption.Coding.Unicode.Unicode_Form Unicode_Form = new Unicode_Form();
@@ -77,6 +79,7 @@ public class NodeMap {
         nodemap.put("HEX",HEXCoder_Form);
         nodemap.put("ASCII",ASCII_Form);
         nodemap.put("Base Conversion",Conversion_Form);
+        nodemap.put("Base Conversion 2",Conversion_2_form);
         nodemap.put("Unicode",Unicode_Form);
         nodemap.put("Case Conversion",Case_conversion_form);
         nodemap.put("Text Substitution",Text_substitution_form);
