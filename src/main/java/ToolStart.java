@@ -1,5 +1,4 @@
 import All_Tool_List.ToolView.RootView.RootView;
-import All_Tool_List.ToolView.Template.Template;
 import com.formdev.flatlaf.*;
 
 public class ToolStart {

@@ -28,6 +28,7 @@ public class Text_segmentation_form extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         Text_segmentation = new JPanel();
         TitleLBText_segmentation = new JLabel();
+        Text_segmentationLB1 = new JLabel();
         Text_segmentationSCLP1 = new JScrollPane();
         Text_segmentationSoiurceArea = new JTextArea();
         Text_segmentationSCLP2 = new JScrollPane();
@@ -36,6 +37,7 @@ public class Text_segmentation_form extends JPanel {
         Text_segmentationSP = new JSpinner();
         Text_segmentationSCLP3 = new JScrollPane();
         Text_segmentationSEG = new JTextArea();
+        Text_segmentationLB2 = new JLabel();
 
         //======== this ========
         setLayout(null);
@@ -52,6 +54,11 @@ public class Text_segmentation_form extends JPanel {
             TitleLBText_segmentation.setForeground(null);
             Text_segmentation.add(TitleLBText_segmentation);
             TitleLBText_segmentation.setBounds(148, 35, 324, 54);
+
+            //---- Text_segmentationLB1 ----
+            Text_segmentationLB1.setText("SplitString");
+            Text_segmentation.add(Text_segmentationLB1);
+            Text_segmentationLB1.setBounds(263, 302, 62, 16);
 
             //======== Text_segmentationSCLP1 ========
             {
@@ -87,6 +94,11 @@ public class Text_segmentation_form extends JPanel {
             }
             Text_segmentation.add(Text_segmentationSCLP3);
             Text_segmentationSCLP3.setBounds(262, 317, 95, 40);
+
+            //---- Text_segmentationLB2 ----
+            Text_segmentationLB2.setText("SplitString:\u9ed8\u8ba4\u4e0d\u586b\u5219\u4e3a\u7a7a\u683c\u5206\u5272");
+            Text_segmentation.add(Text_segmentationLB2);
+            Text_segmentationLB2.setBounds(5, 570, 195, 16);
 
             {
                 // compute preferred size
@@ -126,6 +138,7 @@ public class Text_segmentation_form extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JPanel Text_segmentation;
     private JLabel TitleLBText_segmentation;
+    private JLabel Text_segmentationLB1;
     private JScrollPane Text_segmentationSCLP1;
     private JTextArea Text_segmentationSoiurceArea;
     private JScrollPane Text_segmentationSCLP2;
@@ -134,5 +147,6 @@ public class Text_segmentation_form extends JPanel {
     private JSpinner Text_segmentationSP;
     private JScrollPane Text_segmentationSCLP3;
     private JTextArea Text_segmentationSEG;
+    private JLabel Text_segmentationLB2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

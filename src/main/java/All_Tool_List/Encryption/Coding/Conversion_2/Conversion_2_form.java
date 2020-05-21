@@ -41,6 +41,7 @@ public class Conversion_2_form extends JPanel {
         Conversion_2SCLP3 = new JScrollPane();
         Conversion_2SplitArea = new JTextArea();
         Conversion_2BT = new JButton();
+        Conversion_2LB1 = new JLabel();
 
         //======== this ========
         setLayout(null);
@@ -95,6 +96,11 @@ public class Conversion_2_form extends JPanel {
             Conversion_2.add(Conversion_2BT);
             Conversion_2BT.setBounds(420, 318, 115, 45);
 
+            //---- Conversion_2LB1 ----
+            Conversion_2LB1.setText("SplitString");
+            Conversion_2.add(Conversion_2LB1);
+            Conversion_2LB1.setBounds(238, 300, 62, 16);
+
             {
                 // compute preferred size
                 Dimension preferredSize = new Dimension();
@@ -142,6 +148,7 @@ public class Conversion_2_form extends JPanel {
     private JScrollPane Conversion_2SCLP3;
     private JTextArea Conversion_2SplitArea;
     private JButton Conversion_2BT;
+    private JLabel Conversion_2LB1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     private void CBOXItemADD(){

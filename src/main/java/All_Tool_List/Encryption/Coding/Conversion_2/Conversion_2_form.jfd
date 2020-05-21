@@ -81,6 +81,15 @@ new FormModel {
 					"width": 115
 					"height": 45
 				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "Conversion_2LB1"
+					"text": "SplitString"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 62
+					"height": 16
+					"x": 238
+					"y": 300
+				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620
 				"height": 590

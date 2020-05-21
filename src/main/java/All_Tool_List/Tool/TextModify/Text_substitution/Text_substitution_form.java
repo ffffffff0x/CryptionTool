@@ -28,6 +28,8 @@ public class Text_substitution_form extends JPanel {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         Text_Substitution = new JPanel();
+        Text_SubstitutionLB1 = new JLabel();
+        Text_SubstitutionLB3 = new JLabel();
         TitleLBText_Substitution = new JLabel();
         Text_SubstitutionSCLP1 = new JScrollPane();
         Text_SubstitutionArea1 = new JTextArea();
@@ -48,6 +50,16 @@ public class Text_substitution_form extends JPanel {
             Text_Substitution.setBackground(null);
             Text_Substitution.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
             Text_Substitution.setLayout(null);
+
+            //---- Text_SubstitutionLB1 ----
+            Text_SubstitutionLB1.setText("OldString");
+            Text_Substitution.add(Text_SubstitutionLB1);
+            Text_SubstitutionLB1.setBounds(65, 295, 62, 16);
+
+            //---- Text_SubstitutionLB3 ----
+            Text_SubstitutionLB3.setText("NewString");
+            Text_Substitution.add(Text_SubstitutionLB3);
+            Text_SubstitutionLB3.setBounds(280, 295, 62, 16);
 
             //---- TitleLBText_Substitution ----
             TitleLBText_Substitution.setText("Text Substitution");
@@ -144,6 +156,8 @@ public class Text_substitution_form extends JPanel {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JPanel Text_Substitution;
+    private JLabel Text_SubstitutionLB1;
+    private JLabel Text_SubstitutionLB3;
     private JLabel TitleLBText_Substitution;
     private JScrollPane Text_SubstitutionSCLP1;
     private JTextArea Text_SubstitutionArea1;

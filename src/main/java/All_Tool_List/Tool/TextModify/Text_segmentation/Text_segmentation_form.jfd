@@ -20,6 +20,15 @@ new FormModel {
 					"x": 148
 					"y": 35
 				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "Text_segmentationLB1"
+					"text": "SplitString"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 62
+					"height": 16
+					"x": 263
+					"y": 302
+				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "Text_segmentationSCLP1"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
@@ -72,6 +81,15 @@ new FormModel {
 					"y": 317
 					"width": 95
 					"height": 40
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "Text_segmentationLB2"
+					"text": "SplitString:默认不填则为空格分割"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 195
+					"height": 16
+					"x": 5
+					"y": 570
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620
