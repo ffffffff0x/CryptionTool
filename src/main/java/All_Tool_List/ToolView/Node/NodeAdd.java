@@ -14,17 +14,17 @@ public class NodeAdd {
     private DefaultMutableTreeNode Theme = new DefaultMutableTreeNode("Theme");
 
     //tools下的三级节点
-    private DefaultMutableTreeNode NetTool = new DefaultMutableTreeNode("NetTool");
-    private DefaultMutableTreeNode TextModify = new DefaultMutableTreeNode("TextModify");
+    private DefaultMutableTreeNode NetTool = new DefaultMutableTreeNode("NetTools(网络工具)");
+    private DefaultMutableTreeNode TextModify = new DefaultMutableTreeNode("TextModify(文本编辑)");
 
     //code下的三级节点
-    private DefaultMutableTreeNode Modern = new DefaultMutableTreeNode("Modern");
-    private DefaultMutableTreeNode Classical = new DefaultMutableTreeNode("Classical");
-    private DefaultMutableTreeNode Coding = new DefaultMutableTreeNode("Coding");
+    private DefaultMutableTreeNode Modern = new DefaultMutableTreeNode("Modern(现代加密)");
+    private DefaultMutableTreeNode Classical = new DefaultMutableTreeNode("Classical(古典加密)");
+    private DefaultMutableTreeNode Coding = new DefaultMutableTreeNode("Coding(编码)");
 
     //现代下的节点
     private DefaultMutableTreeNode JWT = new DefaultMutableTreeNode("JWT");
-    private DefaultMutableTreeNode Authentication = new DefaultMutableTreeNode("Authentication");
+    private DefaultMutableTreeNode Authentication = new DefaultMutableTreeNode("Authentication(认证加密)");
     private DefaultMutableTreeNode AES = new DefaultMutableTreeNode("AES");
     private DefaultMutableTreeNode DES = new DefaultMutableTreeNode("DES");
     private DefaultMutableTreeNode HASH = new DefaultMutableTreeNode("Hash");
@@ -63,16 +63,16 @@ public class NodeAdd {
     private DefaultMutableTreeNode Shell_Code = new DefaultMutableTreeNode("Shell Code");
     private DefaultMutableTreeNode Uuencode = new DefaultMutableTreeNode("Uuencode");
     private DefaultMutableTreeNode Xxencode = new DefaultMutableTreeNode("Xxencode");
-    private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion");
-    private DefaultMutableTreeNode Conversion_2 = new DefaultMutableTreeNode("Base Conversion 2");
+    private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion (Mathematical)");
+    private DefaultMutableTreeNode Conversion_2 = new DefaultMutableTreeNode("Base Conversion Split (Mathematical)");
 
     //nettool下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
     private DefaultMutableTreeNode Port_Scan = new DefaultMutableTreeNode("Port Scan");
 
-    private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Conversion");
-    private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Substitution");
-    private DefaultMutableTreeNode Text_Segmentation = new DefaultMutableTreeNode("Text Segmentation");
+    private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Conversion(大小写转换)");
+    private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Substitution(文本替换)");
+    private DefaultMutableTreeNode Text_Segmentation = new DefaultMutableTreeNode("Text Segmentation(文本分割)");
 
     public void setnode(){
         //--------

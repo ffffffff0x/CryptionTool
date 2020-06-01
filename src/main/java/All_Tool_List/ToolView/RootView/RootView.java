@@ -4,6 +4,7 @@
 
 package All_Tool_List.ToolView.RootView;
 
+import java.awt.event.*;
 import All_Tool_List.ToolView.Index.Index_Form;
 import All_Tool_List.ToolView.Node.NodeAdd;
 import All_Tool_List.ToolView.Node.NodeMap;
@@ -23,6 +24,30 @@ public class RootView extends JFrame {
         SetJtree();
         SetPanel();
         NodeSelect();
+    }
+
+    private void menuItemActionPerformed(ActionEvent e) {
+        // TODO add your code here
+    }
+
+    private void exitActionPerformed() {
+        // TODO add your code here
+    }
+
+    private void restoreFont() {
+        // TODO add your code here
+    }
+
+    private void incrFont() {
+        // TODO add your code here
+    }
+
+    private void decrFont() {
+        // TODO add your code here
+    }
+
+    private void aboutActionPerformed() {
+        // TODO add your code here
     }
 
     private void initComponents() {

@@ -18,7 +18,178 @@ new FormModel {
 					"width": 335
 					"height": 54
 					"x": 142
-					"y": 35
+					"y": 15
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "WebDirectoryScanURLTF"
+					"text": "https://"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 40
+					"y": 105
+					"width": 335
+					"height": 30
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "WebDirectoryScanSCLP1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "WebDirectoryScanOutArea"
+						"editable": false
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 395
+					"y": 90
+					"width": 185
+					"height": 475
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "DictionarySelectBT"
+					"text": "选择字典"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "DictionarySelectBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 40
+					"y": 147
+					"width": 78
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "WebDirectoryScanDictionaryPathTF"
+					"editable": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 255
+					"height": 30
+					"x": 120
+					"y": 147
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "WebDirectoryScanSCLP2"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "WebDirectoryScanStrusCodeArea"
+						"text": "200\n204\n301\n302\n307\n401\n"
+						"font": new java.awt.Font( "Yu Gothic UI", 0, 15 )
+						"lineWrap": true
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 58
+					"y": 263
+					"width": 52
+					"height": 250
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "WebDirectoryScanLB1"
+					"text": "响应码:"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 58
+					"y": 235
+					"width": 51
+					"height": 22
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "TCSP"
+					"model": new javax.swing.SpinnerNumberModel {
+						value: 2000
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 225
+					"y": 238
+					"width": 100
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "LBTC"
+					"text": "线程数:"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 153
+					"y": 245
+					"width": 47
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "LBDealy"
+					"text": "超时时间:"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 59
+					"height": 17
+					"x": 153
+					"y": 300
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "DelaySP"
+					"model": new javax.swing.SpinnerNumberModel {
+						value: 2000
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 100
+					"height": 30
+					"x": 225
+					"y": 293
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "StartBT"
+					"text": "开始"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "StartBTActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 175
+					"y": 505
+					"width": 115
+					"height": 45
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "LBRunTime"
+					"text": "运行状态:"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 59
+					"height": 17
+					"x": 152
+					"y": 410
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "LBDirectiryNumber"
+					"text": "字典条目数:"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 70
+					"height": 17
+					"x": 152
+					"y": 355
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "DirectiryNumberTF"
+					"editable": false
+					"horizontalAlignment": 0
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 225
+					"y": 348
+					"width": 100
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "RunTimeTF"
+					"editable": false
+					"horizontalAlignment": 0
+					"text": "wait"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 100
+					"height": 30
+					"x": 225
+					"y": 403
+				} )
+				add( new FormComponent( "javax.swing.JProgressBar" ) {
+					name: "PB"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 164
+					"y": 457
+					"height": 20
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "WebDirectoryScanSCLP3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "WebDirectoryScanURLArea2"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+						"editable": false
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 41
+					"y": 189
+					"width": 334
+					"height": 36
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620

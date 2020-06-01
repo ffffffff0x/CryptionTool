@@ -72,7 +72,7 @@ public class NTLM_Form extends JPanel {
                 NTLMSCLP2.setViewportView(NTLMencode1);
             }
             NTLM.add(NTLMSCLP2);
-            NTLMSCLP2.setBounds(85, 383, 403, 57);
+            NTLMSCLP2.setBounds(85, 383, 525, 57);
 
             //======== NTLMSCLP3 ========
             {
@@ -82,7 +82,7 @@ public class NTLM_Form extends JPanel {
                 NTLMSCLP3.setViewportView(NTLMencode2);
             }
             NTLM.add(NTLMSCLP3);
-            NTLMSCLP3.setBounds(85, 469, 403, 57);
+            NTLMSCLP3.setBounds(85, 469, 525, 57);
 
             //---- NTLMLB1 ----
             NTLMLB1.setText("\u2191   Source");

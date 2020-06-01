@@ -78,12 +78,12 @@ public class NodeMap {
         nodemap.put("URL",URL_Form);
         nodemap.put("HEX",HEXCoder_Form);
         nodemap.put("ASCII",ASCII_Form);
-        nodemap.put("Base Conversion",Conversion_Form);
-        nodemap.put("Base Conversion 2",Conversion_2_form);
+        nodemap.put("Base Conversion (Mathematical)",Conversion_Form);
+        nodemap.put("Base Conversion Split (Mathematical)",Conversion_2_form);
         nodemap.put("Unicode",Unicode_Form);
-        nodemap.put("Case Conversion",Case_conversion_form);
-        nodemap.put("Text Substitution",Text_substitution_form);
-        nodemap.put("Text Segmentation",Text_segmentation_form);
+        nodemap.put("Case Conversion(大小写转换)",Case_conversion_form);
+        nodemap.put("Text Substitution(文本替换)",Text_substitution_form);
+        nodemap.put("Text Segmentation(文本分割)",Text_segmentation_form);
         nodemap.put("Port Scan",ProtScan_form);
     }
 }
