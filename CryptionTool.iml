@@ -19,5 +19,8 @@
     <orderEntry type="library" name="Beans Binding" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="Maven: com.formdev:flatlaf:0.33" level="project" />
+    <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.2" level="project" />
   </component>
 </module>

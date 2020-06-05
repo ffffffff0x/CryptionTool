@@ -29,6 +29,7 @@ public class PortFast_form extends JFrame {
         //======== this ========
         setTitle("PortFast");
         setResizable(false);
+        setIconImage(new ImageIcon(getClass().getResource("/img/icon/book-2-line.png")).getImage());
         setLayout(null);
 
         //======== scrollPane1 ========

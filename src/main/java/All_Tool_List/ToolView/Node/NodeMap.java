@@ -19,6 +19,7 @@ import All_Tool_List.Encryption.Modern.Hash.Hash_Form;
 import All_Tool_List.Encryption.Modern.SM3.SM3_Form;
 import All_Tool_List.Encryption.Modern.SM4.SM4_Form;
 import All_Tool_List.Tool.NetTool.PortScan.ProtScan_form;
+import All_Tool_List.Tool.NetTool.WebDirectoryScan.WebDirectoryScan_form;
 import All_Tool_List.Tool.TextModify.Case_conversion.Case_conversion_form;
 import All_Tool_List.Tool.TextModify.Text_segmentation.Text_segmentation_form;
 import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_form;
@@ -55,6 +56,7 @@ public class NodeMap {
     //Tools
     //NetTool
     private final All_Tool_List.Tool.NetTool.PortScan.ProtScan_form ProtScan_form = new ProtScan_form();
+    private final All_Tool_List.Tool.NetTool.WebDirectoryScan.WebDirectoryScan_form WebDirectoryScan_form = new WebDirectoryScan_form();
     //TextModify
     private final All_Tool_List.Tool.TextModify.Case_conversion.Case_conversion_form Case_conversion_form = new Case_conversion_form();
     private final All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_form Text_substitution_form = new Text_substitution_form();
@@ -85,5 +87,6 @@ public class NodeMap {
         nodemap.put("Text Substitution(文本替换)",Text_substitution_form);
         nodemap.put("Text Segmentation(文本分割)",Text_segmentation_form);
         nodemap.put("Port Scan",ProtScan_form);
+        nodemap.put("WebDirectory Scan",WebDirectoryScan_form);
     }
 }

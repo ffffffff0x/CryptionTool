@@ -196,7 +196,7 @@
     "ProgressBar.indeterminateStartColor": "#ee9b70",
     "ProgressBar.passedColor": "#78b756",
     "ProgressBar.passedEndColor": "#b4da82",
-    "ProgressBar.progressColor": "#ffe499",
+    "ProgressBar.progressColor": "#666666",
     "ProgressBar.trackColor": "accent",
     "RadioButton.background": "lightBackground",
     "ScrollBar.Mac.hoverTrackColor": "headerBackground",

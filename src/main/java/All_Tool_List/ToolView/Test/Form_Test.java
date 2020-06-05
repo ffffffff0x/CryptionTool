@@ -12,9 +12,10 @@ import javax.swing.*;
 public class Form_Test {
     public static void main(String[] args) {
 
-        //TestForm(new WebDirectoryScan_form());
-        TestForm(new Template());
+        TestForm(new WebDirectoryScan_form());
+        //TestForm(new Template());
         IntelliJTheme.install(Form_Test.class.getResourceAsStream("/Theme/Hiberbee.json"));
+        //IntelliJTheme.install(Form_Test.class.getResourceAsStream("/Theme/Nord.json"));
         FlatLaf.updateUI();
     }
 

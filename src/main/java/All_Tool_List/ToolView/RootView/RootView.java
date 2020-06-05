@@ -26,30 +26,6 @@ public class RootView extends JFrame {
         NodeSelect();
     }
 
-    private void menuItemActionPerformed(ActionEvent e) {
-        // TODO add your code here
-    }
-
-    private void exitActionPerformed() {
-        // TODO add your code here
-    }
-
-    private void restoreFont() {
-        // TODO add your code here
-    }
-
-    private void incrFont() {
-        // TODO add your code here
-    }
-
-    private void decrFont() {
-        // TODO add your code here
-    }
-
-    private void aboutActionPerformed() {
-        // TODO add your code here
-    }
-
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         RP = new JPanel();

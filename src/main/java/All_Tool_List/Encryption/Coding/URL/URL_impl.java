@@ -10,6 +10,6 @@ public class URL_impl {
     }
 
     public String URLEncode(String in) throws UnsupportedEncodingException {
-        return URLEncoder.encode(in,"UTF-8");
+        return URLEncoder.encode(in,"UTF-8").replaceAll("\\+","%20");
     }
 }

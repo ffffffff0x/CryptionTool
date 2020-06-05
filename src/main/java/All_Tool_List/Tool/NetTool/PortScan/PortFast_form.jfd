@@ -9,6 +9,7 @@ new FormModel {
 			"$locationPolicy": 1
 			"$sizePolicy": 1
 			"resizable": false
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/img/icon/book-2-line.png" )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
 				add( new FormComponent( "javax.swing.JEditorPane" ) {

@@ -69,6 +69,7 @@ public class NodeAdd {
     //nettool下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
     private DefaultMutableTreeNode Port_Scan = new DefaultMutableTreeNode("Port Scan");
+    private DefaultMutableTreeNode WebDirectoryScan = new DefaultMutableTreeNode("WebDirectory Scan");
 
     private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Conversion(大小写转换)");
     private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Substitution(文本替换)");
@@ -91,6 +92,7 @@ public class NodeAdd {
 
         ///-------
         NetTool.add(Port_Scan);
+        NetTool.add(WebDirectoryScan);
 
         //--------
         TextModify.add(Case_Conversion);

@@ -34,6 +34,8 @@ public class ProtScan_form extends JPanel {
             PortArea.setText("");
             STBT.setEnabled(false);
             STATE2.setText("Running");
+            PortScanRunPB.setMinimum(1);
+            PortScanRunPB.setMaximum((int)EPortSP.getValue());
             PortScanRunPB.setVisible(true);
             new Progress().execute();
         }else {
@@ -70,7 +72,6 @@ public class ProtScan_form extends JPanel {
         STATE2 = new JTextField();
         PortSortBT = new JButton();
         PortFastBT = new JButton();
-        label1 = new JLabel();
         PortScanRunPB = new JProgressBar();
 
         //======== this ========
@@ -177,28 +178,24 @@ public class ProtScan_form extends JPanel {
             STATE2.setBounds(223, 406, 95, STATE2.getPreferredSize().height);
 
             //---- PortSortBT ----
-            PortSortBT.setText("S");
             PortSortBT.setHorizontalAlignment(SwingConstants.LEFT);
+            PortSortBT.setIcon(new ImageIcon(getClass().getResource("/img/icon/sort-desc.png")));
             PortSortBT.addActionListener(e -> PortSortBTActionPerformed(e));
             ProtScan.add(PortSortBT);
-            PortSortBT.setBounds(375, 96, 34, 59);
+            PortSortBT.setBounds(372, 96, 25, 45);
 
             //---- PortFastBT ----
-            PortFastBT.setText("H");
             PortFastBT.setHorizontalAlignment(SwingConstants.LEFT);
+            PortFastBT.setIcon(new ImageIcon(getClass().getResource("/img/icon/book-2-line.png")));
             PortFastBT.addActionListener(e -> PortFastBTActionPerformed(e));
             ProtScan.add(PortFastBT);
-            PortFastBT.setBounds(375, 156, 34, 59);
-
-            //---- label1 ----
-            label1.setText("S:\u6392\u5e8f  H:\u7aef\u53e3\u5e2e\u52a9\u4fe1\u606f");
-            ProtScan.add(label1);
-            label1.setBounds(5, 573, 610, label1.getPreferredSize().height);
+            PortFastBT.setBounds(372, 144, 25, 45);
 
             //---- PortScanRunPB ----
-            PortScanRunPB.setIndeterminate(true);
             PortScanRunPB.setBackground(new Color(102, 102, 102));
             PortScanRunPB.setVisible(false);
+            PortScanRunPB.setStringPainted(true);
+            PortScanRunPB.setMaximum(0);
             ProtScan.add(PortScanRunPB);
             PortScanRunPB.setBounds(223, 440, 95, 20);
 
@@ -257,7 +254,6 @@ public class ProtScan_form extends JPanel {
     private JTextField STATE2;
     private JButton PortSortBT;
     private JButton PortFastBT;
-    private JLabel label1;
     private JProgressBar PortScanRunPB;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
@@ -319,6 +315,7 @@ class PortScan implements Runnable {
             if (ScannerPort(address, Port, delay) == "OPEN") {
                 //System.out.println((Port + ": open"));
                 PortArea.append(Port+"\n");
+                PortScanRunPB.setValue(Port);
             } else {
                 //System.out.println(Port);
             }

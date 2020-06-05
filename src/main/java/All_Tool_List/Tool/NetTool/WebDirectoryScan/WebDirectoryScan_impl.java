@@ -6,19 +6,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WebDirectoryScan_impl {
-    public File file;
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
     }
 
-    public void DirectoryGet(){
+    public File DirectoryGet(){
         JFileChooser chooser = new JFileChooser();//文件选择器
-        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);//选择器选择模式
+        chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);//选择器选择模式
         chooser.showDialog(new JLabel(), "选择字典文件");
-        file = chooser.getSelectedFile();
-    }
+        return chooser.getSelectedFile();
+    }//字典获取
 
-    public int DirectoryLineGet(){
+    public int DirectoryLineGet(File file){
         int count = 0;
         Scanner scanner = null;
         try {
@@ -31,9 +30,9 @@ public class WebDirectoryScan_impl {
             count++;
         }
         return count;
-    }
+    }//字典行数获取
 
-    public ArrayList<String> DirectoryTextGet() throws IOException {
+    public ArrayList<String> DirectoryTextGet(File file) throws IOException {
         ArrayList<String> out = new ArrayList<>();
         String line;
         FileInputStream fis = new FileInputStream(file);//Input流
@@ -46,5 +45,9 @@ public class WebDirectoryScan_impl {
         isr.close();
         fis.close();
         return out;
-    }
+    }//字典内容获取
+
+    public String[] MatchNumListGet(JTextArea Area) {
+        return Area.getText().split("\n");
+    }//需要匹配的返回值获取
 }
