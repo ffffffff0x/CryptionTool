@@ -11,6 +11,7 @@
 **工具**
 - 网络工具
   - Port Scan(端口扫描)
+  - WebDirectory Scan(WDB目录扫描)
 - 文字处理
   - Case conversion(大小写转换)
   - Text substitution(文字替换)
