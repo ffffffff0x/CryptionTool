@@ -68,7 +68,7 @@ public class NodeMap {
         nodemap.put("JWT",JWT_Form);
         nodemap.put("AES",AES_Form);
         nodemap.put("Hash",Hash_Form);
-        nodemap.put("NTLM",NTLM_Form);
+        nodemap.put("NTLM-HASH",NTLM_Form);
         nodemap.put("SM3",SM3_Form);
         nodemap.put("SM4",SM4_Form);
         nodemap.put("ROT",ROT_Form);
@@ -80,12 +80,12 @@ public class NodeMap {
         nodemap.put("URL",URL_Form);
         nodemap.put("HEX",HEXCoder_Form);
         nodemap.put("ASCII",ASCII_Form);
-        nodemap.put("Base Conversion (Mathematical)",Conversion_Form);
-        nodemap.put("Base Conversion Split (Mathematical)",Conversion_2_form);
+        nodemap.put("Base Conversion",Conversion_Form);
+        nodemap.put("Base Conversion Split",Conversion_2_form);
         nodemap.put("Unicode",Unicode_Form);
-        nodemap.put("Case Conversion(大小写转换)",Case_conversion_form);
-        nodemap.put("Text Substitution(文本替换)",Text_substitution_form);
-        nodemap.put("Text Segmentation(文本分割)",Text_segmentation_form);
+        nodemap.put("Case Convert(大小写转换)",Case_conversion_form);
+        nodemap.put("Text Replace(文本替换)",Text_substitution_form);
+        nodemap.put("Text Separate(文本分隔)",Text_segmentation_form);
         nodemap.put("Port Scan",ProtScan_form);
         nodemap.put("WebDirectory Scan",WebDirectoryScan_form);
     }

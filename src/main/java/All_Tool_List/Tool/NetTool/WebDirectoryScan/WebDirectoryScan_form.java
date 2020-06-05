@@ -4,6 +4,8 @@
 
 package All_Tool_List.Tool.NetTool.WebDirectoryScan;
 
+import All_Tool_List.Tool.NetTool.PortScan.PortFast_form;
+
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
@@ -123,6 +125,10 @@ public class WebDirectoryScan_form extends JPanel {
          **/
     }
 
+    private void StrusNumFastActionPerformed(ActionEvent e) {
+        new Response_code_form().setSize(550,645);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         Template = new JPanel();
@@ -153,6 +159,7 @@ public class WebDirectoryScan_form extends JPanel {
         WDSMatchNumCB = new JComboBox<>();
         LB1 = new JLabel();
         TextOutBT = new JButton();
+        StrusNumFast = new JButton();
 
         //======== this ========
         setToolTipText("\u5bfc\n\u51fa");
@@ -294,7 +301,7 @@ public class WebDirectoryScan_form extends JPanel {
             //---- LBDown ----
             LBDown.setText("\u5b57\u5178\u5185\u5bb9\u4f1a\u88ab\"{dir}\"\u66ff\u6362::\u7ebf\u7a0b\u6570\u5efa\u8bae\u6700\u592750::\u54cd\u5e94\u7801\u53ef\u81ea\u884c\u6dfb\u52a0\u6216\u5220\u9664.\u522b\u5fd8\u4e86\u6362\u884c");
             Template.add(LBDown);
-            LBDown.setBounds(4, 570, 616, LBDown.getPreferredSize().height);
+            LBDown.setBounds(4, 577, 616, LBDown.getPreferredSize().height);
 
             //---- WDSMatchNumCB ----
             WDSMatchNumCB.setModel(new DefaultComboBoxModel<>(new String[] {
@@ -310,10 +317,16 @@ public class WebDirectoryScan_form extends JPanel {
             LB1.setBounds(413, 77, 85, LB1.getPreferredSize().height);
 
             //---- TextOutBT ----
-            TextOutBT.setIcon(new ImageIcon(getClass().getResource("/img/icon/save-fill.png")));
+            TextOutBT.setIcon(new ImageIcon(getClass().getResource("/img/icon/save-line.png")));
             TextOutBT.addActionListener(e -> TextOutBTActionPerformed(e));
             Template.add(TextOutBT);
             TextOutBT.setBounds(378, 100, 25, 45);
+
+            //---- StrusNumFast ----
+            StrusNumFast.setIcon(new ImageIcon(getClass().getResource("/img/icon/book-2-line.png")));
+            StrusNumFast.addActionListener(e -> StrusNumFastActionPerformed(e));
+            Template.add(StrusNumFast);
+            StrusNumFast.setBounds(378, 148, 25, 45);
 
             {
                 // compute preferred size
@@ -331,7 +344,7 @@ public class WebDirectoryScan_form extends JPanel {
             }
         }
         add(Template);
-        Template.setBounds(0, 0, 620, 590);
+        Template.setBounds(0, 0, 620, 595);
 
         {
             // compute preferred size
@@ -379,6 +392,7 @@ public class WebDirectoryScan_form extends JPanel {
     private JComboBox<String> WDSMatchNumCB;
     private JLabel LB1;
     private JButton TextOutBT;
+    private JButton StrusNumFast;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     protected void saveToFile() {

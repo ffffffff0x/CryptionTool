@@ -30,7 +30,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode HASH = new DefaultMutableTreeNode("Hash");
     private DefaultMutableTreeNode SM3 = new DefaultMutableTreeNode("SM3");
     private DefaultMutableTreeNode SM4 = new DefaultMutableTreeNode("SM4");
-    private DefaultMutableTreeNode NTLM = new DefaultMutableTreeNode("NTLM");
+    private DefaultMutableTreeNode NTLM = new DefaultMutableTreeNode("NTLM-HASH");
 
     //古典下的节点
     private DefaultMutableTreeNode ROT13 = new DefaultMutableTreeNode("ROT");
@@ -63,17 +63,17 @@ public class NodeAdd {
     private DefaultMutableTreeNode Shell_Code = new DefaultMutableTreeNode("Shell Code");
     private DefaultMutableTreeNode Uuencode = new DefaultMutableTreeNode("Uuencode");
     private DefaultMutableTreeNode Xxencode = new DefaultMutableTreeNode("Xxencode");
-    private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion (Mathematical)");
-    private DefaultMutableTreeNode Conversion_2 = new DefaultMutableTreeNode("Base Conversion Split (Mathematical)");
+    private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion");
+    private DefaultMutableTreeNode Conversion_2 = new DefaultMutableTreeNode("Base Conversion Split");
 
     //nettool下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
     private DefaultMutableTreeNode Port_Scan = new DefaultMutableTreeNode("Port Scan");
     private DefaultMutableTreeNode WebDirectoryScan = new DefaultMutableTreeNode("WebDirectory Scan");
 
-    private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Conversion(大小写转换)");
-    private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Substitution(文本替换)");
-    private DefaultMutableTreeNode Text_Segmentation = new DefaultMutableTreeNode("Text Segmentation(文本分割)");
+    private DefaultMutableTreeNode Case_Conversion = new DefaultMutableTreeNode("Case Convert(大小写转换)");
+    private DefaultMutableTreeNode Text_Substitution = new DefaultMutableTreeNode("Text Replace(文本替换)");
+    private DefaultMutableTreeNode Text_Segmentation = new DefaultMutableTreeNode("Text Separate(文本分隔)");
 
     public void setnode(){
         //--------

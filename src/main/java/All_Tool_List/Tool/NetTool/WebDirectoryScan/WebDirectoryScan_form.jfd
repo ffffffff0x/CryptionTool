@@ -220,7 +220,7 @@ new FormModel {
 					"text": "字典内容会被\"{dir}\"替换::线程数建议最大50::响应码可自行添加或删除.别忘了换行"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 4
-					"y": 570
+					"y": 577
 					"width": 616
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
@@ -246,7 +246,7 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "TextOutBT"
-					"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/icon/save-fill.png" )
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/icon/save-line.png" )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "TextOutBTActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 378
@@ -254,9 +254,19 @@ new FormModel {
 					"height": 45
 					"width": 25
 				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "StrusNumFast"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/icon/book-2-line.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "StrusNumFastActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 25
+					"height": 45
+					"x": 378
+					"y": 148
+				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620
-				"height": 590
+				"height": 595
 				"x": 0
 				"y": 0
 			} )

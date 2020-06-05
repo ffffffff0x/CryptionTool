@@ -20,11 +20,12 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 270
 				"y": 5
-				"height": 590
+				"height": 595
 				"width": 625
 			} )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "JTREE"
+				"horizontalScrollBarPolicy": 31
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 4
 				"y": 5

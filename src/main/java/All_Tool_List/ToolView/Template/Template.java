@@ -89,7 +89,7 @@ public class Template extends JPanel {
             }
         }
         add(Template);
-        Template.setBounds(0, 0, 620, 590);
+        Template.setBounds(0, 0, 620, 595);
 
         {
             // compute preferred size

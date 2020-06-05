@@ -215,7 +215,7 @@ public class ProtScan_form extends JPanel {
             }
         }
         add(ProtScan);
-        ProtScan.setBounds(0, 0, 620, 590);
+        ProtScan.setBounds(-5, 25, 620, 590);
 
         {
             // compute preferred size

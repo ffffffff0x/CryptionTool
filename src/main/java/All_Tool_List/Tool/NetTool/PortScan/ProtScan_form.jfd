@@ -204,8 +204,8 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620
 				"height": 590
-				"x": 0
-				"y": 0
+				"x": -5
+				"y": 25
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

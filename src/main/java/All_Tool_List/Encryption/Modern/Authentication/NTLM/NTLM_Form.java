@@ -47,11 +47,11 @@ public class NTLM_Form extends JPanel {
             NTLM.setLayout(null);
 
             //---- TieleLBNTLM ----
-            TieleLBNTLM.setText("NTLM");
+            TieleLBNTLM.setText("NTLM-HASH");
             TieleLBNTLM.setFont(new Font("Jokerman", Font.PLAIN, 35));
             TieleLBNTLM.setForeground(null);
             NTLM.add(TieleLBNTLM);
-            TieleLBNTLM.setBounds(249, 35, 112, 54);
+            TieleLBNTLM.setBounds(197, 35, 226, 54);
 
             //======== NTLMSCLP1 ========
             {

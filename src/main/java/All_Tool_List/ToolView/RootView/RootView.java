@@ -62,7 +62,12 @@ public class RootView extends JFrame {
             }
         }
         contentPane.add(RP);
-        RP.setBounds(270, 5, 625, 590);
+        RP.setBounds(270, 5, 625, 595);
+
+        //======== JTREE ========
+        {
+            JTREE.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        }
         contentPane.add(JTREE);
         JTREE.setBounds(4, 5, 260, 595);
 
@@ -105,7 +110,7 @@ public class RootView extends JFrame {
 
     private void SetPanel(){
         RP.add(Index_Form);
-        Index_Form.setBounds(0, 0, 620, 590);
+        Index_Form.setBounds(0, 0, 620, 595);
         //this.SetPanelSetting(ThemeSelect_form);
 
         for (Map.Entry<String, JPanel> entry : Nodemap.nodemap.entrySet()) {
@@ -115,7 +120,7 @@ public class RootView extends JFrame {
 
     private void SetPanelSetting(JPanel set){
         RP.add(set);
-        set.setBounds(0, 0, 620, 590);
+        set.setBounds(0, 0, 620, 595);
         set.setVisible(false);
     }//设置Panel
 
