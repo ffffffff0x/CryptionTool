@@ -7,9 +7,6 @@ import java.util.Scanner;
 
 public class WebDirectoryScan_impl {
 
-    public static void main(String[] args) throws IOException {
-    }
-
     public File DirectoryGet(){
         JFileChooser chooser = new JFileChooser();//文件选择器
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);//选择器选择模式
