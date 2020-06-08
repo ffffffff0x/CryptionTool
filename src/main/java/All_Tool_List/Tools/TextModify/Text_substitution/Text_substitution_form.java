@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Wed Apr 08 13:59:28 CST 2020
  */
 
-package All_Tool_List.Tool.TextModify.Text_substitution;
+package All_Tool_List.Tools.TextModify.Text_substitution;
 
 import java.awt.*;
 import java.awt.event.*;

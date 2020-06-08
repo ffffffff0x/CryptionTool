@@ -1,6 +1,7 @@
-package All_Tool_List.Tool.NetTool.WebDirectoryScan;
+package All_Tool_List.Tools.NetTool.WebDirectoryScan;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,6 +10,8 @@ public class WebDirectoryScan_impl {
 
     public File DirectoryGet(){
         JFileChooser chooser = new JFileChooser();//文件选择器
+        FileSystemView fsv = FileSystemView.getFileSystemView();
+        chooser.setCurrentDirectory(fsv.getHomeDirectory());
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);//选择器选择模式
         chooser.showDialog(new JLabel(), "选择字典文件");
         return chooser.getSelectedFile();

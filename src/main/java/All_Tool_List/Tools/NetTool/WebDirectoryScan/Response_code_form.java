@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Fri Jun 05 16:22:11 CST 2020
  */
 
-package All_Tool_List.Tool.NetTool.WebDirectoryScan;
+package All_Tool_List.Tools.NetTool.WebDirectoryScan;
 
 import java.awt.*;
 import javax.swing.*;

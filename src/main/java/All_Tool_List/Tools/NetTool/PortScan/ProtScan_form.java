@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Fri Apr 10 10:26:02 CST 2020
  */
 
-package All_Tool_List.Tool.NetTool.PortScan;
+package All_Tool_List.Tools.NetTool.PortScan;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -198,10 +198,10 @@ public class ProtScan_form extends JPanel {
             PortFastBT.setBounds(372, 144, 25, 45);
 
             //---- PortScanRunPB ----
-            PortScanRunPB.setBackground(new Color(102, 102, 102));
+            PortScanRunPB.setBackground(new Color(255, 200, 60));
             PortScanRunPB.setVisible(false);
-            PortScanRunPB.setStringPainted(true);
             PortScanRunPB.setMaximum(0);
+            PortScanRunPB.setIndeterminate(true);
             ProtScan.add(PortScanRunPB);
             PortScanRunPB.setBounds(223, 440, 95, 20);
 

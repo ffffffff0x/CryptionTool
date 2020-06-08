@@ -191,10 +191,10 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JProgressBar" ) {
 					name: "PortScanRunPB"
-					"background": new java.awt.Color( 102, 102, 102, 255 )
+					"background": new java.awt.Color( 255, 200, 60, 255 )
 					"visible": false
-					"stringPainted": true
 					"maximum": 0
+					"indeterminate": true
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 223
 					"y": 440

@@ -2,9 +2,8 @@
  * Created by JFormDesigner on Sat Apr 04 09:45:37 CST 2020
  */
 
-package All_Tool_List.Tool.NetTool.WebDirectoryScan;
+package All_Tool_List.Tools.NetTool.WebDirectoryScan;
 
-import All_Tool_List.Tool.NetTool.PortScan.PortFast_form;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 
@@ -53,6 +52,7 @@ public class WebDirectoryScan_form extends JPanel {
 
     private void StartInit(){
         WebDirectoryScanOutArea.setText("");
+        PB.setValue(0);
         PB.setMaximum(bean.getPBMaxNum());//ProgressBar最大值
         PB.setMinimum(bean.getPBMinNum());//ProgressBar最小值
         bean.setThreadNum((int)TCSP.getValue());
@@ -492,7 +492,7 @@ public class WebDirectoryScan_form extends JPanel {
                     break;
                 }
             }
-            PB.setValue(PBnumber);
+            PB.setValue(PB.getValue()+1);
         }
 
         public String NewResponseNumGet(String url, int timeOut){

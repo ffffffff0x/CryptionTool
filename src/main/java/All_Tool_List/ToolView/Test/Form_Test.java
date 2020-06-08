@@ -1,9 +1,6 @@
 package All_Tool_List.ToolView.Test;
 
-import All_Tool_List.Encryption.Modern.SM4.SM4_Form;
-import All_Tool_List.Tool.NetTool.WebDirectoryScan.WebDirectoryScan_form;
-import All_Tool_List.ToolView.Setting.ThemeSelect.ThemeSelect_form;
-import All_Tool_List.ToolView.Template.Template;
+import All_Tool_List.Tools.NetTool.WebDirectoryScan.WebDirectoryScan_form;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.IntelliJTheme;
 

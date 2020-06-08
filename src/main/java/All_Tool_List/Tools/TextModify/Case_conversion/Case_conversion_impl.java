@@ -1,4 +1,4 @@
-package All_Tool_List.Tool.TextModify.Case_conversion;
+package All_Tool_List.Tools.TextModify.Case_conversion;
 
 public class Case_conversion_impl {
     public String Uppercase(String source)

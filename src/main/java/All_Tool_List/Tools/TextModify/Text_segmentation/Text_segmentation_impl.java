@@ -1,4 +1,4 @@
-package All_Tool_List.Tool.TextModify.Text_segmentation;
+package All_Tool_List.Tools.TextModify.Text_segmentation;
 
 public class Text_segmentation_impl {
     public String Text_segmentation(String sourcestr,String segmchar,int segmnumber){

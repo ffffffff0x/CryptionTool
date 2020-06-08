@@ -1,4 +1,4 @@
-package All_Tool_List.Tool.NetTool.WebDirectoryScan;
+package All_Tool_List.Tools.NetTool.WebDirectoryScan;
 
 import java.io.File;
 import java.io.IOException;

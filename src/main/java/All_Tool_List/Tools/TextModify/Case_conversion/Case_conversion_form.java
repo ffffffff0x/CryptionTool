@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Tue Apr 07 15:15:13 CST 2020
  */
 
-package All_Tool_List.Tool.TextModify.Case_conversion;
+package All_Tool_List.Tools.TextModify.Case_conversion;
 
 import java.awt.*;
 import java.awt.event.*;

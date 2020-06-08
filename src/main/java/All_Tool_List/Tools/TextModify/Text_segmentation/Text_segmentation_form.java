@@ -2,9 +2,7 @@
  * Created by JFormDesigner on Sat Apr 04 09:45:37 CST 2020
  */
 
-package All_Tool_List.Tool.TextModify.Text_segmentation;
-
-import All_Tool_List.Tool.TextModify.Text_substitution.Text_substitution_impl;
+package All_Tool_List.Tools.TextModify.Text_segmentation;
 
 import java.awt.event.*;
 import javax.swing.*;
