@@ -27,6 +27,12 @@ public class ProtScan_form extends JPanel {
         initComponents();
     }
 
+    public void setPortArea(String Port) {
+        synchronized(this) {
+            PortArea.append(Port+"\n");
+        }
+    }
+
     private void STBTActionPerformed(ActionEvent e) {
         init(IPTF.getText(),(int)SPortSP.getValue(),(int)EPortSP.getValue(),(int)TCSP.getValue(),(int)DelaySP.getValue());
 
@@ -314,7 +320,7 @@ class PortScan implements Runnable {
         public void run() {
             if (ScannerPort(address, Port, delay) == "OPEN") {
                 //System.out.println((Port + ": open"));
-                PortArea.append(Port+"\n");
+                setPortArea(String.valueOf(Port));
                 PortScanRunPB.setValue(Port);
             } else {
                 //System.out.println(Port);
