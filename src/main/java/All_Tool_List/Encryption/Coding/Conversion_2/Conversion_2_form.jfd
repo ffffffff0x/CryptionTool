@@ -88,7 +88,7 @@ new FormModel {
 					"width": 62
 					"height": 16
 					"x": 238
-					"y": 300
+					"y": 298
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 620

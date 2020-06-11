@@ -99,7 +99,7 @@ public class Conversion_2_form extends JPanel {
             //---- Conversion_2LB1 ----
             Conversion_2LB1.setText("SplitString");
             Conversion_2.add(Conversion_2LB1);
-            Conversion_2LB1.setBounds(238, 300, 62, 16);
+            Conversion_2LB1.setBounds(238, 298, 62, 16);
 
             {
                 // compute preferred size
