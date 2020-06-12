@@ -38,7 +38,7 @@ public class PortFast_form extends JFrame {
             scrollPane1.setViewportView(PortFast);
         }
         add(scrollPane1);
-        scrollPane1.setBounds(4, 4, 536, 601);
+        scrollPane1.setBounds(4, 4, 536, 610);
 
         {
             // compute preferred size
@@ -54,7 +54,7 @@ public class PortFast_form extends JFrame {
             setMinimumSize(preferredSize);
             setPreferredSize(preferredSize);
         }
-        setSize(550, 645);
+        setSize(550, 655);
         setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
