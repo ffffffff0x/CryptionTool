@@ -4,6 +4,8 @@
 
 请使用JDK版本8及以上的JDK运行本软件
 
+本软件使用Java 8编写，双击即可启用
+
 不定期更新
 
 ---
@@ -14,10 +16,10 @@
 - 网络工具
   - Port Scan(端口扫描)
   - WebDirectory Scan(WDB目录扫描)
-- 文字处理
-  - Case conversion(大小写转换)
-  - Text substitution(文字替换)
-  - Text segmentation(文本分割)
+- 文本处理
+  - Case Convert(大小写转换)
+  - Text Replace(文字替换)
+  - Text Separate(文本分隔)
 
 **加解密/编解码**
 - 现代

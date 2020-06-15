@@ -500,7 +500,7 @@ public class WebDirectoryScan_form extends JPanel {
             GetMethod getMethod = new GetMethod(url);
             getMethod.setFollowRedirects(false);//取消跟随300段跳转
             client.setTimeout(timeOut);
-            client.setConnectionTimeout(timeOut+10000);
+            client.setConnectionTimeout(timeOut+5000);
             //client.getHttpConnectionManager().getParams().setConnectionTimeout(5000);
             int code = 0;
             try {
