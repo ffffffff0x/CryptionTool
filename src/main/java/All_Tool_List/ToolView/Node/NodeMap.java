@@ -9,6 +9,7 @@ import All_Tool_List.Encryption.Coding.Base64.Base64_Form;
 import All_Tool_List.Encryption.Coding.Conversion.Conversion_Form;
 import All_Tool_List.Encryption.Coding.Conversion_2.Conversion_2_form;
 import All_Tool_List.Encryption.Coding.HEXCoder.HEXCoder_Form;
+import All_Tool_List.Encryption.Coding.HTMLCharEntity.HTMLCharEntity_Form;
 import All_Tool_List.Encryption.Coding.MorseCoder.MorseCoder_Form;
 import All_Tool_List.Encryption.Coding.URL.URL_Form;
 import All_Tool_List.Encryption.Coding.Unicode.Unicode_Form;
@@ -38,6 +39,7 @@ public class NodeMap {
     private final All_Tool_List.Encryption.Coding.MorseCoder.MorseCoder_Form MorseCoder_Form = new MorseCoder_Form();
     private final All_Tool_List.Encryption.Coding.Unicode.Unicode_Form Unicode_Form = new Unicode_Form();
     private final All_Tool_List.Encryption.Coding.URL.URL_Form URL_Form = new URL_Form();
+    private final All_Tool_List.Encryption.Coding.HTMLCharEntity.HTMLCharEntity_Form HTMLCharEntity_Form = new HTMLCharEntity_Form();
 
     //Classical
     private final All_Tool_List.Encryption.Classical.Atbash.Atbash_Form Atbash_Form = new Atbash_Form();
@@ -88,5 +90,6 @@ public class NodeMap {
         nodemap.put("Text Separate(文本分隔)",Text_segmentation_form);
         nodemap.put("Port Scan",ProtScan_form);
         nodemap.put("WebDirectory Scan",WebDirectoryScan_form);
+        nodemap.put("HTML Character Entity",HTMLCharEntity_Form);
     }
 }

@@ -65,6 +65,7 @@ public class NodeAdd {
     private DefaultMutableTreeNode Xxencode = new DefaultMutableTreeNode("Xxencode");
     private DefaultMutableTreeNode Conversion = new DefaultMutableTreeNode("Base Conversion");
     private DefaultMutableTreeNode Conversion_2 = new DefaultMutableTreeNode("Base Conversion Split");
+    private DefaultMutableTreeNode HTML_Character_Entity = new DefaultMutableTreeNode("HTML Character Entity");
 
     //nettool下的节点
     private DefaultMutableTreeNode MailOnceCheck = new DefaultMutableTreeNode("Disposable Email Check");
@@ -147,6 +148,7 @@ public class NodeAdd {
         Coding.add(Conversion);
         Coding.add(Conversion_2);
         Coding.add(HEX);
+        Coding.add(HTML_Character_Entity);
         Coding.add(Morse_Code);
         Coding.add(URL);
         Coding.add(Unicode);

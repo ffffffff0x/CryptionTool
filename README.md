@@ -50,6 +50,7 @@
   - Base Conversion
   - Base Conversion 2(以分割符为界一次转换多个)
   - HEX
+  - HTML Character Entity
   - Morse Code
   - URL
   - Unicode
