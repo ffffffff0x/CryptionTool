@@ -36,17 +36,13 @@ public class ProtScan_form extends JPanel {
     private void STBTActionPerformed(ActionEvent e) {
         init(IPTF.getText(),(int)SPortSP.getValue(),(int)EPortSP.getValue(),(int)TCSP.getValue(),(int)DelaySP.getValue());
 
-        if(isHostReachable(IP,DelayN)){
-            PortArea.setText("");
-            STBT.setEnabled(false);
-            STATE2.setText("Running");
-            PortScanRunPB.setMinimum(1);
-            PortScanRunPB.setMaximum((int)EPortSP.getValue());
-            PortScanRunPB.setVisible(true);
-            new Progress().execute();
-        }else {
-            PortArea.setText("NONE Target");
-        }
+        PortArea.setText("");
+        STBT.setEnabled(false);
+        STATE2.setText("Running");
+        PortScanRunPB.setMinimum(1);
+        PortScanRunPB.setMaximum((int)EPortSP.getValue());
+        PortScanRunPB.setVisible(true);
+        new Progress().execute();
     }
 
     private void PortSortBTActionPerformed(ActionEvent e) {

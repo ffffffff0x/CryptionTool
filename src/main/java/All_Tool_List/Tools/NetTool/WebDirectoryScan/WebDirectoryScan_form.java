@@ -59,6 +59,7 @@ public class WebDirectoryScan_form extends JPanel {
         bean.setTimeOut((int)DelaySP.getValue());
         bean.setURL(WebDirectoryScanURLTF.getText());
         bean.setMatchNumList(webDirectoryScan_impl.MatchNumListGet(WebDirectoryScanStrusCodeArea));//设置要匹配的状态码
+        bean.setResultOut("");
 
         for (String a:bean.getMatchNumList()) {
             WDSMatchNumCB.addItem(a);
