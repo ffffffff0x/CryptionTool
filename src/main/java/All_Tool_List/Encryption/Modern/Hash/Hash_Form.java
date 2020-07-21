@@ -22,8 +22,8 @@ public class Hash_Form extends JPanel {
     private Hash_ipml Hash_ipml = new Hash_ipml();
 
     private void button1ActionPerformed(ActionEvent e) {
-        HashencodeHEX.setText(new BigInteger(1, java.util.Base64.getDecoder().decode(Hash_ipml.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())))).toString(16));
-        HashencodeHEXUP.setText(new BigInteger(1, java.util.Base64.getDecoder().decode(Hash_ipml.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())))).toString(16).toUpperCase());
+        HashencodeHEX.setText(HEXLeaghCheck(new BigInteger(1, java.util.Base64.getDecoder().decode(Hash_ipml.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())))).toString(16)));
+        HashencodeHEXUP.setText(HEXLeaghCheck(new BigInteger(1, java.util.Base64.getDecoder().decode(Hash_ipml.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())))).toString(16)).toUpperCase());
         HashencodeBase64.setText(Hash_ipml.HashEncode(HashSource.getText(), Objects.requireNonNull(HashCBox.getSelectedItem().toString())));
 
     }
@@ -215,5 +215,13 @@ public class Hash_Form extends JPanel {
         HashCBox.addItem("SHA-256");
         HashCBox.addItem("SHA-384");
         HashCBox.addItem("SHA-512");
+    }
+
+    private String HEXLeaghCheck(String in){
+        if (in.length()<32)
+        {
+            in = "0"+in;
+        }
+        return in;
     }
 }

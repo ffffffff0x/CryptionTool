@@ -1,4 +1,6 @@
-# CryptionTool
+<p align="center">
+    <img src="./assets/img/logo.png" width="30%">
+</p>
 
 **简介:** 一个CTF+渗透测试工具框架，主要实现功能在加解密和编码这块，在软件使用过程中发现问题或建议欢迎提交 issue.
 
