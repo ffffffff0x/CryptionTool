@@ -92,9 +92,7 @@ public class DES_impl {
     {
         return new String(doDecrypt(hex2Byte(arg_strToDecriptString)));
     }
-
-
-
+    
     public static void main(String[] args)
     {
         try
