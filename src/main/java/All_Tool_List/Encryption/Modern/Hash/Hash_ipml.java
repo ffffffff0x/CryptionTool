@@ -25,8 +25,10 @@ public class Hash_ipml {
             }
             assert mc != null;
             mc.update(message.getBytes());//hash摘要
-            String out = new BigInteger(1, mc.digest()).toString(16);
-            return out.substring(8,24);
+            byte[] out = mc.digest();
+            // String out = new BigInteger(1, mc.digest()).toString(16);
+            return java.util.Base64.getEncoder().encodeToString(out);
+            // return new BigInteger(1, mc.digest()).toString(16);
         }
         else {
             try {

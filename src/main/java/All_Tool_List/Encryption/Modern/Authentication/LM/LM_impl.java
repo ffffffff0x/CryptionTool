@@ -3,6 +3,8 @@ package All_Tool_List.Encryption.Modern.Authentication.LM;
 import All_Tool_List.Encryption.Coding.Conversion.Conversion_impl;
 import All_Tool_List.Encryption.Coding.HEXCoder.HEXCoder_impl;
 
+import java.io.UnsupportedEncodingException;
+
 public class LM_impl {
 
     public static HEXCoder_impl hex = new HEXCoder_impl();
@@ -29,10 +31,19 @@ public class LM_impl {
 
     public static String LM14check(String S)
     {
-        StringBuilder sb = new StringBuilder(hex.Encode(S,""));
-        for (int i = hex.Encode(S,"").length(); i < 28; i++)
-        {
-            sb.append("0");
+        StringBuilder sb = null;
+        try {
+            sb = new StringBuilder(hex.Encode(S,""));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        try {
+            for (int i = hex.Encode(S,"").length(); i < 28; i++)
+            {
+                sb.append("0");
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
         System.out.println(sb.toString());
         return sb.toString();

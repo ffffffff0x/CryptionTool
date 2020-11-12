@@ -6,6 +6,7 @@ package All_Tool_List.Encryption.Coding.HEXCoder;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.UnsupportedEncodingException;
 import java.util.Objects;
 import javax.swing.*;
 
@@ -21,7 +22,11 @@ public class HEXCoder_Form extends JPanel {
     private static HEXCoder_impl HEXCoder_impl = new HEXCoder_impl();
 
     private void HEXEnCodeBTActionPerformed(ActionEvent e) {
-        HEXDeCodeArea.setText(HEXCoder_impl.Encode(HEXSourceArea.getText(), Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString()));
+        try {
+            HEXDeCodeArea.setText(HEXCoder_impl.Encode(HEXSourceArea.getText(), Objects.requireNonNull(HEXDelCBox.getSelectedItem()).toString()));
+        } catch (UnsupportedEncodingException unsupportedEncodingException) {
+            unsupportedEncodingException.printStackTrace();unsupportedEncodingException.printStackTrace();
+        }
     }
 
     private void HEXDeCodeBTActionPerformed(ActionEvent e) {

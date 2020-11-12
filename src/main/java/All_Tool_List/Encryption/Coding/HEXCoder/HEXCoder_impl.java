@@ -1,11 +1,11 @@
 package All_Tool_List.Encryption.Coding.HEXCoder;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 public class HEXCoder_impl {
-    public String Encode(String i,String d)
-    {
+    public String Encode(String i,String d) throws UnsupportedEncodingException {
         d = CheckSelectItem(d);
         //接收转换结果
         String hexString;
@@ -22,7 +22,7 @@ public class HEXCoder_impl {
         char[] hexArray = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F',};
         StringBuilder sb = new StringBuilder();
         //String ---> byte[]
-        byte[] bs = i.getBytes();
+        byte[] bs = i.getBytes("UTF-8");
         int bit;
         if(d.equals("0x"))
         {

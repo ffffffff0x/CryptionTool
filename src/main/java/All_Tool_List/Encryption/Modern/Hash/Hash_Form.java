@@ -207,9 +207,9 @@ public class Hash_Form extends JPanel {
 
     private void CBOXItemADD(){
         HashCBox.addItem("MD5");
-        HashCBox.addItem("MD5-16");
+        // HashCBox.addItem("MD5-16");
         HashCBox.addItem("MD2");
-        HashCBox.addItem("MD4");
+        // HashCBox.addItem("MD4");
         HashCBox.addItem("SHA-1");
         HashCBox.addItem("SHA-224");
         HashCBox.addItem("SHA-256");

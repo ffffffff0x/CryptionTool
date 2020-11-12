@@ -7,17 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/img" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/dictionaries" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="MigLayout" level="project" />
-    <orderEntry type="library" name="JGoodies Forms" level="project" />
-    <orderEntry type="library" name="TableLayout" level="project" />
-    <orderEntry type="library" name="Beans Binding" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="Maven: com.formdev:flatlaf:0.33" level="project" />
     <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.1" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.0.4" level="project" />
