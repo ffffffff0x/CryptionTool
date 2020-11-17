@@ -2,7 +2,7 @@
     <img src="./assets/img/logo.png" width="70%">
 </p>
 
-## 本软件正在使用新UI框架重制，项目地址为https://github.com/RyuZUSUNC/BerylEnigma，欢迎提供建议与意见。
+## 本软件正在使用新UI框架重制，项目地址为https://github.com/RyuZUSUNC/BerylEnigma 欢迎提供建议与意见。
 
 **简介:** 一个CTF+渗透测试工具框架，主要实现功能在加解密和编码这块，在软件使用过程中发现问题或建议欢迎提交 issue.
 
